@@ -1,2 +1,11 @@
-@import './common';
-@import './example';
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/normalize';
+@import './utils/common';
+@import './utils/global';
+@import './utils/visually-hidden';
+
+@import './components/header';
+@import './components/main';
+@import './components/footer';
+@import './components/modal';
