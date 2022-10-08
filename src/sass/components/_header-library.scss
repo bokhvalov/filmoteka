@@ -6,7 +6,7 @@
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 60px;
-
+    margin-bottom: 60px;
     @media screen and (min-width: 768px) {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.56) 50%, rgba(0, 0, 0, 0.1) 100%), url('/src/images/header/library-tablet.jpg');
     }
@@ -92,7 +92,6 @@
     height: 20px;
 }
 
-
 .header_search-btn {
     display: inline-flex;
     background-color: inherit;
@@ -137,4 +136,9 @@
     @media screen and (min-width: 1280px) {
         margin-left: 15px;
     }
+}
+
+.active-btn {
+    background-color: #FF6B01;
+    border: none;
 }
