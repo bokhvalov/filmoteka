@@ -25,7 +25,6 @@ async function renderPopularMovies(){
         </a>
     </div>`
     })
-    console.log(markup);
-    refs.mainContainer.insertAdjacentHTML("beforeend",markup)
+    refs.mainContainer.insertAdjacentHTML("beforeend",markup.join(""))
 }
 
