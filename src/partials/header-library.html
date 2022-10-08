@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header-library">
   <div class="header-conteiner">
     <nav class="header-nav">
       <a class="header-nav_logo" href="/">
@@ -9,7 +9,7 @@
       </a>
       <ul class="header-nav_list">
         <li class="header-nav_item">
-          <a class="header-nav_item-link" href="/">Home</a>
+          <a class="header-nav_item-link" href="/src/index.html">Home</a>
         </li>
         <li class="header-nav_item">
           <a class="header-nav_item-link" href="/src/library.html"
@@ -18,13 +18,9 @@
         </li>
       </ul>
     </nav>
-    <form class="header_search">
-      <input class="header_search-input" type="text" />
-      <button class="header_search-btn" type="submit">
-        <svg class="header_search-btn_icon" width="24px" height="24px">
-          <use href="/src/images/symbol-defs.svg#icon-search"></use>
-        </svg>
-      </button>
-    </form>
+    <div class="header-wrap">
+      <button class="header_btn">Watched</button>
+      <button class="header_btn">queue</button>
+    </div>
   </div>
 </header>
