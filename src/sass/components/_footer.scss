@@ -12,12 +12,15 @@
    padding-bottom: 29.7px;
  
    @include mq(tablet) {
+    
      padding-top: 30px;
      padding-bottom: 30px;
+
    }
 
   @include mq(desktop)
    /*@media screen and (min-width: 1200px)*/ {
+    
      padding-top: 30px;
      padding-bottom: 28px;
    }
@@ -26,13 +29,13 @@
  .footer__text {
    /*@extend %no-margin;*/
    margin: 0;
-   padding-left: 66px;
-   padding-right: 67px;
+   
    width: 320px;
    text-align: center;
    font-family: $main-font;
    font-style: normal;
    font-weight: 400;
+
 
    @include font-size(14, 16);
 
@@ -47,11 +50,29 @@
    }
  }
 
-.footer_icon{
+ .footer__text-mobile{
+  @include mq(mobile-only) {
+    display: block;
+
+  }
+
+
+ }
+
+
+.footer__icon{
+  margin-left: 10px;
+  margin-right: 10px;
 
   fill: #FF6B08;
 }
 
+.footer__icon:hover, .footer__icon:focus {
+ 
+  transform: scale(1.5);
+  
+}
+
  .modal-footer-open {
-   fill: $secondary-txt-color;
+   color: $secondary-txt-color;
  }
