@@ -1,4 +1,4 @@
-import { getPopularMovies } from "./getPopularMovies";
+//import { getPopularMovies } from "./getPopularMovies";
 import localStrg from "./localStrg";
 import { libraryRender } from "./libraryRender";
 export const APIKEY = "565e4989d784811de7dff7d665000157";
@@ -11,12 +11,12 @@ const refs = {
 it is library variable */
 
 
-dummyLibraryMovies();
+/* dummyLibraryMovies();
 async function dummyLibraryMovies(){
     testQuery = await getPopularMovies(APIKEY);
     localStrg.save("watched",testQuery);
     localStrg.save("queued", testQuery);
-}
+} */
 //console.log("I'm before library render")
 
 /*reating gallery with films from "watched" library*/
