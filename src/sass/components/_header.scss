@@ -6,6 +6,7 @@
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 90px;
+    margin-bottom: 60px;
     @media screen and (min-width: 768px) {
         background-image: url('/src/images/header/tablet-bi.jpg');
         padding-bottom: 80px;
@@ -85,13 +86,22 @@
     display: flex;
     justify-content: center;
     height: 20px;
+
+    &:hover .header_search-input, 
+    &:hover .header_search-btn, 
+    &:focus .header_search-input, 
+    &:focus .header_search-btn {
+        border-bottom: 0.5px solid red;
+    }
 }
 
 .header_search-input {
+    padding-bottom: 4px;
     margin: 0;
     background-color:inherit;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 0.5px solid #fff;
+    font-size: 12px;
     color: #fff;
     width: 100%;
     &:focus-visible{
@@ -104,15 +114,15 @@
     @media screen and (min-width: 1280px) {
         width: 400px;
     }
-}
 
+}
 
 
 .header_search-btn {
     display: inline-flex;
     background-color: inherit;
     border: none;
-   border-bottom: 0.5px solid #fff;
+     border-bottom: 0.5px solid #fff;
     margin: 0;
     padding: 0;
 }
