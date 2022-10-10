@@ -1,4 +1,5 @@
 import { getPopularMovies } from "./getPopularMovies";
+
 import localStrg from "./localStrg";
 export const APIKEY = "565e4989d784811de7dff7d665000157";
 export const APIURL="https://api.themoviedb.org/";
@@ -27,4 +28,3 @@ async function renderPopularMovies(){
     })
     refs.mainContainer.insertAdjacentHTML("beforeend",markup.join(""))
 }
-
