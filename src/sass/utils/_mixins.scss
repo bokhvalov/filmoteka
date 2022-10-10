@@ -4,6 +4,7 @@
   $rounded-line-height: round($line-height);
   line-height: calc($rounded-line-height / 100);
 }
+
 @mixin mq($type) {
   $mobile: 480px;
   $tablet: 768px;
@@ -54,3 +55,4 @@
       }
   }
 }
+
