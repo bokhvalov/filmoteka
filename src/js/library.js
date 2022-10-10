@@ -1,7 +1,7 @@
 //import { getPopularMovies } from "./getPopularMovies";
 
 import localStrg from "./localStrg";
-import { libraryRender, libraryCleaner } from "./libraryRender";
+import { libraryRender, libraryCleaner, libraryCleaner, getFilmById, addFilm, removeFilmById, isInLibrary } from "./libraryRender";
 export const APIKEY = "565e4989d784811de7dff7d665000157";
 export const APIURL="https://api.themoviedb.org/";
 const refs = {
@@ -34,6 +34,7 @@ libraryRender(refs.mainContainer,"watched");
 /* asigning events listiners to buttons: watched and queued */
 refs.btnQueued.addEventListener('click',clickOnBtnQueuedHandler);
 refs.btnWatched.addEventListener('click',clickOnBtnWatchedHandler);
+
 
 /* defining functions for event listiners*/
 
