@@ -25,20 +25,103 @@
 }
 
 .filmoteka__item {
+
+    cursor: pointer;
     margin-left: 0px;
     margin-right: 0px;
+    transform: scale(1);
+    transition: transform 250ms linear;
 
+    @media screen and (max-width: 767px) {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
     @media screen and (min-width: 768px) {
             margin-left: 16px;
             margin-right: 16px;
+            flex-basis: calc((100% - 2 * 30px) / 2);
         }
     
         @media screen and (min-width: 1200px) {
             margin-left: 8px;
             margin-right: 8px;
+            flex-basis: calc((100% - 3 * 30px) / 3);
         }
-//    &:not(:last-child){
-//         margin-left: 0px;
-//         margin-right: 0px;
-//    }  
+    }
+
+.filmoteka__item-link{
+    text-decoration: none;
+}
+
+.filmoteka__item-wrapper {
+    pointer-events: none;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.filmoteka__item-wrapper:hover,
+.filmoteka__item-wrapper:focus {
+
+    transition: color .25s cubic-bezier(.4, 0, .2, 1), transform .25s cubic-bezier(.4, 0, .2, 1), opacity .25s cubic-bezier(.4, 0, .2, 1), visibility .25s cubic-bezier(.4, 0, .2, 1);
+    
+}
+.filmoteka-img {
+    border-radius: 5px;
+}
+.filmoteka__year::before {
+    content: "| ";
+}
+
+.filmoteka__rating {
+    text-align: left;
+    color: #f1f1f1;
+    pointer-events: none;
+    background-color: #ff6b08;
+    width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 1.1;
+    transition: color .25s cubic-bezier(.4, 0, .2, 1);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    }
+    
+.subtitle {
+    color: #000000;
+
+    @media screen and (max-width: 767px) {
+            
+                font-size: 12px;
+                line-height: 16px;
+        }
+    
+}
+.discription {
+    color: #FF6B08;
+
+    @media screen and (max-width: 767px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+}
+
+.subtitle,
+.discription {
+    @media screen and (min-width: 768px) {
+    
+            font-size: 12px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 1200px) {
+    
+            font-size: 20px;
+            line-height: 24px;
+        }
 }
