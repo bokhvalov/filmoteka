@@ -17,10 +17,11 @@ async function renderPopularMovies(){
         return `<div class="filmoteka__item" data-id="${id}">
         <a class="filmoteka__item-link" href="./">
             <div class="filmoteka__item-wrapper">
-                <img class="filmoteka-img" src="${imgPath}" alt="" width="395px">
+                <img class="filmoteka-img" src="${imgPath}" alt="">
                 <div class="overlay-text">
                     <h2 class="subtitle">${title}</h2>
-                    <p class="discription">${genres} | ${year}</p>
+                    <p class="discription">${genres}<span class="filmoteka__year"> ${year}</span> </p>
+                    <div class="filmoteka__rating">${popularity}</div>
                 </div>
             </div>
         </a>
