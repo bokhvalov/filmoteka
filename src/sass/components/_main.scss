@@ -11,17 +11,9 @@
     justify-content: center;
     align-items: flex-start;
 
-    max-width: 320px;
     padding-left: 0;
     padding-right: 0;
 
-    @media screen and (min-width: 768px) {
-        max-width: 768px;
-    }
-
-    @media screen and (min-width: 1200px) {
-        max-width: 1013px;
-    }
 }
 
 .filmoteka__item {
@@ -92,9 +84,23 @@
     left: 10px;
     }
     
-.subtitle {
-    color: #000000;
+.overlay-text {
+    @media screen and (max-width: 767px) {
+        width: 280px;
+    }
+    @media screen and (min-width: 768px){
+        width: 336px;
+        }
+ @media screen and (min-width: 1200px) {
+    max-width: 395px;
+}
+}
 
+.subtitle {
+    text-transform: uppercase;
+    
+    color: #000000;
+   
     @media screen and (max-width: 767px) {
             
                 font-size: 12px;
@@ -103,6 +109,7 @@
     
 }
 .discription {
+
     color: #FF6B08;
 
     @media screen and (max-width: 767px) {
@@ -123,5 +130,8 @@
     
             font-size: 20px;
             line-height: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 }
