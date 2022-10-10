@@ -32,13 +32,13 @@
     @media screen and (min-width: 768px) {
             margin-left: 16px;
             margin-right: 16px;
-            flex-basis: calc((100% - 2 * 30px) / 2);
+            flex-basis: calc(100%/3);
         }
     
         @media screen and (min-width: 1200px) {
             margin-left: 8px;
             margin-right: 8px;
-            flex-basis: calc((100% - 3 * 30px) / 3);
+            flex-basis: calc(100%/4);
         }
     }
 
