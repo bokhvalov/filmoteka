@@ -1,5 +1,7 @@
 import { fetchPopular } from './API';
 import { decodeGenres } from './decodeGenres';
+
+import { APIKEY } from './index';
 import { APIURL } from './index';
 
 export async function getPopularMovies(APIKEY) {
