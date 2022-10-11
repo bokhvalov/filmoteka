@@ -6,6 +6,8 @@ import { startPage } from '../pagination-js/counter-pagination';
 import { renderItems } from '../common/renderItems';
 import { searchMovies } from './search';
 import localStrg from '../common/localStrg';
+import goTopBtn from '../common/goTopBtn';
+import preLoader from '../common/preloader';
 
 
 export const APIKEY = '565e4989d784811de7dff7d665000157';
@@ -22,6 +24,8 @@ refs.openModalBtn.addEventListener('click', openModalFooter);
 refs.form.addEventListener('submit', searchMovies);
 
 renderPopularMovies();
+goTopBtn();
+preLoader();
 
 export async function renderPopularMovies() {
   const popularMovies = await getPopularMovies(APIKEY);
