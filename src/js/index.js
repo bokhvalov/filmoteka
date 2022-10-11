@@ -1,5 +1,5 @@
 
-import './modal-footer';
+// import './modal-footer';
 
 import { getPopularMovies } from './getPopularMovies';
 import { openModal } from './modal';
