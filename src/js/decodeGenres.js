@@ -11,14 +11,15 @@ export async function decodeGenres(genres){
     
     genres.forEach(genre => {
     // try to find genre in localStorage
-    try{
+    //try{
         genresNames.push((genresList.find(genreListItem => genreListItem.id === genre)).name)
-    }// update localStorage ganres data and try to find one more time
-    catch(error){
-        console.log(`${genre} wasn't found in Local Storage, updating ganresList`)
-        genresList = await fetchGenresList(APIKEY);
-        genresNames.push((genresList.find(genreListItem => genreListItem.id === genre)).name)
-    }});
+    // }// update localStorage ganres data and try to find one more time
+    // catch(error){
+    //     console.log(`${genre} wasn't found in Local Storage, updating ganresList`)
+    //     genresList = await fetchGenresList(APIKEY);
+    //     genresNames.push((genresList.find(genreListItem => genreListItem.id === genre)).name)
+    // }
+});
 
     return(genresNames.join(", "))
 }
