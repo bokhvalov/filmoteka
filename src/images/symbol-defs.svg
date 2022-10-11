@@ -2,6 +2,6 @@
 <defs>
 <symbol id="icon-search" viewBox="-3 0 24 24"><path stroke="#fff"  stroke="#fff" style="stroke: var(--color1, #fff)"   stroke-linejoin="round" stroke-linecap="round" stroke-width="1.684" d="M14.316 16a6.737 6.737 0 1 0 0-13.474 6.737 6.737 0 1 0 0 13.474zM22.737 17.685l-3.663-3.663"/>
 </symbol>
-<symbol id="icon-film" viewBox="0 0 33 33"><path  stroke="#fff" style="stroke: var(--color1, #fff)"  stroke="#fff" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M26.427 2.667H5.574a2.907 2.907 0 0 0-2.907 2.907v20.853a2.907 2.907 0 0 0 2.907 2.907h20.853a2.907 2.907 0 0 0 2.907-2.907V5.574a2.907 2.907 0 0 0-2.907-2.907zM9.333 2.667v26.667M22.667 2.667v26.667M2.667 16h26.667M2.667 9.333h6.667M2.667 22.667h6.667M22.667 22.667h6.667M22.667 9.333h6.667"/></symbol>
+<symbol id="icon-film" viewBox="0 0 33 33"><path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)"  stroke="#fff" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M26.427 2.667H5.574a2.907 2.907 0 0 0-2.907 2.907v20.853a2.907 2.907 0 0 0 2.907 2.907h20.853a2.907 2.907 0 0 0 2.907-2.907V5.574a2.907 2.907 0 0 0-2.907-2.907zM9.333 2.667v26.667M22.667 2.667v26.667M2.667 16h26.667M2.667 9.333h6.667M2.667 22.667h6.667M22.667 22.667h6.667M22.667 9.333h6.667"/></symbol>
 </defs>
 </svg>

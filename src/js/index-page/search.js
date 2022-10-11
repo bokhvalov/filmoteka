@@ -1,4 +1,4 @@
-import { fetchSearch } from './themoviedbAPI';
+import { fetchSearch } from './API';
 import { processCurrentPage } from '../data-processing/processCurrentPage';
 import { APIKEY } from '.';
 import { refs } from '.';

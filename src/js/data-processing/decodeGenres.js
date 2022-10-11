@@ -1,4 +1,4 @@
-import { fetchGenresList } from "../index-page/themoviedbAPI";
+import { fetchGenresList } from "../index-page/API";
 import localStrg, { save, load, del } from "../common/localStrg";
 import { APIKEY } from "../index-page/index";
 

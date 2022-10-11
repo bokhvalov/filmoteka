@@ -1,4 +1,5 @@
 .footer {
+<<<<<<< HEAD
 /* @extend .section;*/
  background-color: $secondary-bg-color;
  }
@@ -88,3 +89,52 @@
  cursor: pointer;
  }
 
+=======
+   /* @extend .section;*/
+  background-color: $secondary-bg-color;
+  }
+  
+.footer__container {
+    /* @extend .container;*/
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 28.71px;
+    padding-bottom: 29.7px;
+  
+    @media screen and (min-width: 768px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  
+    @media screen and (min-width: 1200px) {
+      padding-top: 30px;
+      padding-bottom: 28px;
+    }
+  }
+  
+  .footer__text {
+    /*@extend %no-margin;*/
+    margin: 0;
+    width: 320px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+
+    @include font-size(14, 16);
+
+    color: $secondary-txt-color;
+  
+    @media screen and (min-width: 768px) {
+      width: 768px;
+  
+      @include font-size(16, 19);
+      
+    }
+  }
+
+  .footer__link {
+    color: $secondary-txt-color;
+  }
+>>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
