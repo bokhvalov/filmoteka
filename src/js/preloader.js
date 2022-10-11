@@ -1,4 +1,5 @@
-document.body.onload = function () {
+export default function preLoader() {
+    document.body.onload = function () {
     
     setTimeout(function () {
         const preloader = document.getElementById('page-preloader');
@@ -7,4 +8,5 @@ document.body.onload = function () {
         }
     }, 1000);
 
+}
 }
