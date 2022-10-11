@@ -1,22 +1,20 @@
-
-// import './modal-footer';
-
+import localStrg from './localStrg';
+import { openModalFooter } from './modal-footer';
 import { getPopularMovies } from './getPopularMovies';
 import { openModal } from './modal';
+import { startPage } from './pagination-js/counter-pagination';
 
-import localStrg from './localStrg';
 export const APIKEY = '565e4989d784811de7dff7d665000157';
 export const APIURL = 'https://api.themoviedb.org/';
 const refs = {
   mainContainer: document.querySelector('.filmoteka__container'),
+  openModalBtn: document.querySelector('.modal-footer-open')
 };
 
-// Вешаю пагинацию
-import { startPage } from './pagination-js/counter-pagination';
-setTimeout(startPage, 500);
-
 renderPopularMovies();
-export async function renderPopularMovies() {
+refs.openModalBtn.addEventListener('click', openModalFooter);
+
+async function renderPopularMovies() {
   const currentPageContent = await getPopularMovies(APIKEY);
   localStrg.save('currentPage', currentPageContent);
   console.log(currentPageContent);
@@ -44,4 +42,5 @@ export async function renderPopularMovies() {
   );
   refs.mainContainer.insertAdjacentHTML('beforeend', markup.join(''));
   refs.mainContainer.addEventListener('click', openModal);
+  startPage();
 }

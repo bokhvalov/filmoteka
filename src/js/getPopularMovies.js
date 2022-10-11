@@ -9,8 +9,6 @@ export async function getPopularMovies(APIKEY) {
   pageCount = popularMovies.total_pages;
   const result = popularMovies.results;
 
-  console.log(popularMovies);
-
   const currentPage = await Promise.all(
     result.map(
       async ({
@@ -54,6 +52,5 @@ export async function getPopularMovies(APIKEY) {
       }
     )
   );
-  console.log(currentPage);
   return currentPage;
 }
