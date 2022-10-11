@@ -13,6 +13,11 @@
 
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 60px;
+
+    @media screen and (max-width: 767px){
+        padding-bottom: 40px;
+    }
 
 }
 
@@ -113,8 +118,8 @@ transform: scale(1.03);
     color: #f1f1f1;
     pointer-events: none;
     background-color: #ff6b08;
-    width: 36px;
-    height: 16px;
+    // width: 36px;
+    // height: 16px;
     border-radius: 5px;
     padding-top: 2px;
     padding-left: 8px;
