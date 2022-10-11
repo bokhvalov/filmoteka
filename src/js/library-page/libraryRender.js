@@ -1,5 +1,5 @@
 //importing library for working with local storage
-import localStrg from './localStrg';
+import localStrg from '../common/localStrg';
 
 /*function definition for gallery rendering
 with two parameters: 1) document element where gallery has to be created

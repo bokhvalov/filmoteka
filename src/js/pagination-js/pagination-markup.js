@@ -1,4 +1,4 @@
-import { pageCount } from '../getPopularMovies';
+import { pageCount } from '../index-page/getPopularMovies';
 
 export function pagMarkup(peg2, peg3, peg4, peg5, peg6) {
   return `<div class='pagination-decrement'>

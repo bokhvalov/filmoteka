@@ -1,4 +1,4 @@
-import { pageCount } from '../getPopularMovies';
+import { pageCount } from '../index-page/getPopularMovies';
 import { PAGE } from './main-pagination';
 import { pagMarkup } from './pagination-markup';
 
