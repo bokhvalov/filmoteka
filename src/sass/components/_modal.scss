@@ -15,6 +15,7 @@ ul {
     background-color: rgba(0, 0, 0, 0.56);
 }
 
+.modal-container,
 .modal-window {
     position: fixed;
     width: 280px;
@@ -64,6 +65,7 @@ ul {
     background-color: transparent;
 
     position: absolute;
+    z-index: 1;
     top: 0%;
     right: 1%;
     transform: rotate(45deg);
@@ -87,17 +89,21 @@ ul {
 
     @media screen and (min-width: 768px) {
         max-width: 280px;
+        max-height: 373px;
         margin-right: 16px;
     }
     
     @media screen and (min-width: 1024px) {
         max-width: 375px;
+        width: 375px;
+        max-height: 478px;
     }
 }
 
 
 .film-name {
     position: relative;
+    margin: 0;
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 30px;

@@ -1,15 +1,15 @@
-import { fetchGenresList } from "./API";
-import localStrg, { save, load, del } from "./localStrg";
-import { APIKEY } from "./index";
+import { fetchGenresList } from "../index-page/themoviedbAPI";
+import localStrg, { save, load, del } from "../common/localStrg";
+import { APIKEY } from "../index-page/index";
 
 export async function decodeGenres(genres){
     if (!localStrg.load ("genresList")){
         await fetchGenresList(APIKEY)
     }
-    const genresList = localStrg.load ("genresList");
+    let genresList = localStrg.load ("genresList");
     let genresNames = new Array;
     
-    genres.forEach(genre => {
+    genres.forEach(async genre =>  {
     // try to find genre in localStorage
     try{
         genresNames.push((genresList.find(genreListItem => genreListItem.id === genre)).name)
@@ -18,7 +18,8 @@ export async function decodeGenres(genres){
         console.log(`${genre} wasn't found in Local Storage, updating ganresList`)
         genresList = await fetchGenresList(APIKEY);
         genresNames.push((genresList.find(genreListItem => genreListItem.id === genre)).name)
-    }});
+    }
+});
 
-    return(genresNames.join())
+    return(genresNames.join(", "))
 }

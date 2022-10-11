@@ -1,5 +1,5 @@
 //importing library for working with local storage
-import localStrg from './localStrg';
+import localStrg from '../common/localStrg';
 
 /*function definition for gallery rendering
 with two parameters: 1) document element where gallery has to be created
@@ -52,10 +52,10 @@ function libraryRender(htmlElement, userLibrary) {
                 <div class="overlay-text">
                     <h2 class="subtitle">${title}</h2>
                     <p class="discription">`;
-        if (!(genres === undefined)) {
+        if (genres) {
           itemString += `<span class="description__genre">${genres}</span>`;
         }
-        if (!(year === undefined)) {
+        if (year) {
           itemString += `<span class="description__year">${year}</span>`;
         }
         itemString += `<span class="rating">${rating}</span></p>
@@ -74,4 +74,55 @@ function libraryRender(htmlElement, userLibrary) {
     htmlElement.insertAdjacentHTML('beforeend', ObjectForInsert);
   }
 }
-export { libraryRender };
+/*Clear all nested elements in html element*/
+function libraryCleaner(htmlElement){
+  htmlElement.innerHTML = '';
+}
+
+/*boolean function to check if a film is in a library*/
+function isInLibrary(filmId, userLibrary) {
+  let result = false;
+  const filmCollectionFromLocalStorage = localStrg.load(userLibrary);
+
+  if (!filmCollectionFromLocalStorage) {
+    //console.log("checking variable existance");
+    return result;
+  }
+
+  filmCollectionFromLocalStorage.forEach((film)=>{
+    const {id}=film; 
+    if (id===filmId) { result =true }});
+  return result;
+}
+
+/*return object film from specified library, if there is no film with given id - 
+function returns NULL*/
+
+function getFilmById(filmId, userLibrary) {
+  const filmLibrary = localStrg.load(userLibrary);
+  if (!filmLibrary) {
+     return null;}
+  return filmLibrary.find((film) => film.id === filmId);;
+}
+
+/*function adds film object to specified library*/
+function addFilm(film, userLibrary) {
+  let filmLibrary = localStrg.load(userLibrary);
+  if (!filmLibrary) {
+    localStrg.save(userLibrary, [film]);
+  }
+  filmLibrary.push(film);
+  localStrg.save(userLibrary, filmLibrary);
+}
+
+/*function removes film with specified id from specified library*/
+function removeFilmById(filmId, userLibrary){
+
+  if (isInLibrary(filmId, userLibrary)) {
+    let filmLibrary = localStrg.load(userLibrary);
+    filmLibrary = filmLibrary.filter((film) => film.id !== filmId);
+    localStrg.save(userLibrary, filmLibrary);
+  }
+}
+
+export { libraryRender, libraryCleaner, getFilmById, addFilm, removeFilmById, isInLibrary};
