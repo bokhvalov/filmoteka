@@ -52,10 +52,10 @@ function libraryRender(htmlElement, userLibrary) {
                 <div class="overlay-text">
                     <h2 class="subtitle">${title}</h2>
                     <p class="discription">`;
-        if (!(genres === undefined)) {
+        if (genres) {
           itemString += `<span class="description__genre">${genres}</span>`;
         }
-        if (!(year === undefined)) {
+        if (year) {
           itemString += `<span class="description__year">${year}</span>`;
         }
         itemString += `<span class="rating">${rating}</span></p>
@@ -81,15 +81,18 @@ function libraryCleaner(htmlElement){
 
 /*boolean function to check if a film is in a library*/
 function isInLibrary(filmId, userLibrary) {
-  
+  let result = false;
   const filmCollectionFromLocalStorage = localStrg.load(userLibrary);
 
   if (!filmCollectionFromLocalStorage) {
-    return false;
+    //console.log("checking variable existance");
+    return result;
   }
+
   filmCollectionFromLocalStorage.forEach((film)=>{
-    const {id}=film; if(id===filmId) {return true;}});
-  return false;
+    const {id}=film; 
+    if (id===filmId) { result =true }});
+  return result;
 }
 
 /*return object film from specified library, if there is no film with given id - 
@@ -114,10 +117,11 @@ function addFilm(film, userLibrary) {
 
 /*function removes film with specified id from specified library*/
 function removeFilmById(filmId, userLibrary){
+
   if (isInLibrary(filmId, userLibrary)) {
     let filmLibrary = localStrg.load(userLibrary);
     filmLibrary = filmLibrary.filter((film) => film.id !== filmId);
-    localStrg.save(userLibrary.filmLibrary);
+    localStrg.save(userLibrary, filmLibrary);
   }
 }
 

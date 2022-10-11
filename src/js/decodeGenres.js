@@ -20,5 +20,5 @@ export async function decodeGenres(genres){
         genresNames.push((genresList.find(genreListItem => genreListItem.id === genre)).name)
     }});
 
-    return(genresNames.join())
+    return(genresNames.join(", "))
 }

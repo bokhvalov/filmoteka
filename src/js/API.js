@@ -1,8 +1,11 @@
-import { APIURL } from "./index";
-import localStrg from "./localStrg";
+import { APIURL } from './index';
+import localStrg from './localStrg';
+import { PAGE } from './pagination-js/main-pagination';
 
-export async function fetchPopular(token){
-    return await (await fetch(APIURL+`3/trending/movie/day?api_key=${token}`)).json();
+export async function fetchPopular(token) {
+  return await (
+    await fetch(APIURL + `3/trending/movie/day?api_key=${token}&page=${PAGE}`)
+  ).json();
 }
 
 export async function fetchGenresList(token){

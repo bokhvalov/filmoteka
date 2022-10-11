@@ -2,11 +2,12 @@ import { fetchPopular } from './API';
 import { decodeGenres } from './decodeGenres';
 
 import { APIKEY } from './index';
-import { APIURL } from './index';
+
+export let pageCount;
 
 export async function getPopularMovies(APIKEY) {
   const popularMovies = await fetchPopular(APIKEY);
-  const pageCount = popularMovies.total_pages;
+  pageCount = popularMovies.total_pages;
   const result = popularMovies.results;
 
   const currentPage = await Promise.all(
@@ -35,7 +36,7 @@ export async function getPopularMovies(APIKEY) {
           ? `https://image.tmdb.org/t/p/w300` + poster_path
           : '';
         const genres = genre_ids ? await decodeGenres(genre_ids) : null;
-        const raitng = vote_average ? vote_average : null;
+        const raitng = vote_average ? vote_average.toFixed(1) : 0;
 
         return await {
           id: id,
@@ -52,6 +53,5 @@ export async function getPopularMovies(APIKEY) {
       }
     )
   );
-console.log(currentPage);
   return currentPage;
 }
