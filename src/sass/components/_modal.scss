@@ -15,10 +15,7 @@ ul {
     background-color: rgba(0, 0, 0, 0.56);
 }
 
-<<<<<<< HEAD
 .modal-container,
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
 .modal-window {
     position: fixed;
     width: 280px;
@@ -68,10 +65,7 @@ ul {
     background-color: transparent;
 
     position: absolute;
-<<<<<<< HEAD
     z-index: 1;
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
     top: 0%;
     right: 1%;
     transform: rotate(45deg);
@@ -95,30 +89,21 @@ ul {
 
     @media screen and (min-width: 768px) {
         max-width: 280px;
-<<<<<<< HEAD
         max-height: 373px;
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
         margin-right: 16px;
     }
     
     @media screen and (min-width: 1024px) {
         max-width: 375px;
-<<<<<<< HEAD
         width: 375px;
         max-height: 478px;
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
     }
 }
 
 
 .film-name {
     position: relative;
-<<<<<<< HEAD
     margin: 0;
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 30px;
@@ -256,8 +241,4 @@ display: flex;
     font-size: 14px;
     line-height: 1.33;
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138

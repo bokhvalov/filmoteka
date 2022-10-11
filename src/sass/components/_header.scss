@@ -36,19 +36,13 @@
 
     }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
 .header-nav {
     display: flex;
     justify-content: space-between;
     margin-bottom: 58px;    
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
 .header-nav_list {
     display: flex;
     list-style-type: none;
@@ -69,13 +63,10 @@
     }
 }
 
-<<<<<<< HEAD
 .header-nav_logo-icon {
     transition: transform $transition-timing $transition-function;
 }
 
-=======
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
 .header-nav_logo{
     display: inline-flex;
     align-items: center;
@@ -84,7 +75,6 @@
     transition: color $transition-timing $transition-function;
     &:hover,
     &:active {   
-<<<<<<< HEAD
        color: rgb(202, 191, 191);
     }
 
@@ -96,12 +86,6 @@
 
 
 
-=======
-        color: rgb(202, 191, 191);
-    }
-}
-
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
 .header-nav_logo-text {
     font-size: 0;
 
@@ -112,7 +96,6 @@
 }
 
 .header_search {
-<<<<<<< HEAD
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -137,21 +120,6 @@
 
 .header_search-input {
     width: 100%;
-=======
-    display: flex;
-    justify-content: center;
-    height: 20px;
-
-    &:hover .header_search-input, 
-    &:hover .header_search-btn, 
-    &:focus .header_search-input, 
-    &:focus .header_search-btn {
-        border-bottom: 0.5px solid red;
-    }
-}
-
-.header_search-input {
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
     padding-bottom: 4px;
     margin: 0;
     background-color:inherit;
@@ -159,7 +127,6 @@
     border-bottom: 0.5px solid #fff;
     font-size: 12px;
     color: #fff;
-<<<<<<< HEAD
     transition: border-bottom $transition-timing $transition-function;
     &:focus-visible{
         outline: none;
@@ -168,24 +135,6 @@
 
 .header_search-btn {
     transition: border-bottom $transition-timing $transition-function;
-=======
-    width: 100%;
-    &:focus-visible{
-        outline: none;
-    }
-
-    @media screen and (min-width: 768px) {
-        width: 330px;
-    }
-    @media screen and (min-width: 1280px) {
-        width: 400px;
-    }
-
-}
-
-
-.header_search-btn {
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
     display: inline-flex;
     background-color: inherit;
     border: none;
@@ -198,7 +147,6 @@
     height: 100%;
 }
 
-<<<<<<< HEAD
 .form-conteiner {
     position: relative;
 }
@@ -220,6 +168,3 @@
     }
     
 }
-=======
-
->>>>>>> a9749f639ef47a53a6f9e1cf69399698fa331138
