@@ -36,11 +36,13 @@
 
     }
 }
+
 .header-nav {
     display: flex;
     justify-content: space-between;
     margin-bottom: 58px;    
 }
+
 .header-nav_list {
     display: flex;
     list-style-type: none;
@@ -61,6 +63,10 @@
     }
 }
 
+.header-nav_logo-icon {
+    transition: transform $transition-timing $transition-function;
+}
+
 .header-nav_logo{
     display: inline-flex;
     align-items: center;
@@ -69,9 +75,16 @@
     transition: color $transition-timing $transition-function;
     &:hover,
     &:active {   
-        color: rgb(202, 191, 191);
+       color: rgb(202, 191, 191);
     }
+
+    &:hover .header-nav_logo-icon {
+        transform: scale(1.10);
+    }
+
 }
+
+
 
 .header-nav_logo-text {
     font-size: 0;
@@ -83,19 +96,30 @@
 }
 
 .header_search {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     height: 20px;
-
-    &:hover .header_search-input, 
-    &:hover .header_search-btn, 
-    &:focus .header_search-input, 
+    width: 100%;
+    @media screen and (min-width: 768px) {
+            width: 330px;
+    }
+    
+    @media screen and (min-width: 1280px) {
+        width: 400px;
+    }
+    &:hover .header_search-input,
+    &:hover .header_search-btn,
+    &:focus .header_search-input,
     &:focus .header_search-btn {
         border-bottom: 0.5px solid red;
     }
+    
+
 }
 
 .header_search-input {
+    width: 100%;
     padding-bottom: 4px;
     margin: 0;
     background-color:inherit;
@@ -103,22 +127,14 @@
     border-bottom: 0.5px solid #fff;
     font-size: 12px;
     color: #fff;
-    width: 100%;
+    transition: border-bottom $transition-timing $transition-function;
     &:focus-visible{
         outline: none;
     }
-
-    @media screen and (min-width: 768px) {
-        width: 330px;
-    }
-    @media screen and (min-width: 1280px) {
-        width: 400px;
-    }
-
 }
 
-
 .header_search-btn {
+    transition: border-bottom $transition-timing $transition-function;
     display: inline-flex;
     background-color: inherit;
     border: none;
@@ -131,4 +147,24 @@
     height: 100%;
 }
 
+.form-conteiner {
+    position: relative;
+}
 
+.form-text {
+    position: absolute; 
+    top: 20px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+
+    text-align: left;
+    font-size: 14px;
+    color: #FF001B;
+    @include font-size(14, 16);
+
+    @media screen and (min-width: 768px) {
+        text-align: center;
+    }
+    
+}
