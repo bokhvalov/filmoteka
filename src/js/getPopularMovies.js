@@ -37,7 +37,7 @@ export async function getPopularMovies(APIKEY) {
           ? `https://image.tmdb.org/t/p/w300` + poster_path
           : '';
         const genres = genre_ids ? await decodeGenres(genre_ids) : null;
-        const raitng = vote_average ? vote_average : null;
+        const raitng = vote_average ? vote_average.toFixed(1) : 0;
 
         return await {
           id: id,
