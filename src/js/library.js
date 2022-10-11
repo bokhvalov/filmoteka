@@ -2,12 +2,13 @@
 
 import localStrg from "./localStrg";
 import { libraryRender } from "./libraryRender";
+import preLoader from "./preloader";
 export const APIKEY = "565e4989d784811de7dff7d665000157";
 export const APIURL="https://api.themoviedb.org/";
 const refs = {
     mainContainer: document.querySelector(".filmoteka__container")
 }
-
+preLoader();
 /* for testing purpouses getting film collection and save it as
 it is library variable */
 
