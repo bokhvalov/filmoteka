@@ -14,7 +14,7 @@ const refs = {
 renderPopularMovies();
 refs.openModalBtn.addEventListener('click', openModalFooter);
 
-async function renderPopularMovies() {
+export async function renderPopularMovies() {
   const currentPageContent = await getPopularMovies(APIKEY);
   localStrg.save('currentPage', currentPageContent);
   console.log(currentPageContent);

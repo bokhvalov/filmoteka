@@ -2,8 +2,9 @@ import { fetchPopular } from './API';
 import { decodeGenres } from './decodeGenres';
 
 import { APIKEY } from './index';
-import { APIURL } from './index';
+
 export let pageCount;
+
 export async function getPopularMovies(APIKEY) {
   const popularMovies = await fetchPopular(APIKEY);
   pageCount = popularMovies.total_pages;
