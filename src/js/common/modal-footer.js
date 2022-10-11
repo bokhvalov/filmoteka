@@ -1,6 +1,7 @@
 const refs = {
   overlay: document.querySelector('.modal-footer-overlay'),
   modalFooter: document.querySelector('.modal-footer'),
+  modalBtnClose: document.querySelector('.js-modal-close')
 };
 
 export function openModalFooter() {
@@ -13,6 +14,7 @@ export function openModalFooter() {
 function onModalOpen() {
   document.body.addEventListener('keydown', closeModalOnEsc);
   refs.overlay.addEventListener('click', closeModal);
+  refs.modalBtnClose.addEventListener('click', closeModal);
 }
 
 function closeModalOnEsc(event) {
