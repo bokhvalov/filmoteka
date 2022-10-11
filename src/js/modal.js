@@ -37,7 +37,8 @@ function renderModal(movieID) {
     voteCount,
     imgPath}=movieToRender;
 
-  const modalMarkup = `<div class="modal-img">
+  const modalMarkup = `
+  <div class="modal-img-container">
   <img
     class="modal-img"
     src="${imgPath}"
