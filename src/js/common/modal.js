@@ -79,7 +79,7 @@ function renderModal(movieID) {
   </p>
   <div class="modal-btn-wrap">
     <button type="button" class="modal-btn">ADD TO WATCHED</button>
-    <button type="button" class="modal-btn">ADD TO QUEUE</button>
+    <button type="button" class="modal-btn add-to-queue" data-modal-queue>ADD TO QUEUE</button>
   </div>
 </div>`
   modalBox.insertAdjacentHTML("beforeend",modalMarkup)
