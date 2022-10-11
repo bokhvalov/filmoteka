@@ -1,9 +1,14 @@
 //import { getPopularMovies } from "./getPopularMovies";
-
+import goTopBtn from '../common/goTopBtn';
+import preLoader from '../common/preloader';
 import localStrg from "../common/localStrg";
 import { libraryRender, libraryCleaner, libraryCleaner, getFilmById, addFilm, removeFilmById, isInLibrary } from "./libraryRender";
 export const APIKEY = "565e4989d784811de7dff7d665000157";
-export const APIURL="https://api.themoviedb.org/";
+export const APIURL = "https://api.themoviedb.org/";
+
+goTopBtn();
+// preLoader();
+
 const refs = {
     mainContainer: document.querySelector(".filmoteka__container"),
     btnWatched: document.querySelector("#btnWatched"),

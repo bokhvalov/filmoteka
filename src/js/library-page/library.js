@@ -1,6 +1,6 @@
 //import { getPopularMovies } from "./getPopularMovies";
 
-import localStrg from "../common/localStrg";
+// import localStrg from "../common/localStrg";
 import { libraryRender, libraryCleaner, libraryCleaner, getFilmById, addFilm, removeFilmById, isInLibrary } from "./libraryRender";
 export const APIKEY = "565e4989d784811de7dff7d665000157";
 export const APIURL="https://api.themoviedb.org/";
