@@ -128,11 +128,12 @@
   }
 }
   
-.tim {  
-  background-color: $background-tim;
+.team {  
+  background-color: $background-team;
 
 &__list {
   display: grid;
+  justify-content: center;
   max-width: 1140px;
   grid-auto-rows: 420px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 0.3fr));
@@ -200,7 +201,7 @@
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
-  color: $modal-footer-tim-text;
+  color: $modal-footer-team-text;
   margin-top: 0;
   margin-bottom: 16px;
   }
@@ -226,7 +227,7 @@
   align-items: center;
   width: 44px;
   height: 44px;
-  background-color: $background-modal-footer-tim;
+  background-color: $background-modal-footer-team;
   border-radius: 50%;
   border: 1px solid #dbb858;
   cursor: pointer;
