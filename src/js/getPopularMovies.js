@@ -4,10 +4,14 @@ import { decodeGenres } from './decodeGenres';
 import { APIKEY } from './index';
 import { APIURL } from './index';
 
+export let pageCount;
+
 export async function getPopularMovies(APIKEY) {
   const popularMovies = await fetchPopular(APIKEY);
-  const pageCount = popularMovies.total_pages;
+  pageCount = popularMovies.total_pages;
   const result = popularMovies.results;
+
+  console.log(popularMovies);
 
   const currentPage = await Promise.all(
     result.map(
@@ -52,6 +56,6 @@ export async function getPopularMovies(APIKEY) {
       }
     )
   );
-console.log(currentPage);
+  console.log(currentPage);
   return currentPage;
 }

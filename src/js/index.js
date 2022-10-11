@@ -1,20 +1,27 @@
-import { getPopularMovies } from "./getPopularMovies";
+import { getPopularMovies } from './getPopularMovies';
 
-import localStrg from "./localStrg";
-export const APIKEY = "565e4989d784811de7dff7d665000157";
-export const APIURL="https://api.themoviedb.org/";
+import { startPage } from './pagination-js/counter-pagination';
+
+import localStrg from './localStrg';
+export const APIKEY = '565e4989d784811de7dff7d665000157';
+export const APIURL = 'https://api.themoviedb.org/';
 const refs = {
-    mainContainer: document.querySelector(".filmoteka__container")
-}
+  mainContainer: document.querySelector('.filmoteka__container'),
+};
 
 renderPopularMovies();
-async function renderPopularMovies(){
-    const currentPageContent = await getPopularMovies(APIKEY);
-    localStrg.save("currentPage",currentPageContent);
-    console.log(currentPageContent);
-    
-    const markup = currentPageContent.map (({id,title,year,genres,popularity,imgPath}) => {
-        return `<div class="filmoteka__item" data-id="${id}">
+
+// ВЕШАЮ РАЗМЕТКУ ПАГИНАЦИИ /////////////////////
+const timerId = setTimeout(startPage, 500);
+
+export async function renderPopularMovies() {
+  const currentPageContent = await getPopularMovies(APIKEY);
+  localStrg.save('currentPage', currentPageContent);
+  console.log(currentPageContent);
+
+  const markup = currentPageContent.map(
+    ({ id, title, year, genres, popularity, imgPath }) => {
+      return `<div class="filmoteka__item" data-id="${id}">
         <a class="filmoteka__item-link" href="./">
             <div class="filmoteka__item-wrapper">
                 <img class="filmoteka-img" src="${imgPath}" alt="" width="395px">
@@ -24,7 +31,8 @@ async function renderPopularMovies(){
                 </div>
             </div>
         </a>
-    </div>`
-    })
-    refs.mainContainer.insertAdjacentHTML("beforeend",markup.join(""))
+    </div>`;
+    }
+  );
+  refs.mainContainer.insertAdjacentHTML('beforeend', markup.join(''));
 }
