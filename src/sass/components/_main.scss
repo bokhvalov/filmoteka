@@ -1,0 +1,138 @@
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.filmoteka__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+.filmoteka__item {
+
+    cursor: pointer;
+    margin-left: 0px;
+    margin-right: 0px;
+    transform: scale(1);
+    transition: transform 250ms linear;
+
+    @media screen and (max-width: 767px) {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    @media screen and (min-width: 768px) {
+            margin-left: 16px;
+            margin-right: 16px;
+            flex-basis: calc(100%/3);
+        }
+    
+        @media screen and (min-width: 1200px) {
+            margin-left: 8px;
+            margin-right: 8px;
+            flex-basis: calc(100%/4);
+        }
+    }
+
+.filmoteka__item-link{
+    text-decoration: none;
+}
+
+.filmoteka__item-wrapper {
+    pointer-events: none;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.filmoteka__item:hover,
+.filmoteka__item:focus {
+
+transform: scale(1.03);
+    
+}
+.filmoteka-img {
+    border-radius: 5px;
+
+}
+.filmoteka__year::before {
+    content: "| ";
+}
+
+.filmoteka__rating {
+    text-align: left;
+    color: #f1f1f1;
+    pointer-events: none;
+    background-color: #ff6b08;
+    width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 1.1;
+    transition: color .25s cubic-bezier(.4, 0, .2, 1);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    }
+    
+.overlay-text {
+    @media screen and (max-width: 767px) {
+        width: 280px;
+    }
+    @media screen and (min-width: 768px){
+        width: 336px;
+        }
+ @media screen and (min-width: 1200px) {
+    max-width: 395px;
+}
+}
+
+.subtitle {
+    text-transform: uppercase;
+    
+    color: #000000;
+   
+    @media screen and (max-width: 767px) {
+            
+                font-size: 12px;
+                line-height: 16px;
+        }
+    
+}
+.discription {
+
+    color: #FF6B08;
+
+    @media screen and (max-width: 767px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+}
+
+.subtitle,
+.discription {
+    @media screen and (min-width: 768px) {
+    
+            font-size: 12px;
+            line-height: 16px;
+        }
+    
+        @media screen and (min-width: 1200px) {
+    
+            font-size: 20px;
+            line-height: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+}

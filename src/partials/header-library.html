@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header-library">
   <div class="header-conteiner">
     <nav class="header-nav">
       <a class="header-nav_logo" href="/">
@@ -18,17 +18,9 @@
         </li>
       </ul>
     </nav>
-    <form class="header_search">
-      <input
-        class="header_search-input"
-        placeholder="Movie search"
-        type="text"
-      />
-      <button class="header_search-btn" type="submit">
-        <svg class="header_search-btn_icon" width="24px" height="24px">
-          <use href="/src/images/symbol-defs.svg#icon-search"></use>
-        </svg>
-      </button>
-    </form>
+    <div class="header-wrap">
+      <button class="header_btn active-btn" id="btnWatched">Watched</button>
+      <button class="header_btn"  id="btnQueued">queue</button>
+    </div>
   </div>
 </header>
