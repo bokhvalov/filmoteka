@@ -9,7 +9,7 @@ export async function decodeGenres(genres){
     let genresList = localStrg.load ("genresList");
     let genresNames = new Array;
     
-    genres.forEach(genre => {
+    genres.forEach(async genre =>  {
     // try to find genre in localStorage
     try{
         genresNames.push((genresList.find(genreListItem => genreListItem.id === genre)).name)
