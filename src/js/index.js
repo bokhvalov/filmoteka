@@ -8,8 +8,12 @@ const refs = {
   mainContainer: document.querySelector('.filmoteka__container'),
 };
 
+// Вешаю пагинацию
+import { startPage } from './pagination-js/counter-pagination';
+setTimeout(startPage, 500);
+
 renderPopularMovies();
-async function renderPopularMovies() {
+export async function renderPopularMovies() {
   const currentPageContent = await getPopularMovies(APIKEY);
   localStrg.save('currentPage', currentPageContent);
   console.log(currentPageContent);
