@@ -2,6 +2,9 @@
 
 import localStrg from "./localStrg";
 import { libraryRender, libraryCleaner, libraryCleaner, getFilmById, addFilm, removeFilmById, isInLibrary } from "./libraryRender";
+import { openModal } from './modal__library';
+
+
 export const APIKEY = "565e4989d784811de7dff7d665000157";
 export const APIURL="https://api.themoviedb.org/";
 const refs = {
@@ -35,6 +38,7 @@ libraryRender(refs.mainContainer,"watched");
 refs.btnQueued.addEventListener('click',clickOnBtnQueuedHandler);
 refs.btnWatched.addEventListener('click',clickOnBtnWatchedHandler);
 
+refs.mainContainer.addEventListener('click', openModal);
 
 /* defining functions for event listiners*/
 

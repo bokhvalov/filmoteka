@@ -7,6 +7,10 @@ with two parameters: 1) document element where gallery has to be created
 
 function libraryRender(htmlElement, userLibrary) {
 
+  htmlElement.classList.remove('gallery__watched');
+  htmlElement.classList.remove('gallery__queued');
+  htmlElement.classList.add("gallery__"+userLibrary);
+
   
   //console.log(htmlElement);
   
@@ -46,7 +50,7 @@ function libraryRender(htmlElement, userLibrary) {
         } = film;
 
         let itemString = `<div class="filmoteka__item" data-id="${id}">
-        <a class="filmoteka__item-link" href="./">
+        <div class="filmoteka__item-wrapper">
             <div class="filmoteka__item-wrapper">
                 <img class="filmoteka-img" src="${imgPath}" alt="" width="">
                 <div class="overlay-text">
@@ -61,7 +65,7 @@ function libraryRender(htmlElement, userLibrary) {
         itemString += `<span class="rating">${rating}</span></p>
                 </div>
             </div>
-        </a>
+        </div>
         </div>`;
         return itemString;
       })
