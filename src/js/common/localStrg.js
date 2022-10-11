@@ -3,7 +3,7 @@ const save = (key, value) => {
     const serializedState = JSON.stringify(value);
     localStorage.setItem(key, serializedState);
   } catch (error) {
-    console.error(`Error during saving ${key} to local strage; `, error.message);
+    console.log(`Error during saving ${key} to local strage; `, error.message);
   }
 };
 
@@ -12,7 +12,7 @@ const load = key => {
     const serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
-    console.error(`Error during getting ${key} from localStorage: `, error.message);
+    console.log(`Error during getting ${key} from localStorage: `, error.message);
   }
 };
 
@@ -20,7 +20,7 @@ const del = key => {
   try {
     localStorage.removeItem(key);
   } catch (error) {
-    console.error(`Error during deleting ${key}! from localStorage: `, error.message);
+    console.log(`Error during deleting ${key}! from localStorage: `, error.message);
   }
 };
 

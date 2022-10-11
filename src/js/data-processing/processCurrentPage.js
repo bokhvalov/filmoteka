@@ -27,9 +27,9 @@ export async function processCurrentPage (result){
           const imgPath = poster_path
             ? `https://image.tmdb.org/t/p/w300` + poster_path
             : '';
-          const genres = genre_ids ? await decodeGenres(genre_ids) : null;
+          const genres = genre_ids.length > 1 ? await decodeGenres(genre_ids) : false;
           const raitng = vote_average ? vote_average.toFixed(1) : 0;
-  
+
           return await {
             id: id,
             title: movieTitle,

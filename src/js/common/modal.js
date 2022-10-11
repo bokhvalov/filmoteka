@@ -1,41 +1,42 @@
+import { onClickWatchBtn } from '../library-page/library';
 import localStrg from './localStrg';
-
-const closeButton = document.querySelector('.cross');
+import {onClickQueueBtn, onClickWatchBtn} from '../library-page/library'
+let closeButton = document.querySelector('.cross');
 const modalBackdrop = document.querySelector('.backdrop');
 const modalBox = document.querySelector('.modal-container');
-
 
 export function openModal(event) {
   if (!event.target.classList.contains('filmoteka__item')) {
     return;
   }
+
   const movieId = +event.target.dataset.id;
   renderModal(movieId);
-
 
   modalBackdrop.classList.remove('visually-hidden');
   document.body.style.overflow = 'hidden';
 
+  closeButton = document.querySelector('.cross');
   closeButton.addEventListener('click', modalClosing);
   modalBackdrop.addEventListener('click', modalClosinByBackdrop);
   window.addEventListener('keydown', modalClosinByEsc);
 }
 
-
 function renderModal(movieID) {
   const currentPageContent = localStrg.load('currentPage');
-  const movieToRender = currentPageContent.find(movie => (movie.id === movieID));
+  const movieToRender = currentPageContent.find(movie => movie.id === movieID);
 
   const {
     title,
     originalTitle,
-    year,
     genres,
     popularity,
     overview,
     rating,
     voteCount,
-    imgPath}=movieToRender;
+    imgPath,
+  } = movieToRender;
+
 
   const modalMarkup = `
   <div class="modal-img-container">
@@ -69,7 +70,7 @@ function renderModal(movieID) {
     </tr>
     <tr class="modal-table__row">
       <td><p class="modal-table__attribute">Genre</p></td>
-      <td><p class="modal-table__value">${genres}</p></td>
+      <td><p class="modal-table__value">${genres||''}</p></td>
     </tr>
   </table>
 
@@ -79,11 +80,38 @@ function renderModal(movieID) {
   </p>
   <div class="modal-btn-wrap">
     <button type="button" class="modal-btn">ADD TO WATCHED</button>
-    <button type="button" class="modal-btn add-to-queue" data-modal-queue>ADD TO QUEUE</button>
+    <button type="button" class="modal-btn">ADD TO QUEUE</button>
   </div>
-</div>`
-  modalBox.insertAdjacentHTML("beforeend",modalMarkup)
+</div>`;
+  modalBox.insertAdjacentHTML('beforeend', modalMarkup);
+  checkUsebLib(movieID);
 }
+
+function checkUsebLib(movieID) {
+  const watchBtn = document.querySelector('.modal-btn');
+  const queueBtn = document.querySelector('.modal-btn');
+  watchBtn.addEventListener(click,onClickWatchBtn)
+  queueBtn.addEventListener(click,onClickQueueBtn)
+
+  let queued;
+  let watched;
+
+  if (localStrg.load('watched')) {
+    watched = localStrg
+      .load('watched')
+      .find(movie => (movie.id === movieID ? true : false));
+  }
+  if (localStrg.load('queued')) {
+    queued = localStrg
+      .load('queued')
+      .find(movie => (movie.id === movieID ? true : false));
+  }
+  watched && watchBtn.classList.add('watched');
+  queued && queueBtn.classList.add('watched');
+
+}
+
+
 
 function modalClosing() {
   modalBackdrop.classList.add('visually-hidden');
@@ -91,7 +119,7 @@ function modalClosing() {
   modalBackdrop.removeEventListener('click', modalClosinByBackdrop);
   closeButton.removeEventListener('click', modalClosing);
   window.removeEventListener('keydown', modalClosinByEsc);
-  modalBox.innerHTML='<button type="button" class="cross">+</button>';
+  modalBox.innerHTML = '<button type="button" class="cross">+</button>';
 }
 
 function modalClosinByEsc(event) {
@@ -105,3 +133,4 @@ function modalClosinByBackdrop(event) {
     modalClosing();
   }
 }
+
