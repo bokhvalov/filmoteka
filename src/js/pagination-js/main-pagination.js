@@ -1,6 +1,6 @@
 import { renderMarkupOnClickLink } from './counter-pagination';
 import { renderPaginationONClickBtn } from './counter-pagination';
-import { renderPopularMovies } from '../index';
+import { renderPopularMovies } from '../index-page/index';
 
 import { ellipsis } from './counter-pagination';
 

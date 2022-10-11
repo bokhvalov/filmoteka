@@ -26,7 +26,7 @@ function renderModal(movieID) {
   const currentPageContent = localStrg.load('currentPage');
   const movieToRender = currentPageContent.find(movie => (movie.id === movieID));
 
-  const {id,
+  const {
     title,
     originalTitle,
     year,
@@ -37,7 +37,8 @@ function renderModal(movieID) {
     voteCount,
     imgPath}=movieToRender;
 
-  const modalMarkup = `<div class="modal-img">
+  const modalMarkup = `
+  <div class="modal-img-container">
   <img
     class="modal-img"
     src="${imgPath}"
@@ -90,7 +91,7 @@ function modalClosing() {
   modalBackdrop.removeEventListener('click', modalClosinByBackdrop);
   closeButton.removeEventListener('click', modalClosing);
   window.removeEventListener('keydown', modalClosinByEsc);
-  modalBox.innerHTML='';
+  modalBox.innerHTML='<button type="button" class="cross">+</button>';
 }
 
 function modalClosinByEsc(event) {
