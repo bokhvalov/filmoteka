@@ -1,7 +1,7 @@
 <header class="header">
   <div class="header-conteiner">
     <nav class="header-nav">
-      <a class="header-nav_logo" href="/">
+      <a class="header-nav_logo" href="/src/index.html">
         <svg class="header-nav_logo-icon" width="24" height="24">
           <use href="/src/images/symbol-defs.svg#icon-film"></use>
         </svg>
@@ -18,17 +18,24 @@
         </li>
       </ul>
     </nav>
-    <form class="header_search">
-      <input
-        class="header_search-input"
-        placeholder="Movie search"
-        type="text"
-      />
-      <button class="header_search-btn" type="submit">
-        <svg class="header_search-btn_icon" width="24px" height="24px">
-          <use href="/src/images/symbol-defs.svg#icon-search"></use>
-        </svg>
-      </button>
-    </form>
+    <div class="form-conteiner">
+      <form class="header_search">
+        <input
+          class="header_search-input"
+          placeholder="Movie search"
+          name="search"
+          autocomplete="off"
+          type="text"
+        />
+        <button class="header_search-btn" type="submit">
+          <svg class="header_search-btn_icon" width="24px" height="24px">
+            <use href="/src/images/symbol-defs.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+      <p class="form-text visually-hidden">
+        Search result not successful. Enter the correct movie name and
+      </p>
+    </div>
   </div>
 </header>
