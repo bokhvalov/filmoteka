@@ -1,6 +1,7 @@
 import { openModalFooter } from '../common/modal-footer';
 import { openModal } from '../common/modal';
 import { libraryRender } from './libraryRender';
+import goTopBtn from '../common/goTopBtn';
 
 export const refs = {
   btnWatched: document.querySelector('#btnWatched'),
@@ -33,3 +34,4 @@ function clickOnBtnWatchedHandler() {
   libraryRender("watched");
 }
 
+goTopBtn();
