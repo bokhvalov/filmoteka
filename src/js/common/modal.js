@@ -1,9 +1,9 @@
-import { onClickWatchBtn } from '../library-page/library';
 import localStrg from './localStrg';
-import {onClickQueueBtn, onClickWatchBtn} from '../library-page/library'
+import {addMovieToLib, removeMovieFromLib} from '../library-page/library';
+import {renderItems} from './renderItems';
 let closeButton = document.querySelector('.cross');
 const modalBackdrop = document.querySelector('.backdrop');
-const modalBox = document.querySelector('.modal-container');
+
 
 export function openModal(event) {
   if (!event.target.classList.contains('filmoteka__item')) {
@@ -23,10 +23,12 @@ export function openModal(event) {
 }
 
 function renderModal(movieID) {
+  const modalBox = document.querySelector('.modal-container');
   const currentPageContent = localStrg.load('currentPage');
   const movieToRender = currentPageContent.find(movie => movie.id === movieID);
 
   const {
+    id,
     title,
     originalTitle,
     genres,
@@ -79,19 +81,19 @@ function renderModal(movieID) {
     ${overview}
   </p>
   <div class="modal-btn-wrap">
-    <button type="button" class="modal-btn">ADD TO WATCHED</button>
-    <button type="button" class="modal-btn">ADD TO QUEUE</button>
+    <button type="button" class="modal-btn js-watch" data-id="${id}">ADD TO WATCHED</button>
+    <button type="button" class="modal-btn js-queue" data-id="${id}">ADD TO QUEUE</button>
   </div>
 </div>`;
   modalBox.insertAdjacentHTML('beforeend', modalMarkup);
-  checkUsebLib(movieID);
+  checkUserLib(movieID);
 }
 
-function checkUsebLib(movieID) {
-  const watchBtn = document.querySelector('.modal-btn');
-  const queueBtn = document.querySelector('.modal-btn');
-  watchBtn.addEventListener(click,onClickWatchBtn)
-  queueBtn.addEventListener(click,onClickQueueBtn)
+function checkUserLib(movieID) {
+  const watchBtn = document.querySelector('.js-watch');
+  const queueBtn = document.querySelector('.js-queue');
+  watchBtn.addEventListener("click",onClickWatchBtn);
+  queueBtn.addEventListener("click",onClickQueueBtn);
 
   let queued;
   let watched;
@@ -107,10 +109,51 @@ function checkUsebLib(movieID) {
       .find(movie => (movie.id === movieID ? true : false));
   }
   watched && watchBtn.classList.add('watched');
-  queued && queueBtn.classList.add('watched');
+  queued && queueBtn.classList.add('queued');
 
 }
 
+function onClickWatchBtn(event) {
+  console.log("watch");
+  const movieID = event.target.dataset.id;
+  const watchBtn = document.querySelector('.js-watch');
+
+  if (!watchBtn.classList.contains('watched')) {
+    addMovieToLib(movieID, 'watched');
+    watchBtn.classList.add('watched');
+    watchBtn.text = 'WATCHED';
+    return;
+  }
+
+  watchBtn.classList.remove('watched');
+  watchBtn.text = 'ADD TO WATCHED';
+  removeMovieFromLib(movieID, 'watched');
+
+  if (window.location.href.indexOf('library') > -1) {
+    renderItems('watched');
+  }
+}
+
+function onClickQueueBtn(event) {
+  console.log("queue");
+  const movieID = event.target.dataset.id;
+  const watchBtn = document.querySelector('.js-queue');
+
+  if (!watchBtn.classList.contains('queued')) {
+    addMovieToLib(movieID, 'queued');
+    watchBtn.classList.add('queued');
+    watchBtn.innerText = 'QUEUED';
+    return;
+  }
+
+  watchBtn.classList.remove('queued');
+  watchBtn.innerText = 'ADD TO QUEUE';
+  removeMovieFromLib(movieID, 'queued');
+
+  if (window.location.href.indexOf('library') > -1) {
+    renderItems('queued');
+  }
+}
 
 
 function modalClosing() {

@@ -45,43 +45,6 @@ function clickOnBtnWatchedHandler() {
   libraryRender("watched");
 }
 
-export function onClickWatchBtn(movieID) {
-  const watchBtn = document.querySelector('.modal-btn');
-
-  if (!watchBtn.classList.contains('watched')) {
-    addMovieToLib(movieID, 'watched');
-    watchBtn.classList.add('watched');
-    watchBtn.text.innerText = 'WATCHED';
-    return;
-  }
-
-  watchBtn.classList.remove('watched');
-  watchBtn.text.innerText = 'ADD TO WATCHED';
-  removeMovieFromLib(movieID, 'watched');
-
-  if (window.location.href.indexOf('library') > -1) {
-    renderItems('watched');
-  }
-}
-
-export function onClickQueueBtn(movieID) {
-  const watchBtn = document.querySelector('.modal-btn');
-
-  if (!watchBtn.classList.contains('queued')) {
-    addMovieToLib(movieID, 'queued');
-    watchBtn.classList.add('queued');
-    watchBtn.text.innerText = 'QUEUED';
-    return;
-  }
-
-  watchBtn.classList.remove('queued');
-  watchBtn.text.innerText = 'ADD TO QUEUE';
-  removeMovieFromLib(movieID, 'queued');
-
-  if (window.location.href.indexOf('library') > -1) {
-    renderItems('queued');
-  }
-}
 
 export function removeMovieFromLib(movieID, userLibrary) {
   const currentLibraryState = localStrg.load(userLibrary);
