@@ -8,14 +8,13 @@
     height: 100vh;
   
     background-color: $background-modal-footer-overlay;
-    background-image: url('../images/modal-footer/back.jpg');
+    background-image: url('..//..//images/modal-footer/back.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    // -webkit-backdrop-filter: blur(6px);
-    // backdrop-filter: blur(6px);
+
   
-    opacity: 0;
+    opacity: 0,5;
     visibility: hidden;
   
     transition: opacity $transition-timing $transition-function,
@@ -52,35 +51,13 @@
     transform: translate(-50%, -50%);
 
     background-color: $background-modal-footer;
-    background-image: url('..//..//images/modal-footer/back_js.jpg');
+    background-image: url('..//..//images/modal-footer/keyboard.jpg');
     background-size: cover;
-    background-position: 1% -70%;
-    // background-position: top 15% left, top 15% right;
-    // background-size: 146px, 146px;
+    background-position: 50% 0%;
+    
     background-repeat: no-repeat;
   
-    // background-image: url('../images/modal-footer/back.jpg');
-
-    // background-image: url('../images/about/bg/mobile/bg-mobile-left.webp'),
-    //   url('../images/about/bg/mobile/bg-mobile-right.webp');
-  
-    // @media (min-device-pixel-ratio: 2),
-    //   (min-resolution: 192dpi),
-    //   (min-resolution: 2dppx) {
-    //   background-image: url('../images/about/bg/mobile/bg-mobile-left@2x.png'),
-    //     url('../images/about/bg/mobile/bg-mobile-right@2x.png');
-    //   background-image: url('../images/about/bg/mobile/bg-mobile-left@2x.webp'),
-    //     url('../images/about/bg/mobile/bg-mobile-right@2x.webp');
-    // }
-  
-    // @media (min-device-pixel-ratio: 3),
-    //   (min-resolution: 288dpi),
-    //   (min-resolution: 3dppx) {
-    //   background-image: url('../images/about/bg/mobile/bg-mobile-left@3x.png'),
-    //     url('../images/about/bg/mobile/bg-mobile-right@3x.png');
-    //   background-image: url('../images/about/bg/mobile/bg-mobile-left@3x.webp'),
-    //     url('../images/about/bg/mobile/bg-mobile-right@3x.webp');
-    // }
+   
   
     border-radius: 24px;
     border: 3px solid  #ffffff;
@@ -284,14 +261,12 @@
 
 &__link:hover,
 &__link:focus {
-  // background-color: $hover-color;
   background-color: $modal-footer-card-border-color;
   box-shadow: 4px 4px 4px rgba(192, 53, 53, 0.25);
 }
 
 &__link:hover &__icon,
 &__link:focus &__icon {
-  //  fill:  $text-on-a-dark-background;
    fill:  $hover-color;
 }
 
