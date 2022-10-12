@@ -14,7 +14,7 @@ export function openModal(event) {
 
 
   modalBackdrop.classList.remove('visually-hidden');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'scroll';
 
   closeButton.addEventListener('click', modalClosing);
   modalBackdrop.addEventListener('click', modalClosinByBackdrop);
