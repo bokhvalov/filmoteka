@@ -160,7 +160,7 @@ function updateLibraryPageContent() {
   if (window.location.href.indexOf('library') > -1) {
     const queuedBtn = document.querySelector('#btnQueued');
     const isQueuedSelected = queuedBtn.classList.contains('active-btn');
-    currentLibPage = isQueuedSelected ? 'queued' : 'watched';
+    const currentLibPage = isQueuedSelected ? 'queued' : 'watched';
     libraryRender(currentLibPage);
   }
 }
