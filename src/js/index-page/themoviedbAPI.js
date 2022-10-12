@@ -1,5 +1,5 @@
 import { APIURL } from './index';
-import localStrg from '../common/localStrg';
+import localStrg from '../localStorage/localStrg';
 import { PAGE } from '../pagination-js/main-pagination';
 
 export async function fetchPopular(token) {

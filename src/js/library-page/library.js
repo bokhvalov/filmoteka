@@ -1,54 +1,35 @@
-//import { getPopularMovies } from "./getPopularMovies";
+import { openModalFooter } from '../common/modal-footer';
+import { openModal } from '../common/modal';
+import { libraryRender } from './libraryRender';
 
-import localStrg from "../common/localStrg";
-import { libraryRender, libraryCleaner, libraryCleaner, getFilmById, addFilm, removeFilmById, isInLibrary } from "./libraryRender";
-export const APIKEY = "565e4989d784811de7dff7d665000157";
-export const APIURL="https://api.themoviedb.org/";
-const refs = {
-    mainContainer: document.querySelector(".filmoteka__container"),
-    btnWatched: document.querySelector("#btnWatched"),
-    btnQueued: document.querySelector("#btnQueued")
-}
-
-console.log(refs.btnQueued);
-console.log(refs.btnWatched);
-
-/* for testing purpouses getting film collection and save it as
-it is library variable */
+export const refs = {
+  btnWatched: document.querySelector('#btnWatched'),
+  btnQueued: document.querySelector('#btnQueued'),
+  mainContainer: document.querySelector('.filmoteka__container'),
+  openModalBtn: document.querySelector('.modal-footer-open'),
+  mainContainer: document.querySelector('.filmoteka__container'),
+};
 
 
-
-/* dummyLibraryMovies();
-
-async function dummyLibraryMovies(){
-    testQuery = await getPopularMovies(APIKEY);
-    localStrg.save("watched",testQuery);
-    localStrg.save("queued", testQuery);
-} */
-
-//console.log("I'm before library render")
-
-/*reating gallery with films from "watched" library*/
-libraryRender(refs.mainContainer,"watched");
+libraryRender("watched");
 
 /* asigning events listiners to buttons: watched and queued */
-refs.btnQueued.addEventListener('click',clickOnBtnQueuedHandler);
-refs.btnWatched.addEventListener('click',clickOnBtnWatchedHandler);
-
+refs.btnQueued.addEventListener('click', clickOnBtnQueuedHandler);
+refs.btnWatched.addEventListener('click', clickOnBtnWatchedHandler);
+refs.mainContainer.addEventListener('click', openModal);
+refs.openModalBtn.addEventListener('click', openModalFooter);
 
 /* defining functions for event listiners*/
 
 function clickOnBtnQueuedHandler() {
-    refs.btnWatched.classList.remove("active-btn");
-    refs.btnQueued.classList.add("active-btn");
-    libraryCleaner(refs.mainContainer);
-    libraryRender(refs.mainContainer,"queued");
+  refs.btnWatched.classList.remove('active-btn');
+  refs.btnQueued.classList.add('active-btn');
+  libraryRender("queued");
 }
 
 function clickOnBtnWatchedHandler() {
-    refs.btnQueued.classList.remove("active-btn");
-    refs.btnWatched.classList.add("active-btn");
-    libraryCleaner(refs.mainContainer);
-    libraryRender(refs.mainContainer,"watched");
+  refs.btnQueued.classList.remove('active-btn');
+  refs.btnWatched.classList.add('active-btn');
+  libraryRender("watched");
 }
 

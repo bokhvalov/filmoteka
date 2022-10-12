@@ -1,11 +1,10 @@
 import { processCurrentPage } from '../data-processing/processCurrentPage';
 import { openModalFooter } from '../common/modal-footer';
-import { getPopularMovies } from './getPopularMovies';
+import { getPopularMovies } from '../index-page/getPopularMovies';
 import { openModal } from '../common/modal';
 import { startPage } from '../pagination-js/counter-pagination';
 import { renderItems } from '../common/renderItems';
 import { searchMovies } from './search';
-import localStrg from '../common/localStrg';
 
 
 export const APIKEY = '565e4989d784811de7dff7d665000157';
