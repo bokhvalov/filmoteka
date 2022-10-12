@@ -24,8 +24,9 @@ const del = key => {
   }
 };
 
+
 export default {
   save,
   load,
-  del,
+  del
 };

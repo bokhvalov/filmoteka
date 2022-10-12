@@ -5,7 +5,7 @@ import { refs } from '.';
 import { startPage } from '../pagination-js/counter-pagination';
 import { renderItems } from '../common/renderItems';
 import { renderPopularMovies } from '.';
-import localStrg from '../common/localStrg';
+import localStrg from '../localStorage/localStrg';
 
 export let pageCount;
 

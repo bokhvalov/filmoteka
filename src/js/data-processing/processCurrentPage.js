@@ -1,5 +1,5 @@
 import { decodeGenres } from './decodeGenres';
-import localStrg from '../common/localStrg';
+import localStrg from '../localStorage/localStrg';
 
 export async function processCurrentPage (result){
     const currentPageContent = await Promise.all(
