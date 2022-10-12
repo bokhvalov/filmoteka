@@ -15,7 +15,7 @@ export function openModal(event) {
   renderModal(movieId);
 
   modalBackdrop.classList.remove('visually-hidden');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'scroll';
 
   closeButton = document.querySelector('.cross');
   closeButton.addEventListener('click', modalClosing);
