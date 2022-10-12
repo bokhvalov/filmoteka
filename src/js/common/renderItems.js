@@ -5,7 +5,7 @@ export function renderItems(currentPageContent) {
       if (genres) {
         let countOfComma = (genres.match(/\,/g) || []).length;
         while (countOfComma > 1) {
-          genres = genres.slice(0, genres.lastIndexOf(',')) + '...';
+          genres = genres.slice(0, genres.lastIndexOf(',')) + 'npm ...';
           countOfComma = (genres.match(/\,/g) || []).length;
         }
       }

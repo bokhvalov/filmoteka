@@ -84,7 +84,6 @@ function renderModal(movieID) {
     <button type="button" class="modal-btn js-queue" data-id="${id}">ADD TO QUEUE</button>
   </div>
 </div>`;
-console.log(modalBox);
   modalBox.insertAdjacentHTML('beforeend', modalMarkup);
   checkUserLib(movieID);
 }
@@ -100,7 +99,6 @@ function checkUserLib(movieID) {
 
   let watchedLib = localStrg.load('watched');
   let queuedLib = localStrg.load('queued');
-  console.log(watchedLib);
 
   if (watchedLib) {
     isWatched = watchedLib.find(movie => movie.id == movieID) ? true : false;
