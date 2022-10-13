@@ -95,13 +95,9 @@
 }
 
 .header-nav_logo-icon {
-<<<<<<< HEAD
     fill: #fff;
     transition: transform $transition-timing $transition-function;
    
-=======
-    transition: transform $transition-timing $transition-function;
->>>>>>> 222fa9ae0e5c4f6a6facc5ed5720993938dd998e
 }
 
 .header-nav_logo{
@@ -113,7 +109,6 @@
     &:hover,
     &:active {   
        color: rgb(202, 191, 191);
-<<<<<<< HEAD
     }
 
     &:hover .header-nav_logo-icon {
@@ -121,14 +116,6 @@
         fill: #FF001B;
     }
 
-=======
-    }
-
-    &:hover .header-nav_logo-icon {
-        transform: scale(1.10);
-    }
-
->>>>>>> 222fa9ae0e5c4f6a6facc5ed5720993938dd998e
 }
 
 
@@ -162,10 +149,6 @@
         border-bottom: 0.5px solid red;
     }
     
-<<<<<<< HEAD
-=======
-
->>>>>>> 222fa9ae0e5c4f6a6facc5ed5720993938dd998e
 }
 
 .header_search-input {
@@ -177,10 +160,7 @@
     border-bottom: 0.5px solid #fff;
     font-size: 14px;
     color: #fff;
-<<<<<<< HEAD
     caret-color: #FF001B;
-=======
->>>>>>> 222fa9ae0e5c4f6a6facc5ed5720993938dd998e
     transition: border-bottom $transition-timing $transition-function;
     &:focus-visible{
         outline: none;
@@ -211,7 +191,6 @@
 .form-conteiner {
     position: relative;
 }
-<<<<<<< HEAD
 
 .form-text {
     position: absolute; 
@@ -230,8 +209,6 @@
     }
     
 }
-=======
->>>>>>> 222fa9ae0e5c4f6a6facc5ed5720993938dd998e
 
 .form-text {
     position: absolute; 

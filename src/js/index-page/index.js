@@ -35,3 +35,4 @@ export async function renderPopularMovies() {
   spin.spinOff();
 
 goTopBtn();
+}
