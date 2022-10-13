@@ -1,6 +1,6 @@
 import { processCurrentPage } from '../data-processing/processCurrentPage';
 import { openModalFooter } from '../common/modal-footer';
-import { getPopularMovies } from '../index-page/getPopularMovies';
+import { getPopularMovies } from '../index-page/search';
 import { openModal } from '../common/modal';
 import { startPage } from '../pagination-js/counter-pagination';
 import { renderItems } from '../common/renderItems';
@@ -9,7 +9,6 @@ import goTopBtn from '../common/goTopBtn';
 import Spinner from '../common/spinner';
 
 const spin = new Spinner();
-
 
 export const APIKEY = '565e4989d784811de7dff7d665000157';
 export const APIURL = 'https://api.themoviedb.org/';
@@ -26,13 +25,14 @@ refs.form.addEventListener('submit', searchMovies);
 
 spin.spinOn();
 renderPopularMovies();
+setTimeout(startPage, 500);
 
 export async function renderPopularMovies() {
   const popularMovies = await getPopularMovies(APIKEY);
-  const currentPageContent= await processCurrentPage (popularMovies);
+  const currentPageContent = await processCurrentPage(popularMovies);
 
   renderItems(currentPageContent);
-  startPage();
   spin.spinOff();
-}
+
 goTopBtn();
+}

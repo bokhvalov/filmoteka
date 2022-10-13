@@ -14,6 +14,7 @@ export default class Spinner {
                 preloader.classList.add('done')
             }
         
-        }, 1000);
+        }, 500);
+
     };
 }
