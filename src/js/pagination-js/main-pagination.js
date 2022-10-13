@@ -1,36 +1,48 @@
 import { renderMarkupOnClickLink } from './counter-pagination';
 import { renderPaginationONClickBtn } from './counter-pagination';
-import { renderPopularMovies } from '../index-page/index';
 
-import { ellipsis } from './counter-pagination';
+import { renderPopularMovies } from '../index-page/index';
+import { searchMoviesPagination } from './featch-pagination';
+
+import { searchQueryPagination } from '../index-page/search';
+
+import { ellipsis } from './plagin-pagination';
+import { curentPage } from './plagin-pagination';
+import { disaibledBtn } from './plagin-pagination';
 
 export let PAGE = 1;
-const div = document.querySelector('#pagination');
+
 const refs = {
+  pagination: document.querySelector('#pagination'),
   mainContainer: document.querySelector('.filmoteka__container'),
 };
-div.addEventListener('click', onClickPaginationLink);
-div.addEventListener('click', onClickButtonPagination);
+refs.pagination.addEventListener('click', onClickPaginationLink);
+refs.pagination.addEventListener('click', onClickButtonPagination);
 
-// startPage();
 // ////////////////////// НАВИГАЦИЯ ПО СЫЛКЕ
 
 function onClickPaginationLink(e) {
   e.preventDefault();
-
   if (e.target.nodeName !== 'A') {
     return;
   }
-
   PAGE = Number(e.target.textContent);
 
-  // fetchOnPagination(PAGE).then(respons => console.log(respons));
   refs.mainContainer.innerHTML = '';
-  renderPopularMovies();
+
+  console.log(searchQueryPagination === '');
+
+  if (searchQueryPagination === '') {
+    renderPopularMovies();
+  } else {
+    searchMoviesPagination(e);
+  }
 
   // СЧЕТЧИК ПАГИНАЦИИ
-  renderMarkupOnClickLink();
+  renderMarkupOnClickLink(e);
   ellipsis();
+  curentPage();
+  disaibledBtn();
 }
 
 // ////////////////////// НАВИГАЦИЯ ПО КНОПКЕ
@@ -40,22 +52,31 @@ function onClickButtonPagination(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
-  const leftBtn = document.querySelector('.btn-left');
-  const rightBtn = document.querySelector('.btn-right');
 
-  if (e.target === rightBtn) {
+  const ref = {
+    leftBtn: document.querySelector('.btn-left'),
+    rightBtn: document.querySelector('.btn-right'),
+  };
+
+  if (e.target === ref.rightBtn) {
     PAGE += 1;
   }
 
-  if (e.target === leftBtn) {
+  if (e.target === ref.leftBtn) {
     PAGE -= 1;
   }
 
-  // fetchOnPagination(PAGE).then(respons => console.log(respons));
-
   refs.mainContainer.innerHTML = '';
-  renderPopularMovies();
+
+  if (searchQueryPagination === '') {
+    renderPopularMovies();
+  } else {
+    searchMoviesPagination(e);
+  }
+
   // СЧЕТЧИК ПАГИНАЦИИ
   renderPaginationONClickBtn(e);
   ellipsis();
+  curentPage();
+  disaibledBtn();
 }
