@@ -6,6 +6,9 @@ import { startPage } from '../pagination-js/counter-pagination';
 import { renderItems } from '../common/renderItems';
 import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
+import Spinner from '../common/spinner';
+
+const spin = new Spinner();
 
 
 export const APIKEY = '565e4989d784811de7dff7d665000157';
@@ -21,6 +24,7 @@ refs.mainContainer.addEventListener('click', openModal);
 refs.openModalBtn.addEventListener('click', openModalFooter);
 refs.form.addEventListener('submit', searchMovies);
 
+spin.spinOn();
 renderPopularMovies();
 
 export async function renderPopularMovies() {
@@ -29,5 +33,6 @@ export async function renderPopularMovies() {
 
   renderItems(currentPageContent);
   startPage();
+  spin.spinOff();
 }
 goTopBtn();

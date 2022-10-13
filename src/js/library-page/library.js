@@ -2,6 +2,10 @@ import { openModalFooter } from '../common/modal-footer';
 import { openModal } from '../common/modal';
 import { libraryRender } from './libraryRender';
 import goTopBtn from '../common/goTopBtn';
+import Spinner from '../common/spinner';
+
+const spin = new Spinner();
+spin.spinOn();
 
 export const refs = {
   btnWatched: document.querySelector('#btnWatched'),
@@ -35,3 +39,4 @@ function clickOnBtnWatchedHandler() {
 }
 
 goTopBtn();
+spin.spinOff();
