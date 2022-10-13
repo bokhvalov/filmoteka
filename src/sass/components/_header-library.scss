@@ -49,18 +49,46 @@
     @include font-size(12, 14);
     text-transform: uppercase;
 }
+.header-nav_item {
+    margin-left: 20px;
+    transition: transform $transition-timing $transition-function;
+
+    &:hover {
+        transform: scale(1.15);
+    }
+}
 
 .header-nav_item-link {
     color: #fff;
-    transition: border-bottom $transition-timing $transition-function;
+    position: relative;
 
-    &:first-child {
-        margin-left: 20px;
+    &:after,
+    &:before {
+        backface-visibility: hidden;
+        border: 1px solid rgba(#FF001B, 0);
+        bottom: -2px;
+        content: " ";
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        transition: all $transition-timing $transition-function;
+        width: 0;
     }
 
-    &:hover,
-    &:active {
-        border-bottom: 3px solid #FF001B;
+    &:before {
+        top: -2px;
+    }
+
+    &:hover:after,
+    &:hover:before {
+        backface-visibility: hidden;
+        border-color: #FF001B;
+        transition: width $transition-timing $transition-function;
+        width: 100%;
+    }
+
+    &:hover:before {
+        width: 100%;
     }
 }
 
@@ -120,6 +148,7 @@
     padding: 0;
     margin: 0;
     transition: background-color $transition-timing $transition-function;
+    transition: border $transition-timing $transition-function;
     text-transform: uppercase;
     font-size: 12px;
     @include font-size(12, 16);
@@ -127,7 +156,7 @@
     &:hover,
     &:active {
         background-color: #FF6B01;
-        border: none;
+        border: 1px solid #FF6B01;
     }
     @media screen and (min-width: 768px) {
             width: 150px;
@@ -140,5 +169,5 @@
 
 .active-btn {
     background-color: #FF6B01;
-    border: none;
+    border: 1px solid #FF6B01;
 }
