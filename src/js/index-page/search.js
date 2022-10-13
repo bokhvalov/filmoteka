@@ -6,8 +6,13 @@ import { startPage } from '../pagination-js/counter-pagination';
 import { renderItems } from '../common/renderItems';
 import { renderPopularMovies } from '.';
 import localStrg from '../localStorage/localStrg';
+import { fetchPopular } from './themoviedbAPI';
+import { decodeGenres } from '../data-processing/decodeGenres';
+
+import { APIKEY } from './index';
 
 export let pageCount;
+export let searchQueryPagination = '';
 
 let searchQuery = '';
 
@@ -16,13 +21,19 @@ export async function searchMovies(event) {
   searchQuery = event.target.search.value;
   refs.searchResultText.classList.add('visually-hidden');
 
-  if(!searchQuery){
+  if (!searchQuery) {
     renderPopularMovies();
-    return
+    startPage();
+    searchQueryPagination = '';
+    return;
   }
 
   const searchResult = await getSearchMovies();
-  const currentPageContent= await processCurrentPage (searchResult);
+  const currentPageContent = await processCurrentPage(searchResult);
+
+  if (searchResult.length > 0) {
+    searchQueryPagination = event.target.search.value;
+  }
 
   if (currentPageContent.length > 0) {
     renderItems(currentPageContent);
@@ -35,6 +46,11 @@ export async function searchMovies(event) {
 export async function getSearchMovies() {
   const popularMovies = await fetchSearch(APIKEY, searchQuery);
   pageCount = popularMovies.total_pages;
+  return popularMovies.results;
+}
 
-  return popularMovies.results
+export async function getPopularMovies(APIKEY) {
+  const popularMovies = await fetchPopular(APIKEY);
+  pageCount = popularMovies.total_pages;
+  return popularMovies.results;
 }
