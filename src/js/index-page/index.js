@@ -33,6 +33,6 @@ export async function renderPopularMovies() {
 
   renderItems(currentPageContent);
   startPage();
+  spin.spinOff();
 }
 goTopBtn();
-spin.spinOff();
