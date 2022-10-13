@@ -8,8 +8,11 @@ import { renderPopularMovies } from '.';
 import localStrg from '../localStorage/localStrg';
 import { fetchPopular } from './themoviedbAPI';
 import { decodeGenres } from '../data-processing/decodeGenres';
-
 import { APIKEY } from './index';
+import Spinner from '../common/spinner';
+
+const spin = new Spinner();
+
 
 export let pageCount;
 export let searchQueryPagination = '';
@@ -18,14 +21,18 @@ let searchQuery = '';
 
 export async function searchMovies(event) {
   event.preventDefault();
+  spin.spinOn();
   searchQuery = event.target.search.value;
   refs.searchResultText.classList.add('visually-hidden');
 
   if (!searchQuery) {
     renderPopularMovies();
+
     startPage();
     searchQueryPagination = '';
-    return;
+    spin.spinOff();
+    return
+
   }
 
   const searchResult = await getSearchMovies();
@@ -38,9 +45,11 @@ export async function searchMovies(event) {
   if (currentPageContent.length > 0) {
     renderItems(currentPageContent);
     startPage();
+    spin.spinOff();
     return;
   }
   refs.searchResultText.classList.remove('visually-hidden');
+  spin.spinOff();
 }
 
 export async function getSearchMovies() {
