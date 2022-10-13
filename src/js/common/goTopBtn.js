@@ -13,13 +13,12 @@ export default function goTopBtn () {
   }
 
   function backToTop() {
-    if (window.pageYOffset > 0) {
-      window.scroll({
-    top: 0,
-    behavior: 'smooth',
-  });
-      setTimeout(backToTop, 1000);
-    }
+      if (window.pageYOffset > 0) {
+        window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
+      }
   }
 
   var goTopBtn = document.querySelector('.back_to_top');
