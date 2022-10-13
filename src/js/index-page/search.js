@@ -36,6 +36,7 @@ export async function searchMovies(event) {
     return;
   }
   refs.searchResultText.classList.remove('visually-hidden');
+  spin.spinOff();
 }
 
 export async function getSearchMovies() {
