@@ -14,8 +14,8 @@ export function openModal(event) {
   const movieId = +event.target.dataset.id;
   renderModal(movieId);
 
-  modalBackdrop.classList.remove('is-hidden');
-  document.body.style.overflow = 'hidden';
+  modalBackdrop.classList.remove('visually-hidden');
+  document.body.style.overflow = 'scroll';
 
   closeButton = document.querySelector('.cross');
   closeButton.addEventListener('click', modalClosing);
@@ -167,7 +167,7 @@ function updateLibraryPageContent() {
 
 // Modal closing functions
 function modalClosing() {
-  modalBackdrop.classList.add('is-hidden');
+  modalBackdrop.classList.add('visually-hidden');
   document.body.style.overflow = '';
   modalBackdrop.removeEventListener('click', modalClosinByBackdrop);
   closeButton.removeEventListener('click', modalClosing);

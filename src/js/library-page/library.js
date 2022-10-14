@@ -3,6 +3,10 @@ import { openModal } from '../common/modal';
 import { libraryRender } from './libraryRender';
 import goTopBtn from '../common/goTopBtn';
 import { isTouuchDevice } from '../library-page/libraryBackground';
+import Spinner from '../common/spinner';
+
+const spin = new Spinner();
+spin.spinOn();
 
 export const refs = {
   btnWatched: document.querySelector('#btnWatched'),
@@ -36,3 +40,4 @@ function clickOnBtnWatchedHandler() {
 }
 
 goTopBtn();
+spin.spinOff();
