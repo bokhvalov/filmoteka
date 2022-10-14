@@ -1,0 +1,50 @@
+.filter {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 768px) {
+
+        padding-bottom: 80px;
+    }
+
+    @media screen and (min-width: 1280px) {
+
+    }
+
+    & a{
+        text-decoration:none;
+    }
+}
+.filter-container {
+   
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 320px;
+
+    @media screen and (min-width: 768px) {
+        max-width: 740px;
+        padding: 0 32px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 1240px;
+
+    }
+}
+.filter-search {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.filter-list {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.filter-item {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.js-filter-reset,.js-filter-submit {
+    display: flex;
+    flex-wrap: nowrap;
+}
