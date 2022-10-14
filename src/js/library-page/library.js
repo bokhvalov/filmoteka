@@ -2,6 +2,7 @@ import { openModalFooter } from '../common/modal-footer';
 import { openModal } from '../common/modal';
 import { libraryRender } from './libraryRender';
 import goTopBtn from '../common/goTopBtn';
+import { isTouuchDevice } from '../library-page/libraryBackground';
 
 export const refs = {
   btnWatched: document.querySelector('#btnWatched'),
