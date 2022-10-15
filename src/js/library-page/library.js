@@ -3,13 +3,17 @@ import { openModal } from '../common/modal';
 import { libraryRender } from './libraryRender';
 import goTopBtn from '../common/goTopBtn';
 import Spinner from '../common/spinner';
+// import { setLangLib } from '../changeLang/cahgeLangLib';
+// import { langCurrent } from '../changeLang/changeLang';
 
 const spin = new Spinner();
+// const lang = langCurrent();
+// setLangLib(lang);
 spin.spinOn();
 
 export const refs = {
-  btnWatched: document.querySelector('#btnWatched'),
-  btnQueued: document.querySelector('#btnQueued'),
+  btnWatched: document.querySelector('#btnWatched-lang'),
+  btnQueued: document.querySelector('#btnQueued-lang'),
   mainContainer: document.querySelector('.filmoteka__container'),
   openModalBtn: document.querySelector('.modal-footer-open'),
   mainContainer: document.querySelector('.filmoteka__container'),
