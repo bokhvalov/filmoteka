@@ -93,6 +93,7 @@ function checkUserLib(movieID) {
   const queueBtn = document.querySelector('.js-queue');
   watchBtn.addEventListener('click', onClickWatchBtn);
   queueBtn.addEventListener('click', onClickQueueBtn);
+  let pageLang = localStorage.getItem('lang');
 
   let isQueued;
   let isWatched;
@@ -121,7 +122,9 @@ function checkUserLib(movieID) {
 function onClickWatchBtn(event) {
   const movieID = event.target.dataset.id;
   const watchBtn = document.querySelector('.js-watch');
+ // let pageLang = localStorage.getItem('lang');
 
+  // if (pageLang === 'en') {
   if (!watchBtn.classList.contains('watched')) {
     addMovieToLib(movieID, 'watched');
     watchBtn.classList.add('watched');
@@ -129,6 +132,7 @@ function onClickWatchBtn(event) {
     updateLibraryPageContent();
     return;
   }
+
 
   watchBtn.classList.remove('watched');
   watchBtn.innerText = 'ADD TO WATCHED';
@@ -140,14 +144,17 @@ function onClickWatchBtn(event) {
 function onClickQueueBtn(event) {
   const movieID = event.target.dataset.id;
   const queueBtn = document.querySelector('.js-queue');
+ // let pageLang = localStorage.getItem('lang');
 
-  if (!queueBtn.classList.contains('queued')) {
-    addMovieToLib(movieID, 'queued');
-    queueBtn.classList.add('queued');
-    queueBtn.innerText = 'QUEUED';
-    updateLibraryPageContent();
-    return;
-  }
+//  if (pageLang === 'en') {
+    if (!queueBtn.classList.contains('queued')) {
+      addMovieToLib(movieID, 'queued');
+      queueBtn.classList.add('queued');
+      queueBtn.innerText = 'QUEUED';
+      updateLibraryPageContent();
+      return;
+    }
+  //}
 
   queueBtn.classList.remove('queued');
   queueBtn.innerText = 'ADD TO QUEUE';
