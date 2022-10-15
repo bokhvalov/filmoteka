@@ -1,7 +1,7 @@
   .main-div {
     display: none;
 
-    @media screen and (min-width: 786px) {
+    @media screen and (min-width: 768px) {
       display: grid;
     place-items: center;
     min-height: 100vh;
@@ -10,15 +10,15 @@
   }
   
   .minion-img{
-    max-width: 768px;
-    max-height: 768px;
+    max-width: 622px;
+    max-height: 704px;
   }
   
   .eyes-wrapper {
     display: flex;
     position: relative;
-    right: 75px;
-    bottom: 645px;
+    right: -10px;
+    bottom: 690px;
   }
   .eye {
     width: 10em;
