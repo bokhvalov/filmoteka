@@ -1,7 +1,11 @@
+import *as noImage from "../../images/main/no-picture.jpg";
+
 export function renderItems(currentPageContent) {
   const mainContainer = document.querySelector('.filmoteka__container')
   const itemMarkup = currentPageContent.map(
     ({ id, title, year, genres, rating, imgPath }) => {
+
+      console.log(imgPath);
       if (genres) {
         let countOfComma = (genres.match(/\,/g) || []).length;
         while (countOfComma > 1) {
@@ -12,7 +16,7 @@ export function renderItems(currentPageContent) {
       let itemString = `
          <div class="filmoteka__item" data-id="${id}">
               <div class="filmoteka__item-wrapper">
-                  <img class="filmoteka-img" src="${imgPath}" alt="">
+                  <img class="filmoteka-img" src="${imgPath ? imgPath: noImage}" alt="${title}">
                   <div class="overlay-text">
                       <h2 class="subtitle">${title}</h2>
                       <p class="discription">`;
