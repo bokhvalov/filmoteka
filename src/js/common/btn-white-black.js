@@ -12,7 +12,7 @@ export function btnWhiteBlack() {
         const paginColor = document.querySelectorAll('.pagination__page');
         const paginEllips = document.querySelectorAll('.pagination__ellipsis');
         const gallerySubtittle = document.querySelectorAll('.subtitle');
-        
+
     if (localStorage.getItem('btn')) {
         localStorage.removeItem('section');
         localStorage.removeItem('btn');
@@ -23,6 +23,7 @@ export function btnWhiteBlack() {
         document.querySelector('.footer__text').style.color = '#545454';
         document.querySelector('.modal-footer-open').style.color = '#545454';
         document.querySelector('.modal-container').style.backgroundColor = '#ffffff';
+        document.querySelector('.empty_text').style.color = '#000000';
         return (paginColor.forEach(p => p.style.color = '#000000'),
             paginEllips.forEach(pEl => pEl.style.color = '#000000'),
         gallerySubtittle.forEach(g => g.style.color = '#000000'));
@@ -32,6 +33,7 @@ export function btnWhiteBlack() {
         document.querySelector('.footer__text').style.color = '#f7f7f7';
         document.querySelector('.modal-footer-open').style.color = '#f7f7f7';
         document.querySelector('.modal-container').style.backgroundColor = '#a34545';
+        document.querySelector('.empty_text').style.color = '#ffffff';
         return (paginColor.forEach(p => p.style.color = '#ffffff'),
         paginEllips.forEach(pEl => pEl.style.color = '#ffffff'),
         gallerySubtittle.forEach(g => g.style.color = '#ffffff'));
