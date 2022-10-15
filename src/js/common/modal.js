@@ -1,6 +1,7 @@
 import { libraryRender } from '../library-page/libraryRender';
 import { addMovieToLib, removeMovieFromLib } from '../localStorage/addRemove';
 import localStrg from '../localStorage/localStrg';
+import *as noImage from "../../images/main/no-picture.jpg";
 
 let closeButton = document.querySelector('.cross');
 const modalBackdrop = document.querySelector('.backdrop');
@@ -43,7 +44,7 @@ function renderModal(movieID) {
   <div class="modal-img-container">
   <img
     class="modal-img"
-    src="${imgPath}"
+    src="${imgPath ? imgPath: noImage}"
     alt="${title}"
     width="370"
     height="470"
