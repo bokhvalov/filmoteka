@@ -18,7 +18,6 @@ export default function goTopBtn () {
     top: 0,
     behavior: 'smooth',
   });
-      setTimeout(backToTop, 1000);
     }
   }
 

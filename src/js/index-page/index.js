@@ -7,6 +7,7 @@ import { renderItems } from '../common/renderItems';
 import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
 import Spinner from '../common/spinner';
+import { btnWhiteBlack } from '../common/btn-white-black';
 
 const spin = new Spinner();
 
@@ -23,6 +24,7 @@ refs.mainContainer.addEventListener('click', openModal);
 refs.openModalBtn.addEventListener('click', openModalFooter);
 refs.form.addEventListener('submit', searchMovies);
 
+btnWhiteBlack();
 spin.spinOn();
 renderPopularMovies();
 setTimeout(startPage, 500);
