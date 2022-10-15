@@ -1,3 +1,4 @@
+import { langCurrent, setLang } from '../changeLang/changeLang';
 import { processCurrentPage } from '../data-processing/processCurrentPage';
 import { openModalFooter } from '../common/modal-footer';
 import { getPopularMovies } from '../index-page/getPopularMovies';
@@ -7,6 +8,7 @@ import { renderItems } from '../common/renderItems';
 import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
 import Spinner from '../common/spinner';
+
 
 const spin = new Spinner();
 
@@ -25,14 +27,17 @@ refs.openModalBtn.addEventListener('click', openModalFooter);
 refs.form.addEventListener('submit', searchMovies);
 
 spin.spinOn();
+const lang = langCurrent();
+
+setLang(lang);
 renderPopularMovies();
 
 export async function renderPopularMovies() {
-  const popularMovies = await getPopularMovies(APIKEY);
-  const currentPageContent= await processCurrentPage (popularMovies);
+    const popularMovies = await getPopularMovies(APIKEY);
+    const currentPageContent = await processCurrentPage(popularMovies);
 
-  renderItems(currentPageContent);
-  startPage();
-  spin.spinOff();
+    renderItems(currentPageContent);
+    startPage();
+    spin.spinOff();
 }
 goTopBtn();
