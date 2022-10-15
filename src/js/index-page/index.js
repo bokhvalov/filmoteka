@@ -49,7 +49,7 @@ refs.filterGenre.addEventListener('change', onGenresFilterChangeHandler);
 refs.filterYear.addEventListener('change', onYearsFilterChangeHandler);
 refs.filterReset.addEventListener('click', onFilterResetClickHandler);
 refs.filterForm.addEventListener('submit', onFormSubmitHandler);
-refs.filterInput.addEventListener('input', debounce(onFormInputChangeHandler,500));
+refs.filterInput.addEventListener('input', debounce(onFormInputChangeHandler,700));
 
 
 spin.spinOn();
@@ -138,7 +138,7 @@ function renderKeyWords (htmlElem, keyWords){
 
     for(let i = 0; i < inputChildren.length; i++){
       //console.log('in get key word id: option '+ inputChildren[i].value+ ' input value  '+  datalist.value+'  equation' + (inputChildren[i].value === datalist.value));
-        if (inputChildren[i].value === datalist.value) {
+        if (inputChildren[i].value === datalist.value.trim()) {
           refs.filterFormSubmitButton.disabled = false;
           keyword = inputChildren[i].id;
           return 
