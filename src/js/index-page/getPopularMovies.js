@@ -1,4 +1,4 @@
-import { fetchPopular } from './themoviedbAPI';
+import { fetchPopular } from '../index-page/themoviedbAPI';
 import { decodeGenres } from '../data-processing/decodeGenres';
 
 import { APIKEY } from './index';
