@@ -125,7 +125,7 @@ function renderKeyWords (htmlElem, keyWords){
   return ;
   }
 
-  stringElement = keyWords.map(keyword=>{return `<option value="${keyword.name}" id="${keyword.id}"></option>`});
+  stringElement = keyWords.map(keyword=>{return `<option value="${keyword.name}" id="${keyword.id}">${keyword.name}</option>`});
   htmlElem.insertAdjacentHTML('beforeend', stringElement.join(''));
   getKeyWordId();
   //console.log(refs.filterInput.value);
