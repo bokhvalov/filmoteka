@@ -12,6 +12,7 @@ import { disaibledBtn } from './plagin-pagination';
 import Spinner from '../common/spinner';
 import controlColor from '../common/controlColor';
 
+
 const spin = new Spinner();
 
 export let PAGE = 1;
@@ -49,7 +50,7 @@ function onClickPaginationLink(e) {
   ellipsis();
   curentPage();
   disaibledBtn();
-  
+
   spin.spinOff();
 }
 
@@ -89,6 +90,6 @@ function onClickButtonPagination(e) {
   ellipsis();
   curentPage();
   disaibledBtn();
-  
+
   spin.spinOff();
 }

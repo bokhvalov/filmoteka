@@ -9,6 +9,7 @@ import controlColor from '../common/controlColor';
 
 const spin = new Spinner();
 
+
 spin.spinOn();
 
 export const refs = {

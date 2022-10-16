@@ -7,8 +7,10 @@ import { renderItems } from '../common/renderItems';
 import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
 import Spinner from '../common/spinner';
+
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
+
 
 const spin = new Spinner();
 
@@ -24,6 +26,7 @@ export const refs = {
 refs.mainContainer.addEventListener('click', openModal);
 refs.openModalBtn.addEventListener('click', openModalFooter);
 refs.form.addEventListener('submit', searchMovies);
+
 
 
 spin.spinOn();

@@ -5,10 +5,12 @@ export default function btnWhiteBlack() {
   const section = document.querySelector('body');
   console.log(section);
 
+
   if (localStorage.getItem('btn')) {
     btnDAndN.classList.add(localStorage.getItem('btn'));
     section.classList.add(localStorage.getItem('section'));
   }
+
 
     btnDAndN.addEventListener('click', (e) => {
         e.preventDefault();
@@ -23,6 +25,7 @@ export default function btnWhiteBlack() {
         toggleBlackMode();
         }
         controlColor();
+
   });
 }
 
