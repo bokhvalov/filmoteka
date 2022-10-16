@@ -1,5 +1,5 @@
 import { text } from './packageLang';
-import { renderPopularMovies } from '../index-page';
+import { renderPopularMovies } from '../index-page/renderPopularMovies';
 
 
 const refs = {

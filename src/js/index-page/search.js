@@ -6,7 +6,7 @@ import { refs } from '.';
 import { startPage } from '../pagination-js/counter-pagination';
 
 import { renderItems } from '../common/renderItems';
-import { renderPopularMovies } from '.';
+import { renderPopularMovies } from './renderPopularMovies';
 import localStrg from '../localStorage/localStrg';
 import { fetchPopular } from './themoviedbAPI';
 import { decodeGenres } from '../data-processing/decodeGenres';

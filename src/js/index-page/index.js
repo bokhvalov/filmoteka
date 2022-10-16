@@ -2,7 +2,6 @@ import { openModalFooter } from '../common/modal-footer';
 import { openModal } from '../common/modal';
 import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
-
 import { renderPopularMovies } from './renderPopularMovies';
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
