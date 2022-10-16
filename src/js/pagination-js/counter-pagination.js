@@ -1,11 +1,11 @@
 import { pageCount } from '../index-page/search';
-// import { pageCount } from '../index-page/search';
 
 import { PAGE } from './main-pagination';
 
 import { pagMarkup } from './pagination-markup';
 import { markupLastPag } from './pagination-markup';
 import { markupStartPag } from './pagination-markup';
+import { markupPag } from './pagination-markup';
 
 // import controlColor from '../common/controlColor';
 
@@ -26,14 +26,14 @@ export function renderMarkupOnClickLink(e) {
     peg6: PAGE,
   };
 
-  // Последняя страница
-  if (PAGE === pageCount || PAGE >= pageCount - 4) {
-    lastPages(pages);
-  }
-
   // Увиличение счетчика
   if (Number(lastPage.textContent) === PAGE) {
     incriment(pages);
+  }
+
+  // Последняя страница
+  if (PAGE === pageCount || PAGE >= pageCount - 4) {
+    lastPages(pages);
   }
 
   // Уменьшение счетчика
@@ -146,4 +146,31 @@ export function startPage() {
   div.innerHTML = '';
 
   div.innerHTML = markupStartPag();
+}
+
+// ЕСЛИ МАКСИМАЛЬНОЕ КАЛИЧЕСТВО СТРАНИЦ МЕНЬШЕ 8 РАЗМЕТКА ДОЛЖНА БЫТЬ ДИНАМИЧЕСКОЙ
+
+export function adaptivPage() {
+  div.innerHTML = '';
+
+  div.innerHTML = markupPag();
+  const arreyId = [
+    ,
+    ,
+    `id="firstPage"`,
+    `id ='thirdPage'`,
+    `id ='fourthPage'`,
+    `id ='fifthPage'`,
+    `id="lastPag"`,
+    `id="preLastPag"`,
+  ];
+  const ul = document.querySelector('.pagination__list');
+
+  let li = '';
+
+  for (let i = 2; i < pageCount + 1; i += 1) {
+    li += `<li class='pagination__item'><a class="pagination__page"  href='' ${arreyId[i]}>${i}</a></li>`;
+  }
+
+  ul.insertAdjacentHTML('beforeend', li);
 }

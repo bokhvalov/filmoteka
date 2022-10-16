@@ -2,7 +2,9 @@ import { processCurrentPage } from '../data-processing/processCurrentPage';
 import { openModalFooter } from '../common/modal-footer';
 import { getPopularMovies } from '../index-page/search';
 import { openModal } from '../common/modal';
+
 import { startPage } from '../pagination-js/counter-pagination';
+
 import { renderItems } from '../common/renderItems';
 import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
@@ -16,14 +18,12 @@ import Notiflix from 'notiflix';
 import { langCurrent } from '../lang/changeLang';
 
 /* переменные для расширенного поиска */
-let genre = "none";
+let genre = 'none';
 let year = 0;
 let keyword = 0;
 
-
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
-
 
 const spin = new Spinner();
 
@@ -42,8 +42,7 @@ export const refs = {
   filterForm: document.querySelector('.filter-search'),
   filterFormSubmitButton: document.querySelector('.js-filter-submit'),
   filterInput: document.querySelector('#keyword-input'),
-  inputList: document.querySelector('#keywords-suggest')
-
+  inputList: document.querySelector('#keywords-suggest'),
 };
 
 refs.mainContainer.addEventListener('click', openModal);
@@ -55,13 +54,14 @@ refs.filterGenre.addEventListener('change', onGenresFilterChangeHandler);
 refs.filterYear.addEventListener('change', onYearsFilterChangeHandler);
 refs.filterReset.addEventListener('click', onFilterResetClickHandler);
 refs.filterForm.addEventListener('submit', onFormSubmitHandler);
-refs.filterInput.addEventListener('input', debounce(onFormInputChangeHandler,700));
-
-
+refs.filterInput.addEventListener(
+  'input',
+  debounce(onFormInputChangeHandler, 700)
+);
 
 spin.spinOn();
 renderPopularMovies();
-setTimeout(startPage, 500);
+// setTimeout(startPage, 500);
 
 export async function renderPopularMovies() {
   const popularMovies = await getPopularMovies(APIKEY);
@@ -70,22 +70,27 @@ export async function renderPopularMovies() {
   renderItems(currentPageContent);
   spin.spinOff();
 
-goTopBtn();
+  startPage();
+  goTopBtn();
 }
 
-
 /* расширенный поиск */
-export async function renderExtandedSearchMovies(genre,year,keyword) {
+export async function renderExtandedSearchMovies(genre, year, keyword) {
   //console.log("I'm in renderPopularMovies");
-  const extandedSearchMovies = await getExtSearchMovies(APIKEY,genre,year,keyword);
-  const currentPageContent= await processCurrentPage (extandedSearchMovies);
+  const extandedSearchMovies = await getExtSearchMovies(
+    APIKEY,
+    genre,
+    year,
+    keyword
+  );
+  const currentPageContent = await processCurrentPage(extandedSearchMovies);
 
   renderItems(currentPageContent);
   spin.spinOff();
 
   goTopBtn();
 }
-function onGenresFilterChangeHandler (event) {
+function onGenresFilterChangeHandler(event) {
   genre = event.target.value;
   //renderExtandedSearchMovies(genre,year);
 }
@@ -97,66 +102,69 @@ function onYearsFilterChangeHandler(event) {
 
 function onFilterResetClickHandler(event) {
   refs.filterForm.reset();
-  genre = "none";
+  genre = 'none';
   year = 0;
   keyword = 0;
-  refs.inputList.innerHTML='';
+  refs.inputList.innerHTML = '';
   renderPopularMovies();
 }
 
-function onFormSubmitHandler(event){
-event.preventDefault();
-//getKeyWordId();
-renderExtandedSearchMovies(genre,year,keyword);
+function onFormSubmitHandler(event) {
+  event.preventDefault();
+  //getKeyWordId();
+  renderExtandedSearchMovies(genre, year, keyword);
 }
 
 function onFormInputChangeHandler(event) {
   let wordSearch = event.target.value;
-  if(!wordSearch||wordSearch===''){
+  if (!wordSearch || wordSearch === '') {
     refs.filterFormSubmitButton.disabled = false;
     return;
   }
-  fetchKeyWordsSearch(APIKEY,wordSearch)
-  .then(response=>{return response.results})
-  .then(response=>{renderKeyWords(refs.inputList, response)})
-  .catch(error=>console.log(error));
-  
+  fetchKeyWordsSearch(APIKEY, wordSearch)
+    .then(response => {
+      return response.results;
+    })
+    .then(response => {
+      renderKeyWords(refs.inputList, response);
+    })
+    .catch(error => console.log(error));
 }
 
-function renderKeyWords (htmlElem, keyWords){
-
- let stringElement = '';
+function renderKeyWords(htmlElem, keyWords) {
+  let stringElement = '';
   htmlElem.innerHTML = '';
-  if (!keyWords||keyWords.length==0) {
-    Notiflix.Notify.failure('Sorry, it seems there is no such keyword. Please enter a valid key word');
+  if (!keyWords || keyWords.length == 0) {
+    Notiflix.Notify.failure(
+      'Sorry, it seems there is no such keyword. Please enter a valid key word'
+    );
     refs.filterFormSubmitButton.disabled = true;
-  return ;
+    return;
   }
 
-  stringElement = keyWords.map(keyword=>{return `<option value="${keyword.name}" id="${keyword.id}">${keyword.name}</option>`});
+  stringElement = keyWords.map(keyword => {
+    return `<option value="${keyword.name}" id="${keyword.id}">${keyword.name}</option>`;
+  });
   htmlElem.insertAdjacentHTML('beforeend', stringElement.join(''));
   getKeyWordId();
   //console.log(refs.filterInput.value);
- }
+}
 
- function getKeyWordId() {
-  
-    const datalist = refs.filterInput;
-    const inputChildren = refs.inputList.children;
+function getKeyWordId() {
+  const datalist = refs.filterInput;
+  const inputChildren = refs.inputList.children;
 
-    for(let i = 0; i < inputChildren.length; i++){
-      //console.log('in get key word id: option '+ inputChildren[i].value+ ' input value  '+  datalist.value+'  equation' + (inputChildren[i].value === datalist.value));
-        if (inputChildren[i].value === datalist.value.trim()) {
-          refs.filterFormSubmitButton.disabled = false;
-          keyword = inputChildren[i].id;
-          return 
-        }
+  for (let i = 0; i < inputChildren.length; i++) {
+    //console.log('in get key word id: option '+ inputChildren[i].value+ ' input value  '+  datalist.value+'  equation' + (inputChildren[i].value === datalist.value));
+    if (inputChildren[i].value === datalist.value.trim()) {
+      refs.filterFormSubmitButton.disabled = false;
+      keyword = inputChildren[i].id;
+      return;
     }
-    Notiflix.Notify.failure('Please choose from word and phrases in list!');
-    refs.filterFormSubmitButton.disabled = true;
-
- }
-
+  }
+  Notiflix.Notify.failure('Please choose from word and phrases in list!');
+  refs.filterFormSubmitButton.disabled = true;
+}
 
 btnWhiteBlack();
 controlColor();
