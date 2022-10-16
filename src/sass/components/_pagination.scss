@@ -28,8 +28,9 @@
 }
 
 @media screen and (max-width: 320px) {
-  #preFirstPage,
+  #preLastItem,
   #preLastPag {
+    position: absolute;
     display: none;
   }
 }
@@ -39,7 +40,7 @@
   align-items: center;
   justify-content: center;
 
-  margin-right: 16px;
+  // margin-right: 16px;
 
   font-family: 'Roboto';
   font-weight: 500;
@@ -71,5 +72,15 @@
 }
 
 .pagination-decrement {
+  margin-right: 16px;
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__item {
   margin-right: 16px;
 }

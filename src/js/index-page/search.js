@@ -2,7 +2,9 @@ import { fetchSearch } from './themoviedbAPI';
 import { processCurrentPage } from '../data-processing/processCurrentPage';
 import { APIKEY } from '.';
 import { refs } from '.';
+
 import { startPage } from '../pagination-js/counter-pagination';
+
 import { renderItems } from '../common/renderItems';
 import { renderPopularMovies } from '.';
 import localStrg from '../localStorage/localStrg';
@@ -11,12 +13,13 @@ import { decodeGenres } from '../data-processing/decodeGenres';
 import { APIKEY } from './index';
 import Spinner from '../common/spinner';
 
+import { adaptivPage } from '../pagination-js/counter-pagination';
+
 /* расширенный поиск */
 import { fetchExtendedSearch } from './themoviedbAPI';
 
 const spin = new Spinner();
-
-
+const paginationDiv = document.querySelector('#pagination');
 export let pageCount;
 export let searchQueryPagination = '';
 
@@ -30,12 +33,9 @@ export async function searchMovies(event) {
 
   if (!searchQuery) {
     renderPopularMovies();
-
-    startPage();
     searchQueryPagination = '';
     spin.spinOff();
-    return
-
+    return;
   }
 
   const searchResult = await getSearchMovies();
@@ -47,7 +47,15 @@ export async function searchMovies(event) {
 
   if (currentPageContent.length > 0) {
     renderItems(currentPageContent);
-    startPage();
+
+    paginationDiv.innerHTML = '';
+
+    if (pageCount > 1 && pageCount < 8) {
+      adaptivPage();
+    } else if (pageCount !== 1) {
+      startPage();
+    }
+
     spin.spinOff();
     return;
   }
@@ -67,11 +75,14 @@ export async function getPopularMovies(APIKEY) {
   return popularMovies.results;
 }
 
-
 /* расширенный поиск */
-export async function getExtSearchMovies(APIKEY,genre,year,keyword) {
-  const extSearchMovies = await fetchExtendedSearch(APIKEY,genre,year,keyword);
+export async function getExtSearchMovies(APIKEY, genre, year, keyword) {
+  const extSearchMovies = await fetchExtendedSearch(
+    APIKEY,
+    genre,
+    year,
+    keyword
+  );
   pageCount = extSearchMovies.total_pages;
   return extSearchMovies.results;
 }
-
