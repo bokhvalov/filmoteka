@@ -11,6 +11,9 @@ import { decodeGenres } from '../data-processing/decodeGenres';
 import { APIKEY } from './index';
 import Spinner from '../common/spinner';
 
+/* расширенный поиск */
+import { fetchExtendedSearch } from './themoviedbAPI';
+
 const spin = new Spinner();
 
 
@@ -63,3 +66,12 @@ export async function getPopularMovies(APIKEY) {
   pageCount = popularMovies.total_pages;
   return popularMovies.results;
 }
+
+
+/* расширенный поиск */
+export async function getExtSearchMovies(APIKEY,genre,year,keyword) {
+  const extSearchMovies = await fetchExtendedSearch(APIKEY,genre,year,keyword);
+  pageCount = extSearchMovies.total_pages;
+  return extSearchMovies.results;
+}
+
