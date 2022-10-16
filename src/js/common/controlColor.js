@@ -5,7 +5,7 @@ export default function controlColor() {
     const modaTvalue = document.querySelectorAll('.modal-table__value');
     const modalTattributes = document.querySelectorAll('.modal-table__attribute');
     const searchMovies = document.querySelector('.filter');
-    // const modalBtn = document.querySelectorAll('.modal-btn');
+    const modalBtn = document.querySelectorAll('.modal-btn');
     const bgDark = document.querySelector('.img__wrapper-dark');
     const bgLight = document.querySelector('.img__wrapper-lignt');
     
@@ -15,10 +15,10 @@ export default function controlColor() {
             document.querySelector('.footer__text').style.color = '#f7f7f7';
             document.querySelector('.modal-footer-open').style.color = '#f7f7f7';
             document.querySelector('.modal-container').style.backgroundColor = '#3e444c';
-            document.querySelector('.film-name').style.color = '#ffffff';
-            document.querySelector('.film-about').style.color = '#ffffff';
-            document.querySelector('.film-description').style.color = '#ffffff';
-            document.querySelector('.modal-table__votes').style.background = '#878787';
+            // document.querySelector('.film-name').style.color = '#ffffff';
+            // document.querySelector('.film-about').style.color = '#ffffff';
+            // document.querySelector('.film-description').style.color = '#ffffff';
+            // document.querySelector('.modal-table__votes').style.background = '#878787';
             searchMovies.classList.add('black-theme');
 
             // .film-name
@@ -34,8 +34,8 @@ export default function controlColor() {
             paginColor.forEach(p => p.style.color = '#ffffff');
             paginEllips.forEach(pEl => pEl.style.color = '#ffffff');
             gallerySubtittle.forEach(g => g.style.color = '#ffffff');
-            bgDark.classList.remove('no-display');
-            bgLight.classList.add('no-display');
+            // bgDark.classList.remove('no-display');
+            // bgLight.classList.add('no-display');
             
         }
         else {
@@ -43,21 +43,21 @@ export default function controlColor() {
             document.querySelector('.footer__text').style.color = '#545454';
             document.querySelector('.modal-footer-open').style.color = '#545454';
             document.querySelector('.modal-container').style.backgroundColor = '#ffffff';
-            document.querySelector('.film-name').style.color = '#000000';
-            document.querySelector('.film-about').style.color = '#000000';
-            document.querySelector('.film-description').style.color = '#000000';
-            document.querySelector('.modal-table__votes').style.background = '#f7f7f7';
+            // document.querySelector('.film-name').style.color = '#000000';
+            // document.querySelector('.film-about').style.color = '#000000';
+            // document.querySelector('.film-description').style.color = '#000000';
+            // document.querySelector('.modal-table__votes').style.background = '#f7f7f7';
             searchMovies.classList.remove('black-theme');
             // document.querySelector('.empty_text').style.color = '#000000';
             modaTvalue.forEach(mtv => mtv.style.color = '#000000');
             modalTattributes.forEach(mta => mta.style.color = '#8c8c8c');
             // modalBtn.forEach(mb => mb.style.background = '#ffffff');
-            paginColor.forEach(p => p.style.color = '#000000'),
-            paginEllips.forEach(pEl => pEl.style.color = '#000000'),
+            paginColor.forEach(p => p.style.color = '#000000');
+            paginEllips.forEach(pEl => pEl.style.color = '#000000');
             gallerySubtittle.forEach(g => g.style.color = '#000000');
-            bgDark.classList.add('no-display');
-            bgLight.classList.remove('no-display');
+            // bgDark.classList.add('no-display');
+            // bgLight.classList.remove('no-display');
             
         }
-    } catch (err) { }
+    } catch (err) { console.log(err) }
 }
