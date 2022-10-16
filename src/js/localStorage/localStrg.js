@@ -6,10 +6,10 @@ const save = (key, value) => {
     console.log(`Error during saving ${key} to local strage; `, error.message);
   }
 };
-export let loadLaibrery;
+export let loadlibrary;
 const load = key => {
   try {
-    loadLaibrery = key;
+    loadlibrary = key;
 
     const serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);

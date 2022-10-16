@@ -3,7 +3,7 @@ import { renderPagONLibClickBtn } from './library-counter';
 import { adaptivPageLib } from './library-counter';
 
 import { libraryRender } from '../../library-page/libraryRender';
-import { loadLaibrery } from '../../localStorage/localStrg';
+import { loadlibrary } from '../../localStorage/localStrg';
 
 import { pageCount } from '../../library-page/libraryRender';
 
@@ -15,8 +15,8 @@ const refs = {
   paginationLib: document.querySelector('#pagination'),
 };
 
-setListenerLib(refs.paginationLib, 'click', onLaibreryLink);
-setListenerLib(refs.paginationLib, 'click', onLaibreryBtn);
+setListenerLib(refs.paginationLib, 'click', onlibraryLink);
+setListenerLib(refs.paginationLib, 'click', onlibraryBtn);
 function setListenerLib(element, tayp, handler) {
   if (element) {
     element.addEventListener(tayp, handler);
@@ -25,7 +25,7 @@ function setListenerLib(element, tayp, handler) {
 
 export let PAGE_LIBR = 1;
 
-export function onLaibreryLink(e) {
+export function onlibraryLink(e) {
   e.preventDefault();
   if (e.target.nodeName !== 'A') {
     return;
@@ -33,9 +33,9 @@ export function onLaibreryLink(e) {
 
   PAGE_LIBR = Number(e.target.textContent);
 
-  if (loadLaibrery === 'watched') {
+  if (loadlibrary === 'watched') {
     libraryRender('watched');
-  } else if (loadLaibrery === 'queued') {
+  } else if (loadlibrary === 'queued') {
     libraryRender('queued');
   }
 
@@ -50,7 +50,7 @@ export function onLaibreryLink(e) {
   disaibledBtnLib();
 }
 
-export function onLaibreryBtn(e) {
+export function onlibraryBtn(e) {
   e.preventDefault();
   if (e.target.nodeName !== 'BUTTON') {
     return;
@@ -66,9 +66,9 @@ export function onLaibreryBtn(e) {
     PAGE_LIBR -= 1;
   }
 
-  if (loadLaibrery === 'watched') {
+  if (loadlibrary === 'watched') {
     libraryRender('watched');
-  } else if (loadLaibrery === 'queued') {
+  } else if (loadlibrary === 'queued') {
     libraryRender('queued');
   }
 

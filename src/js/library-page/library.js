@@ -6,6 +6,8 @@ import { isTouuchDevice } from '../library-page/libraryBackground';
 import Spinner from '../common/spinner';
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
+import { langCurrent, setLibraryLang } from '../lang/changeLang';
+
 
 const spin = new Spinner();
 
@@ -18,10 +20,16 @@ export const refs = {
   mainContainer: document.querySelector('.filmoteka__container'),
   openModalBtn: document.querySelector('.modal-footer-open'),
   mainContainer: document.querySelector('.filmoteka__container'),
+  enLangBTN: document.getElementById('e-lang-en'),
+  uaLangBTN: document.getElementById('e-lang-ua')
 };
 
+refs.enLangBTN.addEventListener('click', setLibraryLang.bind(null, 'en'));
+refs.uaLangBTN.addEventListener('click', setLibraryLang.bind(null, 'ua'));
 
+const currentLang = langCurrent();
 libraryRender("watched");
+setLibraryLang(currentLang);
 
 /* asigning events listiners to buttons: watched and queued */
 refs.btnQueued.addEventListener('click', clickOnBtnQueuedHandler);

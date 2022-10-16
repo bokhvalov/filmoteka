@@ -8,6 +8,7 @@ import { markupStartPagLib } from './library-markup';
 import { markupPagLib } from './library-markup';
 
 import { isNone } from './library-plugin';
+import controlColor from '../../common/controlColor';
 
 const divLib = document.querySelector('#pagination');
 
@@ -177,6 +178,6 @@ export function adaptivPageLib() {
   }
 
   ulLib.insertAdjacentHTML('beforeend', liLib);
-
+  controlColor();
   isNone();
 }

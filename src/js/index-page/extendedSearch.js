@@ -11,6 +11,7 @@ import { APIKEY } from './index';
 import { APIKEY } from "../index-page/index";
 import Spinner from '../common/spinner';
 import { renderPopularMovies } from './renderPopularMovies';
+import controlColor from '../common/controlColor';
 
 const spin = new Spinner();
 
@@ -115,6 +116,7 @@ async function renderExtandedSearchMovies(genre, year, keyword) {
       return `<option value="${keyword.name}" id="${keyword.id}">${keyword.name}</option>`;
     });
     htmlElem.insertAdjacentHTML('beforeend', stringElement.join(''));
+    controlColor();
     getKeyWordId();
     //console.log(refs.filterInput.value);
   }

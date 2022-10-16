@@ -3,7 +3,6 @@ import controlColor from "./controlColor";
 export default function btnWhiteBlack() {
   const btnDAndN = document.querySelector('.switch-btn');
   const section = document.querySelector('body');
-  console.log(section);
 
 
   if (localStorage.getItem('btn')) {

@@ -14,8 +14,8 @@ import { disaibledBtn } from './plugin-pagination';
 import Spinner from '../common/spinner';
 import controlColor from '../common/controlColor';
 
-import { onLaibreryLink } from './library-pagination/library-pag';
-import { onLaibreryBtn } from './library-pagination/library-pag';
+import { onlibraryLink } from './library-pagination/library-pag';
+import { onlibraryBtn } from './library-pagination/library-pag';
 
 const spin = new Spinner();
 
@@ -27,8 +27,8 @@ const refs = {
   paginationLib: document.querySelector('#pagination'),
 };
 
-refs.paginationLib.removeEventListener('click', onLaibreryLink);
-refs.paginationLib.removeEventListener('click', onLaibreryBtn);
+refs.paginationLib.removeEventListener('click', onlibraryLink);
+refs.paginationLib.removeEventListener('click', onlibraryBtn);
 
 setListener(refs.pagination, 'click', onClickPaginationLink);
 setListener(refs.pagination, 'click', onClickButtonPagination);
