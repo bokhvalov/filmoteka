@@ -72,7 +72,7 @@ export function renderPaginationONClickBtn(e) {
   }
 
   // Отрисовка начальных страниц от 1-6
-  if (PAGE <= 2) {
+  if (PAGE <= 5) {
     startPage();
   }
 
@@ -150,7 +150,7 @@ export function startPage() {
   const none = document.querySelector('.is-none');
   if (none) {
     none.classList.remove('is-none');
-  } 
+  }
 }
 
 // ЕСЛИ МАКСИМАЛЬНОЕ КАЛИЧЕСТВО СТРАНИЦ МЕНЬШЕ 8 РАЗМЕТКА ДОЛЖНА БЫТЬ ДИНАМИЧЕСКОЙ
