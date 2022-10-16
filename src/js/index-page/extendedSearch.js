@@ -10,6 +10,7 @@ import renderPopularMovies from './renderPopularMovies';
 import { APIKEY } from './index';
 import { APIKEY } from "../index-page/index";
 import Spinner from '../common/spinner';
+import { renderPopularMovies } from './renderPopularMovies';
 
 const spin = new Spinner();
 

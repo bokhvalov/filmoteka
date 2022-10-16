@@ -154,7 +154,7 @@ export function adaptivPageLib() {
   divLib.innerHTML = '';
 
   divLib.innerHTML = markupPagLib();
-  const arreyIdLib = [
+  const arrayIdLib = [
     ,
     ,
     `id="firstPage"`,
@@ -169,7 +169,7 @@ export function adaptivPageLib() {
   let liLib = '';
 
   for (let i = 2; i < pageCount + 1; i += 1) {
-    liLib += `<li class='pagination__item'><a class="pagination__page"  href='' ${arreyIdLib[i]}>${i}</a></li>`;
+    liLib += `<li class='pagination__item'><a class="pagination__page"  href='' ${arrayIdLib[i]}>${i}</a></li>`;
   }
 
   ulLib.insertAdjacentHTML('beforeend', liLib);

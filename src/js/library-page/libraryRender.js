@@ -1,22 +1,6 @@
 import localStrg from '../localStorage/localStrg';
 import { renderItems } from '../common/renderItems';
-
 const libraryBackground = document.querySelector('.background-wrapper');
-
-// export function libraryRender(userLibrary) {
-//     const mainContainer = document.querySelector('.filmoteka__container');
-//     let currentLib = localStrg.load(userLibrary);
-//       if (!currentLib) {
-//         mainContainer.innerHTML =
-//           '<div><p2 class="empty_text">It seems that there is no films here!</p2></div>'
-//         ;
-//         libraryBackground.classList.remove('no-display');
-//         return;
-//       }
-//       renderItems(currentLib);
-//       libraryBackground.classList.add('no-display');
-//     }
-
 import { startPageLib } from '../pagination-js/laibrery-pagination/laibrery-counter';
 import { adaptivPageLib } from '../pagination-js/laibrery-pagination/laibrery-counter';
 import { PAGE_LIBR } from '../pagination-js/laibrery-pagination/laibrery-pag';
@@ -30,18 +14,18 @@ export function libraryRender(userLibrary) {
   const mainContainer = document.querySelector('.filmoteka__container');
   let currentLib = localStrg.load(userLibrary);
 
-  pageCount = getPageCount(currentLib);
-  let arreyMove = counterRenderMove(currentLib, PAGE_LIBR);
-
   if (!currentLib) {
     mainContainer.innerHTML =
       '<div><p2 class="empty_text">It seems that there is no films here!</p2></div>';
     libraryBackground.classList.remove('no-display');
     return;
   }
-  renderItems(arreyMove);
-  libraryBackground.classList.add('no-display');
 
+  pageCount = getPageCount(currentLib);
+  let arrayMove = counterRenderMove(currentLib, PAGE_LIBR);
+  renderItems(arrayMove);
+  localStrg.save("currentPage",arrayMove);
+  libraryBackground.classList.add('no-display');
   refs.paginationLib.innerHTML = '';
   if (pageCount > 1 && pageCount < 8) {
     adaptivPageLib();
@@ -50,7 +34,7 @@ export function libraryRender(userLibrary) {
   }
 }
 
-function counterRenderMove(arrey, PAGE_LIBR) {
+function counterRenderMove(array, PAGE_LIBR) {
   let refPoint;
   let сountdown;
 
@@ -67,15 +51,15 @@ function counterRenderMove(arrey, PAGE_LIBR) {
 
   let arr = [];
 
-  if (arrey.length > 20) {
+  if (array.length > 20) {
     for (let i = refPoint; i < сountdown; i += 1) {
-      if (arrey[i] === undefined) {
+      if (array[i] === undefined) {
         break;
       }
-      arr.push(arrey[i]);
+      arr.push(array[i]);
     }
   } else {
-    arr = arrey;
+    arr = array;
   }
 
   return arr;
