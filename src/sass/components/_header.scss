@@ -179,6 +179,24 @@
     
 }
 
+.header_search-btn_close {
+    height: 100%;
+    fill: #fff;
+    margin-right: 5px;
+    transition: transform $transition-timing $transition-function;
+    &:hover {
+             transform: scale(1.25);
+   }
+}
+
+.vertical-line {
+    /*border-left: 1px solid #dadce0;*/
+    color: #fff;
+    height: 35%;
+    margin-right: 5px;
+}
+
+
 .header_search-btn_icon {
     height: 100%;
     fill: #fff;
