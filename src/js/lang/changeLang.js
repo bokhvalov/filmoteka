@@ -18,7 +18,7 @@ const extSearchYears = document.querySelector('.js-filter-years--default');
 const extSearchGenres = document.querySelector('.js-filter-genres--default');
 const extSearchBtnSbmt = document.querySelector('.js-filter-submit');
 const extSearchBtnRst = document.querySelector('.js-filter-reset');
-console.log(extSearchGenres);
+
 
 
 export function langCurrent() {
