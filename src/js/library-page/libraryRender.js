@@ -24,7 +24,7 @@ export function libraryRender(userLibrary) {
   pageCount = getPageCount(currentLib);
   let arrayMove = counterRenderMove(currentLib, PAGE_LIBR);
   renderItems(arrayMove);
-  localStrg.save("currentPage",arrayMove);
+  localStrg.save('currentPage', arrayMove);
   libraryBackground.classList.add('no-display');
   refs.paginationLib.innerHTML = '';
   if (pageCount > 1 && pageCount < 8) {
@@ -35,23 +35,25 @@ export function libraryRender(userLibrary) {
 }
 
 function counterRenderMove(array, PAGE_LIBR) {
+  const cards = 20;
+
   let refPoint;
   let сountdown;
 
   if (PAGE_LIBR === 1) {
     refPoint = 0;
-    сountdown = 20;
+    сountdown = cards;
   } else if (PAGE_LIBR === 2) {
-    refPoint = 20;
-    сountdown = 20 * 2;
+    refPoint = cards;
+    сountdown = cards * 2;
   } else {
-    refPoint = 20 * (PAGE_LIBR - 1);
-    сountdown = 20 * PAGE_LIBR;
+    refPoint = cards * (PAGE_LIBR - 1);
+    сountdown = cards * PAGE_LIBR;
   }
 
   let arr = [];
 
-  if (array.length > 20) {
+  if (array.length > cards) {
     for (let i = refPoint; i < сountdown; i += 1) {
       if (array[i] === undefined) {
         break;

@@ -44,7 +44,6 @@ function setListener(element, tayp, handler) {
 
 function onClickPaginationLink(e) {
   e.preventDefault();
-  spin.spinOn();
   if (e.target.nodeName !== 'A') {
     return;
   }
@@ -78,7 +77,6 @@ function onClickPaginationLink(e) {
 
 function onClickButtonPagination(e) {
   e.preventDefault();
-  spin.spinOn();
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }

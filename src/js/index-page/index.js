@@ -1,7 +1,6 @@
 import { openModalFooter } from '../common/modal-footer';
 import { openModal } from '../common/modal';
 import { searchMovies } from './search';
-import { startPage } from '../pagination-js/counter-pagination';
 import goTopBtn from '../common/goTopBtn';
 import { renderPopularMovies } from './renderPopularMovies';
 import btnWhiteBlack from '../common/btn-white-black';
@@ -24,7 +23,6 @@ refs.form.addEventListener('submit', searchMovies);
 
 
 renderPopularMovies();
-startPage();
 goTopBtn();
 btnWhiteBlack();
 controlColor();
