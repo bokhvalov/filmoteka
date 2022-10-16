@@ -2,6 +2,7 @@ import { libraryRender } from '../library-page/libraryRender';
 import { addMovieToLib, removeMovieFromLib } from '../localStorage/addRemove';
 import localStrg from '../localStorage/localStrg';
 import *as noImage from "../../images/main/no-picture.jpg";
+import { isQueued, isWatched } from '../lang/changeBttnsModal';
 
 let closeButton = document.querySelector('.cross');
 const modalBackdrop = document.querySelector('.backdrop');
