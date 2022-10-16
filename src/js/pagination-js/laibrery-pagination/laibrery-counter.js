@@ -7,6 +7,8 @@ import { markupLastPagLib } from './laibrery-markup';
 import { markupStartPagLib } from './laibrery-markup';
 import { markupPagLib } from './laibrery-markup';
 
+import { isNone } from './laibrery-plagin';
+
 const divLib = document.querySelector('#pagination');
 
 ////////////////////////////// СЧЕТЧИК ПАГИНАЦИИ ////////////////////////////////////////////////////////////////////////////////////////
@@ -146,6 +148,8 @@ export function startPageLib() {
   divLib.innerHTML = '';
 
   divLib.innerHTML = markupStartPagLib();
+
+  isNone();
 }
 
 // ЕСЛИ МАКСИМАЛЬНОЕ КАЛИЧЕСТВО СТРАНИЦ МЕНЬШЕ 8 РАЗМЕТКА ДОЛЖНА БЫТЬ ДИНАМИЧЕСКОЙ
@@ -173,4 +177,6 @@ export function adaptivPageLib() {
   }
 
   ulLib.insertAdjacentHTML('beforeend', liLib);
+
+  isNone();
 }
