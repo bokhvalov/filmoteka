@@ -27,7 +27,7 @@ export function openModal(event) {
 function renderModal(movieID) {
   const currentPageContent = localStrg.load('currentPage');
   const movieToRender = currentPageContent.find(movie => movie.id === movieID);
-
+  console.log(movieToRender);
   const {
     id,
     title,

@@ -7,6 +7,7 @@ import Spinner from '../common/spinner';
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
 
+
 const spin = new Spinner();
 
 
