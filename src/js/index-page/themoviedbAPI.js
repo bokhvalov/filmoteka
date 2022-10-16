@@ -17,7 +17,6 @@ export async function fetchGenresList(token) {
   return response.genres;
 }
 
-// ФУНКЦИЯ ЗАПРОСА ПУТЬ ЗАПРОСА
 export async function fetchSearch(token, name) {
   const response = await (
     await fetch(
@@ -28,23 +27,31 @@ export async function fetchSearch(token, name) {
 }
 
 /* функция расширенного запроса с учетом жанра, года релиза,  ключевого слова */
-export async function fetchExtendedSearch(token,genre="none",year=0, keyword=0){
+export async function fetchExtendedSearch(
+  token,
+  genre = 'none',
+  year = 0,
+  keyword = 0
+) {
   let apiString = APIURL + `3/discover/movie?api_key=${token}&language=en-US`;
-  if (year!==0) {
-    apiString=apiString + `&primary_release_year=${year}`;
+  if (year !== 0) {
+    apiString = apiString + `&primary_release_year=${year}`;
   }
-  if (genre!=="none") {
-    apiString=apiString + `&with_genres=${genre}`;
+  if (genre !== 'none') {
+    apiString = apiString + `&with_genres=${genre}`;
   }
-  if (keyword!==0) {
-    apiString=apiString + `&with_keywords=${keyword}`;
+  if (keyword !== 0) {
+    apiString = apiString + `&with_keywords=${keyword}`;
   }
-  const response = await (await fetch(apiString)).json()
+  const response = await (await fetch(apiString)).json();
   return response;
 }
 /* функция поска ключевого слова */
-export async function fetchKeyWordsSearch(token,query){
-  const response = await (await fetch(APIURL+`3/search/keyword?api_key=${token}&language=en-US&query=${query}`)).json()
+export async function fetchKeyWordsSearch(token, query) {
+  const response = await (
+    await fetch(
+      APIURL + `3/search/keyword?api_key=${token}&language=en-US&query=${query}`
+    )
+  ).json();
   return response;
 }
-

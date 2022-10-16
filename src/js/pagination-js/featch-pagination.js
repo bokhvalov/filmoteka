@@ -5,15 +5,20 @@ import { renderItems } from '../common/renderItems';
 import { PAGE } from './main-pagination';
 import { searchQueryPagination } from '../index-page/search';
 
+import { getPopularMovies } from '../index-page/search';
+import goTopBtn from '../common/goTopBtn';
+import Spinner from '../common/spinner';
+const spin = new Spinner();
+
 export async function searchMoviesPagination(event) {
   event.preventDefault();
-  // console.log(searchQueryPagination);
   const searchResult = await getSearchMoviesPagination();
-  // console.log(searchResult);
   const currentPageContent = await processCurrentPage(searchResult);
 
   if (currentPageContent.length > 0) {
     renderItems(currentPageContent);
+    spin.spinOff();
+    goTopBtn();
     return;
   }
 }
@@ -31,4 +36,13 @@ async function fetchSearchPagination(token) {
     )
   ).json();
   return response;
+}
+
+export async function renderPopularMoviesPagination() {
+  const popularMovies = await getPopularMovies(APIKEY);
+  const currentPageContent = await processCurrentPage(popularMovies);
+
+  renderItems(currentPageContent);
+  spin.spinOff();
+  goTopBtn();
 }
