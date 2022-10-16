@@ -144,7 +144,7 @@ export function startPageLib() {
   //   console.log('до ретурн');
   //   return;
   // }
-  // console.log('после ретурн');
+  
   divLib.innerHTML = '';
 
   divLib.innerHTML = markupStartPagLib();
