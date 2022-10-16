@@ -48,7 +48,7 @@ export async function fetchExtendedSearch(
     lang = `uk`;
   }
 
-  let apiString = APIURL + `3/discover/movie?api_key=${token}}&language=${lang}`;
+  let apiString = APIURL + `3/discover/movie?api_key=${token}&language=${lang}`;
   if (year !== 0) {
     apiString = apiString + `&primary_release_year=${year}`;
   }
