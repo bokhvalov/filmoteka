@@ -15,6 +15,8 @@ import debounce from 'lodash.debounce';
 import { fetchKeyWordsSearch } from './themoviedbAPI';
 import Notiflix from 'notiflix';
 
+import { langCurrent } from '../lang/changeLang';
+
 /* переменные для расширенного поиска */
 let genre = 'none';
 let year = 0;
