@@ -19,6 +19,10 @@ let year = 0;
 let keyword = 0;
 
 
+import btnWhiteBlack from '../common/btn-white-black';
+import controlColor from '../common/controlColor';
+
+
 const spin = new Spinner();
 
 export const APIKEY = '565e4989d784811de7dff7d665000157';
@@ -52,6 +56,7 @@ refs.filterForm.addEventListener('submit', onFormSubmitHandler);
 refs.filterInput.addEventListener('input', debounce(onFormInputChangeHandler,700));
 
 
+
 spin.spinOn();
 renderPopularMovies();
 setTimeout(startPage, 500);
@@ -65,6 +70,7 @@ export async function renderPopularMovies() {
 
 goTopBtn();
 }
+
 
 /* расширенный поиск */
 export async function renderExtandedSearchMovies(genre,year,keyword) {
@@ -149,3 +155,6 @@ function renderKeyWords (htmlElem, keyWords){
 
  }
 
+
+btnWhiteBlack();
+controlColor();
