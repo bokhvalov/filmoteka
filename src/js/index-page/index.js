@@ -1,6 +1,8 @@
 import { openModalFooter } from '../common/modal-footer';
 import { openModal } from '../common/modal';
 import { searchMovies } from './search';
+import { filterRenderGenre } from './filterRender';
+import { filterRenderYear } from './filterRender';
 import goTopBtn from '../common/goTopBtn';
 import { renderPopularMovies } from './renderPopularMovies';
 import btnWhiteBlack from '../common/btn-white-black';
@@ -9,6 +11,8 @@ import * as extendedSearch from "./extendedSearch";
 export const APIKEY = '565e4989d784811de7dff7d665000157';
 export const APIURL = 'https://api.themoviedb.org/';
 
+filterRenderYear();
+filterRenderGenre();
 
 export const refs = {
   mainContainer: document.querySelector('.filmoteka__container'),
@@ -23,6 +27,8 @@ refs.form.addEventListener('submit', searchMovies);
 
 
 renderPopularMovies();
+
+
 goTopBtn();
 btnWhiteBlack();
 controlColor();

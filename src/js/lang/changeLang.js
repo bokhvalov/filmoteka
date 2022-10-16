@@ -1,5 +1,6 @@
 import { text } from './packageLang';
 import { renderPopularMovies } from '../index-page/renderPopularMovies';
+import { filterRenderGenre, filterRenderYear } from '../index-page/filterRender';
 
 
 const refs = {
@@ -14,8 +15,6 @@ const inputPlaceholder = document.querySelector('.header_search-input')
 
 const extInputPlaceholder = document.querySelector('.keyword-input');
 const extInputLabel = document.querySelector('#keywords-label');
-const extSearchYears = document.querySelector('.js-filter-years--default');
-const extSearchGenres = document.querySelector('.js-filter-genres--default');
 const extSearchBtnSbmt = document.querySelector('.js-filter-submit');
 const extSearchBtnRst = document.querySelector('.js-filter-reset');
 
@@ -51,9 +50,10 @@ export function setLang(lang) {
       extInputPlaceholder.placeholder = 'пошук...';
       extSearchBtnSbmt.innerHTML = 'шукати';
       extSearchBtnRst.innerHTML = 'скинути';
-      extSearchGenres.innerHTML = 'Усі жанри';
+      filterRenderYear();
+      filterRenderGenre();
       extSearchYears.innerHTML = 'Усі роки';
-
+    
     } else {
       document.querySelector('html').setAttribute('lang', 'en')
       inputPlaceholder.placeholder = 'Movie search'
@@ -64,7 +64,8 @@ export function setLang(lang) {
       extInputPlaceholder.placeholder = 'search...';
       extSearchBtnSbmt.innerHTML = 'search';
       extSearchBtnRst.innerHTML = 'reset';
-      extSearchGenres.innerHTML = 'All Genres';
+      filterRenderYear();
+      filterRenderGenre();
       extSearchYears.innerHTML = 'All years';
 
     }
