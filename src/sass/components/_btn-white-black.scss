@@ -1,4 +1,5 @@
 .switch-btn {
+
     display: inline-block;
     width: 40px;
     /* ширина переключателя */
@@ -19,6 +20,7 @@
     // top: 30px;
     // right: 50px;
     line-height: 1.5;
+    margin-left: auto;
 }
 
 .switch-btn::after {

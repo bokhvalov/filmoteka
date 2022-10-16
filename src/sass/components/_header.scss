@@ -1,15 +1,16 @@
+
 .header {
     text-align: center;
     background-image: url('/src/images/header/mobail-bi.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 40px;
-    padding-bottom: 90px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     margin-bottom: 60px;
     @media screen and (min-width: 768px) {
         background-image: url('/src/images/header/tablet-bi.jpg');
-        padding-bottom: 80px;
+        padding-bottom: 30px;
     }
 
     @media screen and (min-width: 1280px) {
@@ -37,11 +38,29 @@
     }
 }
 
+.header-nav_fixed {
+    z-index: 300;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('/src/images/header/desktop-bi.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 10px 50px;
+    @media screen and (min-width: 768px) {
+        padding: 10px 100px;
+    }
+
+}
+
 .header-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 58px;    
+    justify-content: space-between;   
+    margin-bottom: 50px;
 }
 
 .header-nav_list {
@@ -118,11 +137,17 @@
 
 }
 
+.link-activ {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #FF001B;
 
+    &:hover {
+    border-bottom: none;
+    }
+}
 
 .header-nav_logo-text {
     font-size: 0;
-
     @media screen and (min-width: 768px) {
         font-size: 30px;
         margin-left: 10px;
@@ -130,22 +155,22 @@
 }
 
 .header_search {
+    position: relative;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     height: 20px;
     width: 100%;
+    margin-bottom: 50px;
     @media screen and (min-width: 768px) {
-            width: 330px;
+        width: 330px;
     }
     
     @media screen and (min-width: 1280px) {
         width: 400px;
     }
     &:hover .header_search-input,
-    &:hover .header_search-btn,
-    &:focus .header_search-input,
-    &:focus .header_search-btn {
+    &:focus .header_search-input{
         border-bottom: 0.5px solid red;
     }
     
@@ -161,28 +186,42 @@
     font-size: 14px;
     color: #fff;
     caret-color: #FF001B;
+    padding-right: 50px;
     transition: border-bottom $transition-timing $transition-function;
     &:focus-visible{
         outline: none;
     }
 }
 
+.header_search button {
+    padding: 3px;
+}
+
 .header_search-btn {
+    position: absolute;
+    content: '';
+    right: 30px;
+    bottom: 0px;
     transition: border-bottom $transition-timing $transition-function;
     display: inline-flex;
     background-color: inherit;
     border: none;
-     border-bottom: 0.5px solid #fff;
-    margin: 0;
-    padding: 0;
+}
 
-    
+.header_search-btn-dealet {
+    position: absolute;
+    content: '';
+    right: 3px;
+    bottom: 0px;
+    transition: border-bottom $transition-timing $transition-function;
+    display: inline-flex;
+    background-color: inherit;
+    border: none;
 }
 
 .header_search-btn_close {
     height: 100%;
     fill: #fff;
-    margin-right: 5px;
     transition: transform $transition-timing $transition-function;
     &:hover {
              transform: scale(1.25);
@@ -190,9 +229,12 @@
 }
 
 .vertical-line {
-    /*border-left: 1px solid #dadce0;*/
+    position: relative;
+    content: '';
+    right: 24px;
+    bottom: 0px;
+    width: 1px;
     color: #fff;
-    height: 35%;
     margin-right: 5px;
 }
 
@@ -248,7 +290,6 @@
 
 .translate {
     border: none;
-    padding: 0 10px 0 10px;
     text-decoration: none;
     font-size: 16px;
     background-color: transparent;
@@ -274,9 +315,14 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    margin-top: 25px;
 }
 
+.header-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
 .zsu {
     margin-left: auto;
@@ -307,4 +353,8 @@
 
 button {
     cursor: pointer;
+}
+
+.fddfdf {
+    margin-left: auto;
 }

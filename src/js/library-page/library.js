@@ -6,7 +6,7 @@ import { isTouuchDevice } from '../library-page/libraryBackground';
 import Spinner from '../common/spinner';
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
-
+import '../common/headers-fixed'
 const spin = new Spinner();
 
 
