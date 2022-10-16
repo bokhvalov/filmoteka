@@ -1,9 +1,9 @@
 import localStrg from '../localStorage/localStrg';
 import { renderItems } from '../common/renderItems';
 const libraryBackground = document.querySelector('.background-wrapper');
-import { startPageLib } from '../pagination-js/laibrery-pagination/laibrery-counter';
-import { adaptivPageLib } from '../pagination-js/laibrery-pagination/laibrery-counter';
-import { PAGE_LIBR } from '../pagination-js/laibrery-pagination/laibrery-pag';
+import { startPageLib } from '../pagination-js/library-pagination/library-counter';
+import { adaptivPageLib } from '../pagination-js/library-pagination/library-counter';
+import { PAGE_LIBR } from '../pagination-js/library-pagination/library-pag';
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),
