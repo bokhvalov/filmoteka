@@ -12,6 +12,7 @@ const extInputPlaceholder = document.querySelector('.keyword-input');
 const extInputLabel = document.querySelector('#keywords-label');
 const extSearchBtnSbmt = document.querySelector('.js-filter-submit');
 const extSearchBtnRst = document.querySelector('.js-filter-reset');
+const extSearchYears = document.querySelector(".js-filter-years");
 
 export function langCurrent() {
   if (localStorage.getItem('lang') === 'ua') {
