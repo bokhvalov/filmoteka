@@ -2,7 +2,7 @@ import { APIURL } from './index';
 import localStrg from '../localStorage/localStrg';
 import { PAGE } from '../pagination-js/main-pagination';
 import { langCurrent, setLang } from '../lang/changeLang';
-
+let lang = 'ua';
 export async function fetchPopular(token) {
   let pageLang = localStorage.getItem('lang');
     if (pageLang === 'ua') {
