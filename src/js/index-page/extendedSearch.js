@@ -7,6 +7,11 @@ import debounce from 'lodash.debounce';
 import { fetchKeyWordsSearch } from './themoviedbAPI';
 import Notiflix from 'notiflix';
 import renderPopularMovies from './renderPopularMovies';
+import { APIKEY } from './index';
+import { APIKEY } from "../index-page/index";
+import Spinner from '../common/spinner';
+
+const spin = new Spinner();
 
 
 
