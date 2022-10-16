@@ -2,6 +2,8 @@ export default function controlColor() {
     const paginColor = document.querySelectorAll('.pagination__page');
     const paginEllips = document.querySelectorAll('.pagination__ellipsis');
     const gallerySubtittle = document.querySelectorAll('.subtitle');
+    const bgDark = document.querySelector('.img__wrapper-dark');
+    const bgLight = document.querySelector('.img__wrapper-lignt');
     
     try {
         if (localStorage.getItem('section') === 'section-black') {
@@ -13,6 +15,9 @@ export default function controlColor() {
             paginColor.forEach(p => p.style.color = '#ffffff'),
             paginEllips.forEach(pEl => pEl.style.color = '#ffffff'),
             gallerySubtittle.forEach(g => g.style.color = '#ffffff');
+            bgDark.classList.remove('no-display');
+            bgLight.classList.add('no-display');
+            
         }
         else {
             document.querySelector('footer').style.backgroundColor = '#f7f7f7';
@@ -23,6 +28,9 @@ export default function controlColor() {
             paginColor.forEach(p => p.style.color = '#000000'),
             paginEllips.forEach(pEl => pEl.style.color = '#000000'),
             gallerySubtittle.forEach(g => g.style.color = '#000000');
+            bgDark.classList.add('no-display');
+            bgLight.classList.remove('no-display');
+            
         }
     } catch (err) { }
 }
