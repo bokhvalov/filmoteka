@@ -1,7 +1,10 @@
 .footer {
 /* @extend .section;*/
- background-color: $secondary-bg-color;
- }
+  background-color: $secondary-bg-color;
+  &.black {
+    background-color: #751D1D;
+  }
+}
  
 .footer__container {
 /* @extend .container;*/
