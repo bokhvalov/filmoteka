@@ -4,10 +4,11 @@ import { libraryRender } from './libraryRender';
 import goTopBtn from '../common/goTopBtn';
 import { isTouuchDevice } from '../library-page/libraryBackground';
 import Spinner from '../common/spinner';
-import { btnWhiteBlack } from '../common/btn-white-black';
+import btnWhiteBlack from '../common/btn-white-black';
+import controlColor from '../common/controlColor';
 
 const spin = new Spinner();
-btnWhiteBlack();
+
 spin.spinOn();
 
 export const refs = {
@@ -43,3 +44,5 @@ function clickOnBtnWatchedHandler() {
 
 goTopBtn();
 spin.spinOff();
+btnWhiteBlack();
+controlColor();

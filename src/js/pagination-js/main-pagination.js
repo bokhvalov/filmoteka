@@ -10,6 +10,7 @@ import { ellipsis } from './plagin-pagination';
 import { curentPage } from './plagin-pagination';
 import { disaibledBtn } from './plagin-pagination';
 import Spinner from '../common/spinner';
+import controlColor from '../common/controlColor';
 
 const spin = new Spinner();
 
@@ -43,10 +44,12 @@ function onClickPaginationLink(e) {
   }
 
   // СЧЕТЧИК ПАГИНАЦИИ
+  controlColor();
   renderMarkupOnClickLink(e);
   ellipsis();
   curentPage();
   disaibledBtn();
+  
   spin.spinOff();
 }
 
@@ -81,9 +84,11 @@ function onClickButtonPagination(e) {
   }
 
   // СЧЕТЧИК ПАГИНАЦИИ
+  controlColor();
   renderPaginationONClickBtn(e);
   ellipsis();
   curentPage();
   disaibledBtn();
+  
   spin.spinOff();
 }

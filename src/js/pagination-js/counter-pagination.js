@@ -7,6 +7,8 @@ import { pagMarkup } from './pagination-markup';
 import { markupLastPag } from './pagination-markup';
 import { markupStartPag } from './pagination-markup';
 
+// import controlColor from '../common/controlColor';
+
 const div = document.querySelector('#pagination');
 
 ////////////////////////////// СЧЕТЧИК ПАГИНАЦИИ ////////////////////////////////////////////////////////////////////////////////////////

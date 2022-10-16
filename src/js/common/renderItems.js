@@ -1,11 +1,12 @@
 import *as noImage from "../../images/main/no-picture.jpg";
+import controlColor from "./controlColor";
 
 export function renderItems(currentPageContent) {
   const mainContainer = document.querySelector('.filmoteka__container')
   const itemMarkup = currentPageContent.map(
     ({ id, title, year, genres, rating, imgPath }) => {
 
-      console.log(imgPath);
+      // console.log(imgPath);
       if (genres) {
         let countOfComma = (genres.match(/\,/g) || []).length;
         while (countOfComma > 1) {
@@ -39,4 +40,6 @@ export function renderItems(currentPageContent) {
   );
   mainContainer.innerHTML = '';
   mainContainer.insertAdjacentHTML('beforeend', itemMarkup.join(''));
+  controlColor();
 }
+
