@@ -1,15 +1,15 @@
-import { renderMarkupOnLibClickLink } from './laibrery-counter';
-import { renderPagONLibClickBtn } from './laibrery-counter';
-import { adaptivPageLib } from './laibrery-counter';
+import { renderMarkupOnLibClickLink } from './library-counter';
+import { renderPagONLibClickBtn } from './library-counter';
+import { adaptivPageLib } from './library-counter';
 
 import { libraryRender } from '../../library-page/libraryRender';
 import { loadLaibrery } from '../../localStorage/localStrg';
 
 import { pageCount } from '../../library-page/libraryRender';
 
-import { ellipsisLib } from './laibrery-plagin';
-import { curentPageLib } from './laibrery-plagin';
-import { disaibledBtnLib } from './laibrery-plagin';
+import { ellipsisLib } from './library-plugin';
+import { curentPageLib } from './library-plugin';
+import { disaibledBtnLib } from './library-plugin';
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),

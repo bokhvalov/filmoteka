@@ -1,4 +1,4 @@
-import { PAGE_LIBR } from '../laibrery-pagination/laibrery-pag';
+import { PAGE_LIBR } from '../library-pagination/library-pag';
 import { pageCount } from '../../library-page/libraryRender';
 
 //////////////////////////// УБИРАЮ ИЛИ СТАВЛЮ  "..."

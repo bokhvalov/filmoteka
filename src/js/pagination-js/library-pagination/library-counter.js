@@ -1,13 +1,13 @@
 import { pageCount } from '../../library-page/libraryRender';
 
-import { PAGE_LIBR } from './laibrery-pag';
+import { PAGE_LIBR } from './library-pag';
 
-import { pagMarkupLib } from './laibrery-markup';
-import { markupLastPagLib } from './laibrery-markup';
-import { markupStartPagLib } from './laibrery-markup';
-import { markupPagLib } from './laibrery-markup';
+import { pagMarkupLib } from './library-markup';
+import { markupLastPagLib } from './library-markup';
+import { markupStartPagLib } from './library-markup';
+import { markupPagLib } from './library-markup';
 
-import { isNone } from './laibrery-plagin';
+import { isNone } from './library-plugin';
 
 const divLib = document.querySelector('#pagination');
 
