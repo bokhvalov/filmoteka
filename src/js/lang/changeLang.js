@@ -1,4 +1,5 @@
 import { text } from './packageLang';
+import { renderPopularMovies } from '../index-page/renderPopularMovies';
 
 const refs = {
   enLangBTN: document.getElementById('e-lang-en'),
@@ -57,7 +58,9 @@ export function setIndexLang(lang) {
       extSearchGenres.innerHTML = 'All Genres';
       extSearchYears.innerHTML = 'All years';
     }
+    
   }
+  renderPopularMovies();
 }
 
 export function setLibraryLang(lang) {
