@@ -72,7 +72,7 @@ export function renderPaginationONClickBtn(e) {
   }
 
   // Отрисовка начальных страниц от 1-6
-  if (PAGE <= 2) {
+  if (PAGE <= 5) {
     startPage();
   }
 

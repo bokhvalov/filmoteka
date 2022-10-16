@@ -1,7 +1,7 @@
 <section class="filter">
 <div class="filter-container">
     <form class="filter-search">
-      <label for="keywords-suggest">
+      <label for="keywords-suggest" id="keywords-label">
         Keyword search:
     </label>
     <input class="keyword-input" list="keywords-suggest" name="keyword-input" id="keyword-input" placeholder="search..." autocomplete="off">
@@ -9,7 +9,7 @@
       <datalist id="keywords-suggest">
       </datalist>
         <select class="js-filter-genres" name="select-genre">
-          <option value="" selected="">All Genres:</option>
+          <option class="js-filter-genres--default" value="" selected="">All Genres:</option>
           <option value="28">Action</option>
           <option value="12">Adventure</option>
           <option value="16">Animation</option>
@@ -31,7 +31,7 @@
           <option value="37">Western</option>
         </select>
         <select class="js-filter-years">
-          <option value="" selected="">All years</option>
+          <option class="js-filter-years--default" value="" selected="">All years</option>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>

@@ -8,14 +8,14 @@ import { searchMoviesPagination } from './featch-pagination';
 import { searchQueryPagination } from '../index-page/search';
 import { pageCount } from '../index-page/search';
 
-import { ellipsis } from './plagin-pagination';
-import { curentPage } from './plagin-pagination';
-import { disaibledBtn } from './plagin-pagination';
+import { ellipsis } from './plugin-pagination';
+import { curentPage } from './plugin-pagination';
+import { disaibledBtn } from './plugin-pagination';
 import Spinner from '../common/spinner';
 import controlColor from '../common/controlColor';
 
-import { onLaibreryLink } from './laibrery-pagination/laibrery-pag';
-import { onLaibreryBtn } from './laibrery-pagination/laibrery-pag';
+import { onLaibreryLink } from './library-pagination/library-pag';
+import { onLaibreryBtn } from './library-pagination/library-pag';
 
 const spin = new Spinner();
 
