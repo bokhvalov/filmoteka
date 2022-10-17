@@ -7,7 +7,7 @@ export function removeMovieFromLib(movieID, userLibrary) {
   });
 
   updatedLibraryState =
-    updatedLibraryState.length > 0 ? updatedLibraryState : null;
+    updatedLibraryState.length ? updatedLibraryState : null;
   localStrg.save(userLibrary, updatedLibraryState);
 }
 
