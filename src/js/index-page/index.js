@@ -4,7 +4,7 @@ import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
 import { renderPopularMovies } from './renderPopularMovies';
 import btnWhiteBlack from '../common/btn-white-black';
-import { controlColor, controlColorFilter } from '../common/controlColor';
+import controlColor,{ controlColorFilter } from '../common/controlColor';
 import { filterRenderGenre, filterRenderYear } from './filterRender';
 
 import '../common/headers-fixed';
