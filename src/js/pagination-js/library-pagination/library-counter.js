@@ -5,8 +5,6 @@ import { markupLastPagLib } from './library-markup';
 import { markupStartPagLib } from './library-markup';
 import { markupPagLib } from './library-markup';
 
-import { isNone } from './library-plugin';
-
 import controlColor from '../../common/controlColor';
 
 const divLib = document.querySelector('#pagination');
@@ -153,7 +151,6 @@ export function startPageLib() {
   divLib.innerHTML = markupStartPagLib();
 
   controlColor();
-  isNone();
 }
 
 // ЕСЛИ МАКСИМАЛЬНОЕ КАЛИЧЕСТВО СТРАНИЦ МЕНЬШЕ 8 РАЗМЕТКА ДОЛЖНА БЫТЬ ДИНАМИЧЕСКОЙ
@@ -182,5 +179,4 @@ export function adaptivPageLib() {
 
   ulLib.insertAdjacentHTML('beforeend', liLib);
   controlColor();
-  isNone();
 }

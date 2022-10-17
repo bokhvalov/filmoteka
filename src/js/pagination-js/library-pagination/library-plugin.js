@@ -85,13 +85,3 @@ export function curentPageLib(e) {
     refs.preLastPag.classList.add('pagination__page--activ');
   }
 }
-
-//
-export function isNone() {
-  const none = document.querySelector('.thumb');
-  if (pageCount > 1) {
-    none.classList.remove('is-none');
-  } else if (pageCount <= 1) {
-    none.classList.add('is-none');
-  }
-}

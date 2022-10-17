@@ -6,16 +6,22 @@ import { adaptivPageLib } from '../pagination-js/library-pagination/library-coun
 import { PAGE_LIBR } from '../pagination-js/library-pagination/library-pag';
 
 import { langCurrent } from '../lang/changeLang';
-import { isNone } from '../pagination-js/library-pagination/library-plugin';
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),
+  none: document.querySelector('.thumb'),
 };
 export let pageCount;
 
 export function libraryRender(userLibrary) {
   const mainContainer = document.querySelector('.filmoteka__container');
   let currentLib = localStrg.load(userLibrary);
+
+  if (currentLib) {
+    refs.none.classList.remove('is-none');
+  } else if (!currentLib) {
+    refs.none.classList.add('is-none');
+  }
 
   if (!currentLib) {
     libraryBackground.classList.remove('no-display');
@@ -28,9 +34,7 @@ export function libraryRender(userLibrary) {
     }
     return;
   }
-
   pageCount = getPageCount(currentLib);
-  isNone();
   let arrayMove = counterRenderMove(currentLib, PAGE_LIBR);
   renderItems(arrayMove);
   localStrg.save('currentPage', arrayMove);
