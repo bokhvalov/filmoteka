@@ -12,7 +12,6 @@ import { ellipsis } from './plugin-pagination';
 import { curentPage } from './plugin-pagination';
 import { disaibledBtn } from './plugin-pagination';
 import Spinner from '../common/spinner';
-import controlColor from '../common/controlColor';
 
 import { onlibraryLink } from './library-pagination/library-pag';
 import { onlibraryBtn } from './library-pagination/library-pag';
@@ -66,7 +65,6 @@ function onClickPaginationLink(e) {
     ellipsis();
   }
 
-  controlColor();
   curentPage();
   disaibledBtn();
 
@@ -111,7 +109,6 @@ function onClickButtonPagination(e) {
     ellipsis();
   }
 
-  controlColor();
   curentPage();
   disaibledBtn();
 

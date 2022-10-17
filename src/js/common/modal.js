@@ -2,7 +2,6 @@ import { libraryRender } from '../library-page/libraryRender';
 import { addMovieToLib, removeMovieFromLib } from '../localStorage/addRemove';
 import localStrg from '../localStorage/localStrg';
 import *as noImage from "../../images/main/no-picture.jpg";
-import controlColor from "./controlColor";
 import { langCurrent,translateModalBtns } from '../lang/changeLang';
 
 let closeButton = document.querySelector('.cross');
@@ -142,8 +141,9 @@ function renderModal(movieID) {
   }
  
   modalBox.insertAdjacentHTML('beforeend', modalMarkup);
-  controlColor();
+  
   checkUserLib(movieID);
+  
 }
 
 function checkUserLib(movieID) {

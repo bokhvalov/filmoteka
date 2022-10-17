@@ -1,6 +1,5 @@
 import { PAGE } from './main-pagination';
 import { pageCount } from '../index-page/search';
-import controlColor from '../common/controlColor';
 
 //////////////////////////// УБИРАЮ ИЛИ СТАВЛЮ  "..."
 
@@ -21,7 +20,6 @@ export function ellipsis() {
     return;
   }
   refs.ellipsisEnd.classList.remove('visually-hidden');
-  controlColor();
 }
 
 //................. ДЕЛФЮ КНОПКУ НЕ АКТИВНОЙ
@@ -41,7 +39,6 @@ export function disaibledBtn() {
   }
 
   refs.rightBtn.removeAttribute('disabled');
-  controlColor();
 }
 
 // //................ АКТИВНАЯ СТРАНИЦА
@@ -87,5 +84,4 @@ export function curentPage(e) {
   if (refs.preLastPag && PAGE == refs.preLastPag.textContent) {
     refs.preLastPag.classList.add('pagination__page--activ');
   }
-  controlColor();
 }
