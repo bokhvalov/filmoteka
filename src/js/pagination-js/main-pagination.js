@@ -26,8 +26,10 @@ const refs = {
   paginationLib: document.querySelector('#pagination'),
 };
 
-refs.paginationLib.removeEventListener('click', onlibraryLink);
-refs.paginationLib.removeEventListener('click', onlibraryBtn);
+// refs.paginationLib.removeEventListener('click', onlibraryLink);
+// refs.paginationLib.removeEventListener('click', onlibraryBtn);
+setListener(refs.paginationLib, 'click', onlibraryLink);
+setListener(refs.paginationLib, 'click', onlibraryBtn);
 
 setListener(refs.pagination, 'click', onClickPaginationLink);
 setListener(refs.pagination, 'click', onClickButtonPagination);
@@ -36,6 +38,12 @@ setListener(refs.form, 'submit', e => (PAGE = 1));
 function setListener(element, tayp, handler) {
   if (element) {
     element.addEventListener(tayp, handler);
+  }
+}
+
+function setListener(element, tayp, handler) {
+  if (element) {
+    element.removeEventListener(tayp, handler);
   }
 }
 
