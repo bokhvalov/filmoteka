@@ -9,7 +9,7 @@ import { markupPagLib } from './library-markup';
 
 import { isNone } from './library-plugin';
 
-import controlColor from '../../common/controlColor';
+import {controlColor} from '../../common/controlColor';
 
 const divLib = document.querySelector('#pagination');
 

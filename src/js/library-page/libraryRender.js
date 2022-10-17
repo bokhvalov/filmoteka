@@ -43,7 +43,7 @@ export function libraryRender(userLibrary) {
 }
 
 function counterRenderMove(array, PAGE_LIBR) {
-  const cards = 2;
+  const cards = 3;
 
   let refPoint;
   let сountdown;
@@ -76,5 +76,5 @@ function counterRenderMove(array, PAGE_LIBR) {
 }
 
 function getPageCount(arr) {
-  return Math.ceil(arr.length / 2);
+  return Math.ceil(arr.length / 3);
 }

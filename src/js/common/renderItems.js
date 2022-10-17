@@ -1,5 +1,5 @@
 import *as noImage from "../../images/main/no-picture.jpg";
-import controlColor from "./controlColor";
+import {controlColor} from "./controlColor";
 
 export function renderItems(currentPageContent) {
   const mainContainer = document.querySelector('.filmoteka__container')
