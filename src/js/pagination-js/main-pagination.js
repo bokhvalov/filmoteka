@@ -28,8 +28,8 @@ const refs = {
 
 // refs.paginationLib.removeEventListener('click', onlibraryLink);
 // refs.paginationLib.removeEventListener('click', onlibraryBtn);
-setListener(refs.paginationLib, 'click', onlibraryLink);
-setListener(refs.paginationLib, 'click', onlibraryBtn);
+removeListener(refs.paginationLib, 'click', onlibraryLink);
+removeListener(refs.paginationLib, 'click', onlibraryBtn);
 
 setListener(refs.pagination, 'click', onClickPaginationLink);
 setListener(refs.pagination, 'click', onClickButtonPagination);
@@ -41,7 +41,7 @@ function setListener(element, tayp, handler) {
   }
 }
 
-function setListener(element, tayp, handler) {
+function removeListener(element, tayp, handler) {
   if (element) {
     element.removeEventListener(tayp, handler);
   }
@@ -56,7 +56,7 @@ function onClickPaginationLink(e) {
   }
   PAGE = Number(e.target.textContent);
 
-  if (searchQueryPagination) {
+  if (searchQueryPagination === '') {
     spin.spinOn();
     renderPopularMoviesPagination();
   } else {
@@ -100,7 +100,7 @@ function onClickButtonPagination(e) {
     PAGE -= 1;
   }
 
-  if (searchQueryPagination) {
+  if (searchQueryPagination === '') {
     spin.spinOn();
     renderPopularMoviesPagination();
   } else {
