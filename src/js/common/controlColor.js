@@ -6,8 +6,6 @@ export default function controlColor() {
     const modalTattributes = document.querySelectorAll('.modal-table__attribute');
     const searchMovies = document.querySelector('.filter');
     const modalBtn = document.querySelectorAll('.modal-btn');
-    const bgDark = document.querySelector('.img__wrapper-dark');
-    const bgLight = document.querySelector('.img__wrapper-lignt');
     
     try {
         if (localStorage.getItem('section') === 'section-black') {
@@ -34,8 +32,6 @@ export default function controlColor() {
             paginColor.forEach(p => p.style.color = '#ffffff');
             paginEllips.forEach(pEl => pEl.style.color = '#ffffff');
             gallerySubtittle.forEach(g => g.style.color = '#ffffff');
-            // bgDark.classList.remove('no-display');
-            // bgLight.classList.add('no-display');
             
         }
         else {
@@ -55,8 +51,6 @@ export default function controlColor() {
             paginColor.forEach(p => p.style.color = '#000000');
             paginEllips.forEach(pEl => pEl.style.color = '#000000');
             gallerySubtittle.forEach(g => g.style.color = '#000000');
-            // bgDark.classList.add('no-display');
-            // bgLight.classList.remove('no-display');
             
         }
     } catch (err) { console.log(err) }
