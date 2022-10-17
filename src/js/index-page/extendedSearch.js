@@ -103,7 +103,7 @@ async function renderExtandedSearchMovies(genre, year, keyword) {
   function renderKeyWords(htmlElem, keyWords) {
     let stringElement = '';
     htmlElem.innerHTML = '';
-    if (!keyWords || keyWords.length) {
+    if (!keyWords || !keyWords.length) {
       Notiflix.Notify.failure(
         'Sorry, it seems there is no such keyword. Please enter a valid key word'
       );
