@@ -1,4 +1,4 @@
-export function controlColor() {
+export default function controlColor() {
     const paginColor = document.querySelectorAll('.pagination__page');
     const paginEllips = document.querySelectorAll('.pagination__ellipsis');
     const gallerySubtittle = document.querySelectorAll('.subtitle');
@@ -57,7 +57,7 @@ export function controlColor() {
     } catch (err) { console.log(err) }
 }
 
-export function controlColorFilter() { 
+export default function controlColorFilter() { 
     const searchMovies = document.querySelector('.filter');
 
     if (localStorage.getItem('section') === 'section-black') {
