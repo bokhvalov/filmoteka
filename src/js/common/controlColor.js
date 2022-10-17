@@ -57,6 +57,7 @@ export function controlColor() {
     } catch (err) { console.log(err) }
 }
 
+
 export function controlColorFilter() { 
     const searchMovies = document.querySelector('.filter');
 
