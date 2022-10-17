@@ -57,7 +57,7 @@ export default function controlColor() {
     } catch (err) { console.log(err) }
 }
 
-export default function controlColorFilter() { 
+export function controlColorFilter() { 
     const searchMovies = document.querySelector('.filter');
 
     if (localStorage.getItem('section') === 'section-black') {
