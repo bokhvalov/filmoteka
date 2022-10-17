@@ -25,8 +25,8 @@ export default function btnWhiteBlack() {
         }
         controlColor();
         controlColorFilter();
-        controlColorModal();
-        controlColorLibraryRender();
+        // controlColorModal();
+        // controlColorLibraryRender();
   });
 }
 

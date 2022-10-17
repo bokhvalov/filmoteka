@@ -54,4 +54,4 @@ goTopBtn();
 spin.spinOff();
 btnWhiteBlack();
 controlColor();
-controlColorLibraryRender();
+// controlColorLibraryRender();
