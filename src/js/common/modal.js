@@ -27,6 +27,7 @@ export function openModal(event) {
   closeButton.addEventListener('click', modalClosing);
   modalBackdrop.addEventListener('click', modalClosinByBackdrop);
   window.addEventListener('keydown', modalClosinByEsc);
+  controlColorModal();
 }
 
 function renderModal(movieID) {
