@@ -6,24 +6,16 @@ import { renderPopularMovies } from './renderPopularMovies';
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor,{ controlColorFilter } from '../common/controlColor';
 import { filterRenderGenre, filterRenderYear } from './filterRender';
-
+import { refs } from '../common/varriables';
 import '../common/headers-fixed';
-export const APIKEY = '565e4989d784811de7dff7d665000157';
-export const APIURL = 'https://api.themoviedb.org/';
+
 import {langCurrent, setIndexLang} from '../lang/changeLang'
 import { filterRenderGenre, filterRenderYear } from './filterRender';
+
 
 filterRenderGenre();
 filterRenderYear();
 
-export const refs = {
-  mainContainer: document.querySelector('.filmoteka__container'),
-  openModalBtn: document.querySelector('.modal-footer-open'),
-  searchResultText: document.querySelector('.form-text'),
-  form: document.querySelector('.header_search'),
-  enLangBTN: document.getElementById('e-lang-en'),
-  uaLangBTN: document.getElementById('e-lang-ua'),
-};
 
 refs.mainContainer.addEventListener('click', openModal);
 refs.openModalBtn.addEventListener('click', openModalFooter);

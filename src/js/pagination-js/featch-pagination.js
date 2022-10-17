@@ -1,6 +1,5 @@
 import { processCurrentPage } from '../data-processing/processCurrentPage';
-import { APIKEY } from '../index-page/index';
-import { APIURL } from '../index-page/index';
+import { APIKEY,APIURL } from '../common/varriables';
 import { renderItems } from '../common/renderItems';
 import { PAGE } from './main-pagination';
 import { searchQueryPagination } from '../index-page/search';

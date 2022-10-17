@@ -1,6 +1,5 @@
 import { text } from './packageLang';
 
-
 const refs = {
   enLangBTN: document.getElementById('e-lang-en'),
   uaLangBTN: document.getElementById('e-lang-ua'),

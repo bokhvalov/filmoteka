@@ -1,14 +1,12 @@
 import { fetchSearch } from './themoviedbAPI';
 import { processCurrentPage } from '../data-processing/processCurrentPage';
-import { APIKEY } from './index';
-import { refs } from './index';
+import { APIKEY, refs } from '../common/varriables';
 import { startPage } from '../pagination-js/counter-pagination';
 import { renderItems } from '../common/renderItems';
 import { renderPopularMovies } from './renderPopularMovies';
 import localStrg from '../localStorage/localStrg';
 import { fetchPopular } from './themoviedbAPI';
 import { decodeGenres } from '../data-processing/decodeGenres';
-import { APIKEY } from './index';
 import Spinner from '../common/spinner';
 
 import { adaptivPage } from '../pagination-js/counter-pagination';

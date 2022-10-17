@@ -1,5 +1,5 @@
 import { fetchGenresList } from "../index-page/themoviedbAPI";
-import { APIKEY } from "../index-page/index";
+import { APIKEY } from "../common/varriables";
 import localStrg, { save, load, del } from "../localStorage/localStrg";
 
 export async function decodeGenres(genres){

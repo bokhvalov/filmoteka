@@ -1,6 +1,6 @@
 import { langCurrent } from '../lang/changeLang';
 import {fetchGenresList} from './themoviedbAPI';
-import { APIKEY } from './index';
+import { APIKEY } from '../common/varriables';
 import localStrg from '../localStorage/localStrg';
 
 let currentRenderLang=langCurrent();

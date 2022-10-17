@@ -1,4 +1,4 @@
-import { APIURL } from './index';
+import { APIURL } from '../common/varriables';
 import localStrg from '../localStorage/localStrg';
 import { PAGE } from '../pagination-js/main-pagination';
 let lang = 'ua';
