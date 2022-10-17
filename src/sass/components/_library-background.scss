@@ -1,7 +1,7 @@
   .main-div {
     display: none;
 
-    @media screen and (min-width: 786px) {
+    @media screen and (min-width: 768px) {
       display: grid;
     place-items: center;
     min-height: 100vh;
@@ -18,7 +18,8 @@
     display: flex;
     position: relative;
     right: -10px;
-    bottom: 680px;
+    bottom: 660px;
+
   }
   .eye {
     width: 10em;
