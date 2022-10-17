@@ -4,7 +4,8 @@ import { searchMovies } from './search';
 import goTopBtn from '../common/goTopBtn';
 import { renderPopularMovies } from './renderPopularMovies';
 import btnWhiteBlack from '../common/btn-white-black';
-import controlColor from '../common/controlColor';
+import { controlColor, controlColorFilter } from '../common/controlColor';
+
 import '../common/headers-fixed';
 export const APIKEY = '565e4989d784811de7dff7d665000157';
 export const APIURL = 'https://api.themoviedb.org/';
@@ -40,3 +41,4 @@ setIndexLang(currentLang);
 goTopBtn();
 btnWhiteBlack();
 controlColor();
+controlColorFilter();
