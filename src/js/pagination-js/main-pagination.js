@@ -64,6 +64,8 @@ export function onClickPaginationLink(e) {
     searchMoviesPagination(e);
   }
 
+  console.log('Это меин');
+
   // СЧЕТЧИК ПАГИНАЦИИ
 
   if (pageCount > 1 && pageCount < 8) {
