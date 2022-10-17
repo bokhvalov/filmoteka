@@ -10,19 +10,11 @@ import { pageCount } from '../../library-page/libraryRender';
 import { ellipsisLib } from './library-plugin';
 import { curentPageLib } from './library-plugin';
 import { disaibledBtnLib } from './library-plugin';
-
-// import { onClickPaginationLink } from '../main-pagination';
-// import { onClickButtonPagination } from '../main-pagination';
+import controlColor from '../../common/controlColor';
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),
-  // pagination: document.querySelector('#pagination'),
-  // form: document.querySelector('.header_search'),
 };
-
-// removeListenerLib(refs.pagination, 'click', onClickPaginationLink);
-// removeListenerLib(refs.pagination, 'click', onClickButtonPagination);
-// removeListenerLib(refs.form, 'submit', e => (PAGE = 1));
 
 setListenerLib(refs.paginationLib, 'click', onlibraryLink);
 setListenerLib(refs.paginationLib, 'click', onlibraryBtn);
@@ -32,12 +24,6 @@ function setListenerLib(element, tayp, handler) {
   }
 }
 
-// function removeListenerLib(element, tayp, handler) {
-//   if (element) {
-//     element.removeEventListener(tayp, handler);
-//   }
-// }
-
 export let PAGE_LIBR = 1;
 
 export function onlibraryLink(e) {
@@ -46,7 +32,6 @@ export function onlibraryLink(e) {
     return;
   }
 
-  console.log('Это библиотека');
   PAGE_LIBR = Number(e.target.textContent);
 
   if (loadlibrary === 'watched') {
@@ -62,6 +47,7 @@ export function onlibraryLink(e) {
     renderMarkupOnLibClickLink();
     ellipsisLib();
   }
+  controlColor();
   curentPageLib();
   disaibledBtnLib();
 }
@@ -95,6 +81,7 @@ export function onlibraryBtn(e) {
     renderPagONLibClickBtn();
     ellipsisLib();
   }
+  controlColor();
   curentPageLib();
   disaibledBtnLib();
 }
