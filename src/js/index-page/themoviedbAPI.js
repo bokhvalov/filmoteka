@@ -48,13 +48,13 @@ export async function fetchExtendedSearch(
   }
 
   let apiString = APIURL + `3/discover/movie?api_key=${token}&language=${lang}`;
-  if (year !== 0) {
+  if (year) {
     apiString = apiString + `&primary_release_year=${year}`;
   }
   if (genre !== 'none') {
     apiString = apiString + `&with_genres=${genre}`;
   }
-  if (keyword !== 0) {
+  if (keyword) {
     apiString = apiString + `&with_keywords=${keyword}`;
   }
   const response = await (await fetch(apiString)).json();

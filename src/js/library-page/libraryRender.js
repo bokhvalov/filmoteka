@@ -5,6 +5,7 @@ import { startPageLib } from '../pagination-js/library-pagination/library-counte
 import { adaptivPageLib } from '../pagination-js/library-pagination/library-counter';
 import { PAGE_LIBR } from '../pagination-js/library-pagination/library-pag';
 import { langCurrent } from '../lang/changeLang';
+import { isNone } from '../pagination-js/library-pagination/library-plugin';
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),
@@ -28,6 +29,7 @@ export function libraryRender(userLibrary) {
   }
 
   pageCount = getPageCount(currentLib);
+  isNone();
   let arrayMove = counterRenderMove(currentLib, PAGE_LIBR);
   renderItems(arrayMove);
   localStrg.save('currentPage', arrayMove);
@@ -41,7 +43,7 @@ export function libraryRender(userLibrary) {
 }
 
 function counterRenderMove(array, PAGE_LIBR) {
-  const cards = 3;
+  const cards = 2;
 
   let refPoint;
   let сountdown;
@@ -74,5 +76,5 @@ function counterRenderMove(array, PAGE_LIBR) {
 }
 
 function getPageCount(arr) {
-  return Math.ceil(arr.length / 3);
+  return Math.ceil(arr.length / 2);
 }

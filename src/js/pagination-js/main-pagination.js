@@ -26,8 +26,6 @@ const refs = {
   paginationLib: document.querySelector('#pagination'),
 };
 
-// refs.paginationLib.removeEventListener('click', onlibraryLink);
-// refs.paginationLib.removeEventListener('click', onlibraryBtn);
 removeListener(refs.paginationLib, 'click', onlibraryLink);
 removeListener(refs.paginationLib, 'click', onlibraryBtn);
 
