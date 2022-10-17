@@ -1,4 +1,4 @@
-import controlColor,{controlColorFilter} from "./controlColor";
+import { controlColor, controlColorFilter, controlColorModal, controlColorLibraryRender } from "./controlColor";
 
 export default function btnWhiteBlack() {
   const btnDAndN = document.querySelector('.switch-btn');
@@ -25,6 +25,8 @@ export default function btnWhiteBlack() {
         }
         controlColor();
         controlColorFilter();
+        controlColorModal();
+        controlColorLibraryRender();
   });
 }
 
