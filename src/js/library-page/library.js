@@ -6,7 +6,7 @@ import { isTouuchDevice } from '../library-page/libraryBackground';
 import Spinner from '../common/spinner';
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
-import '../common/headers-fixed'
+import '../common/headers-fixed';
 
 import { langCurrent, setLibraryLang } from '../lang/changeLang';
 
@@ -20,14 +20,14 @@ export const refs = {
   openModalBtn: document.querySelector('.modal-footer-open'),
   mainContainer: document.querySelector('.filmoteka__container'),
   enLangBTN: document.getElementById('e-lang-en'),
-  uaLangBTN: document.getElementById('e-lang-ua')
+  uaLangBTN: document.getElementById('e-lang-ua'),
 };
 
-refs.enLangBTN.addEventListener('click', ()=>setLibraryLang('en'));
-refs.uaLangBTN.addEventListener('click', ()=>setLibraryLang('ua'));
+refs.enLangBTN.addEventListener('click', () => setLibraryLang('en'));
+refs.uaLangBTN.addEventListener('click', () => setLibraryLang('ua'));
 
 const currentLang = langCurrent();
-libraryRender("watched");
+libraryRender('watched');
 setLibraryLang(currentLang);
 
 /* asigning events listiners to buttons: watched and queued */
@@ -41,13 +41,13 @@ refs.openModalBtn.addEventListener('click', openModalFooter);
 function clickOnBtnQueuedHandler() {
   refs.btnWatched.classList.remove('active-btn');
   refs.btnQueued.classList.add('active-btn');
-  libraryRender("queued");
+  libraryRender('queued');
 }
 
 function clickOnBtnWatchedHandler() {
   refs.btnQueued.classList.remove('active-btn');
   refs.btnWatched.classList.add('active-btn');
-  libraryRender("watched");
+  libraryRender('watched');
 }
 
 goTopBtn();

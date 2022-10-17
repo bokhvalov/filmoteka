@@ -1,7 +1,5 @@
 import { pageCount } from '../../library-page/libraryRender';
-
 import { PAGE_LIBR } from './library-pag';
-
 import { pagMarkupLib } from './library-markup';
 import { markupLastPagLib } from './library-markup';
 import { markupStartPagLib } from './library-markup';
@@ -100,6 +98,7 @@ function lastPagesLib(pages) {
   peg2 = pageCount - 5;
 
   divLib.innerHTML = markupLastPagLib(peg2, peg3, peg4, peg5, peg6);
+  controlColor();
 }
 
 //////////////////////////////////// УМЕНЬШЕНИЕ СЧЕТЧИКА
@@ -118,6 +117,7 @@ function dicremrntLib(pages) {
   peg2 -= 4;
 
   divLib.innerHTML = pagMarkupLib(peg2, peg3, peg4, peg5, peg6);
+  controlColor();
 }
 
 ////////////////////////////////// // УВИЛИЧЕНИЕ СЧЕТЧИКА
@@ -137,6 +137,7 @@ function incrimentLib(pages) {
   peg6 += 4;
 
   divLib.innerHTML = pagMarkupLib(peg2, peg3, peg4, peg5, peg6);
+  controlColor();
 }
 
 // //////////////////// РАЗМЕТКА ПАГИНАЦИИ ПРИ ПЕРВОМ ЗАПУСКЕ СТРАНИЦЫ (НАЧАЛЬНАЯ СТРАНИЦА)
@@ -180,5 +181,6 @@ export function adaptivPageLib() {
   }
 
   ulLib.insertAdjacentHTML('beforeend', liLib);
+  controlColor();
   isNone();
 }

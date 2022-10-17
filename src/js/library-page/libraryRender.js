@@ -4,6 +4,7 @@ const libraryBackground = document.querySelector('.background-wrapper');
 import { startPageLib } from '../pagination-js/library-pagination/library-counter';
 import { adaptivPageLib } from '../pagination-js/library-pagination/library-counter';
 import { PAGE_LIBR } from '../pagination-js/library-pagination/library-pag';
+
 import { langCurrent } from '../lang/changeLang';
 import { isNone } from '../pagination-js/library-pagination/library-plugin';
 
@@ -43,7 +44,7 @@ export function libraryRender(userLibrary) {
 }
 
 function counterRenderMove(array, PAGE_LIBR) {
-  const cards = 2;
+  const cards = 3;
 
   let refPoint;
   let сountdown;
@@ -76,5 +77,5 @@ function counterRenderMove(array, PAGE_LIBR) {
 }
 
 function getPageCount(arr) {
-  return Math.ceil(arr.length / 2);
+  return Math.ceil(arr.length / 3);
 }
