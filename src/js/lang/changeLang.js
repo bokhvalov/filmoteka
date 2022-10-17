@@ -1,5 +1,4 @@
 import { text } from './packageLang';
-import { renderPopularMovies } from '../index-page/renderPopularMovies';
 import { filterRenderGenre, filterRenderYear } from '../index-page/filterRender';
 
 const refs = {
