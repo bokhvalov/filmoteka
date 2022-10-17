@@ -19,7 +19,7 @@ import { fetchExtendedSearch } from './themoviedbAPI';
 const spin = new Spinner();
 const paginationDiv = document.querySelector('#pagination');
 export let pageCount;
-export let searchQueryPagination = '';
+export let searchQueryPagination;
 
 let searchQuery = '';
 

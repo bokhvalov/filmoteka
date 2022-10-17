@@ -56,7 +56,7 @@ function onClickPaginationLink(e) {
   }
   PAGE = Number(e.target.textContent);
 
-  if (searchQueryPagination === '') {
+  if (!searchQueryPagination) {
     spin.spinOn();
     renderPopularMoviesPagination();
   } else {
@@ -100,7 +100,7 @@ function onClickButtonPagination(e) {
     PAGE -= 1;
   }
 
-  if (searchQueryPagination === '') {
+  if (!searchQueryPagination) {
     spin.spinOn();
     renderPopularMoviesPagination();
   } else {
