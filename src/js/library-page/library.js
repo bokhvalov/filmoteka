@@ -23,8 +23,8 @@ export const refs = {
   uaLangBTN: document.getElementById('e-lang-ua')
 };
 
-refs.enLangBTN.addEventListener('click', setLibraryLang.bind(null, 'en'));
-refs.uaLangBTN.addEventListener('click', setLibraryLang.bind(null, 'ua'));
+refs.enLangBTN.addEventListener('click', ()=>setLibraryLang('en'));
+refs.uaLangBTN.addEventListener('click', ()=>setLibraryLang('ua'));
 
 const currentLang = langCurrent();
 libraryRender("watched");

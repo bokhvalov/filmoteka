@@ -31,7 +31,7 @@ export function setIndexLang(lang) {
     if (elem !== null) {
       elem.textContent = text[lang][par];
     }
-
+  }
     if (lang === 'ua') {
       document.querySelector('html').setAttribute('lang', 'ua');
       inputPlaceholder.placeholder = 'Пошук Фільму';
@@ -53,11 +53,8 @@ export function setIndexLang(lang) {
       extInputPlaceholder.placeholder = 'search...';
       extSearchBtnSbmt.innerHTML = 'search';
       extSearchBtnRst.innerHTML = 'reset';
-
-    }
     
   }
-  renderPopularMovies();
   filterRenderGenre();
   filterRenderYear();
 }

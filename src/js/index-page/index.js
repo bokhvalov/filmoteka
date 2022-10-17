@@ -27,8 +27,13 @@ export const refs = {
 refs.mainContainer.addEventListener('click', openModal);
 refs.openModalBtn.addEventListener('click', openModalFooter);
 refs.form.addEventListener('submit', searchMovies);
-refs.enLangBTN.addEventListener('click', setIndexLang.bind(null, 'en'));
-refs.uaLangBTN.addEventListener('click', setIndexLang.bind(null, 'ua'));
+refs.enLangBTN.addEventListener('click', ()=>changeLang('en'));
+refs.uaLangBTN.addEventListener('click', ()=>changeLang('ua'));
+
+function changeLang (lang){
+  setIndexLang(lang);
+  renderPopularMovies();
+}
 
 const currentLang = langCurrent();
 renderPopularMovies();
