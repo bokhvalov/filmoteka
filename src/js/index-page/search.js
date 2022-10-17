@@ -39,11 +39,11 @@ export async function searchMovies(event) {
   const searchResult = await getSearchMovies();
   const currentPageContent = await processCurrentPage(searchResult);
 
-  if (searchResult.length > 0) {
+  if (searchResult.length) {
     searchQueryPagination = event.target.search.value;
   }
 
-  if (currentPageContent.length > 0) {
+  if (currentPageContent.length) {
     renderItems(currentPageContent);
 
     paginationDiv.innerHTML = '';

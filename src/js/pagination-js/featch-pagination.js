@@ -15,7 +15,7 @@ export async function searchMoviesPagination(event) {
   const searchResult = await getSearchMoviesPagination();
   const currentPageContent = await processCurrentPage(searchResult);
 
-  if (currentPageContent.length > 0) {
+  if (currentPageContent.length) {
     renderItems(currentPageContent);
     spin.spinOff();
     goTopBtn();
