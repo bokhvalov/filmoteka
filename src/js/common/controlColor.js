@@ -4,7 +4,7 @@ export default function controlColor() {
     const gallerySubtittle = document.querySelectorAll('.subtitle');
     const modaTvalue = document.querySelectorAll('.modal-table__value');
     const modalTattributes = document.querySelectorAll('.modal-table__attribute');
-    const searchMovies = document.querySelector('.filter');
+    // const searchMovies = document.querySelector('.filter');
     const modalBtn = document.querySelectorAll('.modal-btn');
     
     try {
@@ -17,7 +17,7 @@ export default function controlColor() {
             // document.querySelector('.film-about').style.color = '#ffffff';
             // document.querySelector('.film-description').style.color = '#ffffff';
             // document.querySelector('.modal-table__votes').style.background = '#878787';
-            searchMovies.classList.add('black-theme');
+            // searchMovies.classList.add('black-theme');
 
             // .film-name
             // .modal-table__value (all)
@@ -43,7 +43,8 @@ export default function controlColor() {
             // document.querySelector('.film-about').style.color = '#000000';
             // document.querySelector('.film-description').style.color = '#000000';
             // document.querySelector('.modal-table__votes').style.background = '#f7f7f7';
-            searchMovies.classList.remove('black-theme');
+            // searchMovies.classList.remove('black-theme');
+
             // document.querySelector('.empty_text').style.color = '#000000';
             modaTvalue.forEach(mtv => mtv.style.color = '#000000');
             modalTattributes.forEach(mta => mta.style.color = '#8c8c8c');
@@ -54,4 +55,14 @@ export default function controlColor() {
             
         }
     } catch (err) { console.log(err) }
+}
+
+export default function controlColorFilter() { 
+    const searchMovies = document.querySelector('.filter');
+
+    if (localStorage.getItem('section') === 'section-black') {
+        searchMovies.classList.add('black-theme');
+    } else {
+        searchMovies.classList.remove('black-theme');
+    }
 }
