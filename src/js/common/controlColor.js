@@ -57,13 +57,16 @@ export function controlColor() {
     } catch (err) { console.log(err) }
 }
 
+
 export function controlColorFilter() { 
     const searchMovies = document.querySelector('.filter');
 
     if (localStorage.getItem('section') === 'section-black') {
         searchMovies.classList.add('black-theme');
+        document.getElementById('keywords-label').style.color = '#ffffff';
     } else {
         searchMovies.classList.remove('black-theme');
+        document.getElementById('keywords-label').style.color = '#000000';
     }
 }
 
