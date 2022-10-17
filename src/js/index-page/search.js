@@ -63,13 +63,17 @@ export async function searchMovies(event) {
 
 export async function getSearchMovies() {
   const popularMovies = await fetchSearch(APIKEY, searchQuery);
-  pageCount = popularMovies.total_pages;
+  if (popularMovies.total_pages > 0) {
+    pageCount = popularMovies.total_pages;
+  }
   return popularMovies.results;
 }
 
 export async function getPopularMovies(APIKEY) {
   const popularMovies = await fetchPopular(APIKEY);
-  pageCount = popularMovies.total_pages;
+  if (popularMovies.total_pages > 0) {
+    pageCount = popularMovies.total_pages;
+  }
   return popularMovies.results;
 }
 
@@ -81,6 +85,9 @@ export async function getExtSearchMovies(APIKEY, genre, year, keyword) {
     year,
     keyword
   );
-  pageCount = extSearchMovies.total_pages;
+
+  if (extSearchMovies.total_pages > 0) {
+    pageCount = extSearchMovies.total_pages;
+  }
   return extSearchMovies.results;
 }

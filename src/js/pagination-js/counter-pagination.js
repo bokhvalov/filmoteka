@@ -6,6 +6,7 @@ import { pagMarkup } from './pagination-markup';
 import { markupLastPag } from './pagination-markup';
 import { markupStartPag } from './pagination-markup';
 import { markupPag } from './pagination-markup';
+import controlColor from '../common/controlColor';
 
 // import controlColor from '../common/controlColor';
 
@@ -72,7 +73,7 @@ export function renderPaginationONClickBtn(e) {
   }
 
   // Отрисовка начальных страниц от 1-6
-  if (PAGE <= 2) {
+  if (PAGE <= 5) {
     startPage();
   }
 
@@ -178,4 +179,5 @@ export function adaptivPage() {
   }
 
   ul.insertAdjacentHTML('beforeend', li);
+  controlColor();
 }

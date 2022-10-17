@@ -8,14 +8,14 @@ import { searchMoviesPagination } from './featch-pagination';
 import { searchQueryPagination } from '../index-page/search';
 import { pageCount } from '../index-page/search';
 
-import { ellipsis } from './plagin-pagination';
-import { curentPage } from './plagin-pagination';
-import { disaibledBtn } from './plagin-pagination';
+import { ellipsis } from './plugin-pagination';
+import { curentPage } from './plugin-pagination';
+import { disaibledBtn } from './plugin-pagination';
 import Spinner from '../common/spinner';
 import controlColor from '../common/controlColor';
 
-import { onLaibreryLink } from './laibrery-pagination/laibrery-pag';
-import { onLaibreryBtn } from './laibrery-pagination/laibrery-pag';
+import { onlibraryLink } from './library-pagination/library-pag';
+import { onlibraryBtn } from './library-pagination/library-pag';
 
 const spin = new Spinner();
 
@@ -27,8 +27,8 @@ const refs = {
   paginationLib: document.querySelector('#pagination'),
 };
 
-refs.paginationLib.removeEventListener('click', onLaibreryLink);
-refs.paginationLib.removeEventListener('click', onLaibreryBtn);
+refs.paginationLib.removeEventListener('click', onlibraryLink);
+refs.paginationLib.removeEventListener('click', onlibraryBtn);
 
 setListener(refs.pagination, 'click', onClickPaginationLink);
 setListener(refs.pagination, 'click', onClickButtonPagination);

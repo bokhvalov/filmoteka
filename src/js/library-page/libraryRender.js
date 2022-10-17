@@ -1,9 +1,10 @@
 import localStrg from '../localStorage/localStrg';
 import { renderItems } from '../common/renderItems';
 const libraryBackground = document.querySelector('.background-wrapper');
-import { startPageLib } from '../pagination-js/laibrery-pagination/laibrery-counter';
-import { adaptivPageLib } from '../pagination-js/laibrery-pagination/laibrery-counter';
-import { PAGE_LIBR } from '../pagination-js/laibrery-pagination/laibrery-pag';
+import { startPageLib } from '../pagination-js/library-pagination/library-counter';
+import { adaptivPageLib } from '../pagination-js/library-pagination/library-counter';
+import { PAGE_LIBR } from '../pagination-js/library-pagination/library-pag';
+import { langCurrent } from '../lang/changeLang';
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),
@@ -15,9 +16,14 @@ export function libraryRender(userLibrary) {
   let currentLib = localStrg.load(userLibrary);
 
   if (!currentLib) {
-    mainContainer.innerHTML =
-      '<div><p2 class="empty_text">It seems that there is no films here!</p2></div>';
     libraryBackground.classList.remove('no-display');
+    if (langCurrent() == 'ua') {
+      mainContainer.innerHTML =
+        '<div><p2 class="empty_text">Схоже, ваша бібліотека порожня.</p2></div>';
+    } else {
+      mainContainer.innerHTML =
+        '<div><p2 class="empty_text">It seems that there is no films here!</p2></div>';
+    }
     return;
   }
 

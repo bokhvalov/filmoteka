@@ -1,7 +1,6 @@
 import { APIURL } from './index';
 import localStrg from '../localStorage/localStrg';
 import { PAGE } from '../pagination-js/main-pagination';
-import { langCurrent, setLang } from '../lang/changeLang';
 let lang = 'ua';
 export async function fetchPopular(token) {
   let pageLang = localStorage.getItem('lang');
@@ -41,7 +40,14 @@ export async function fetchExtendedSearch(
   year = 0,
   keyword = 0
 ) {
-  let apiString = APIURL + `3/discover/movie?api_key=${token}&language=en-US`;
+  let lang = localStorage.getItem('lang');
+  if (lang === 'en') {
+    lang = `en`;
+  } else {
+    lang = `uk`;
+  }
+
+  let apiString = APIURL + `3/discover/movie?api_key=${token}&language=${lang}`;
   if (year !== 0) {
     apiString = apiString + `&primary_release_year=${year}`;
   }
