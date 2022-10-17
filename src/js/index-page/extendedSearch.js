@@ -86,7 +86,7 @@ async function renderExtandedSearchMovies(genre, year, keyword) {
   
   function onFormInputChangeHandler(event) {
     let wordSearch = event.target.value;
-    if (!wordSearch || wordSearch === '') {
+    if (!wordSearch) {
       refs.filterFormSubmitButton.disabled = false;
       return;
     }
@@ -103,7 +103,7 @@ async function renderExtandedSearchMovies(genre, year, keyword) {
   function renderKeyWords(htmlElem, keyWords) {
     let stringElement = '';
     htmlElem.innerHTML = '';
-    if (!keyWords || keyWords.length == 0) {
+    if (!keyWords || keyWords.length) {
       Notiflix.Notify.failure(
         'Sorry, it seems there is no such keyword. Please enter a valid key word'
       );
