@@ -4,8 +4,8 @@ import { pagMarkupLib } from './library-markup';
 import { markupLastPagLib } from './library-markup';
 import { markupStartPagLib } from './library-markup';
 import { markupPagLib } from './library-markup';
-
-import controlColor from '../../common/controlColor';
+import { isNone } from './library-plugin';
+import {controlColor} from '../../common/controlColor';
 
 const divLib = document.querySelector('#pagination');
 

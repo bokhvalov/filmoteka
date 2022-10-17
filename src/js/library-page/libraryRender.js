@@ -4,8 +4,10 @@ const libraryBackground = document.querySelector('.background-wrapper');
 import { startPageLib } from '../pagination-js/library-pagination/library-counter';
 import { adaptivPageLib } from '../pagination-js/library-pagination/library-counter';
 import { PAGE_LIBR } from '../pagination-js/library-pagination/library-pag';
-
 import { langCurrent } from '../lang/changeLang';
+import { controlColorLibraryRender } from '../common/controlColor';
+import { isNone } from '../pagination-js/library-pagination/library-plugin';
+
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),
@@ -28,10 +30,13 @@ export function libraryRender(userLibrary) {
     if (langCurrent() == 'ua') {
       mainContainer.innerHTML =
         '<div><p2 class="empty_text">Схоже, ваша бібліотека порожня.</p2></div>';
+      controlColorLibraryRender();
     } else {
       mainContainer.innerHTML =
         '<div><p2 class="empty_text">It seems that there is no films here!</p2></div>';
+      controlColorLibraryRender();
     }
+    
     return;
   }
   pageCount = getPageCount(currentLib);

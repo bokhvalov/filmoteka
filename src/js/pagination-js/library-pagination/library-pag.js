@@ -10,7 +10,7 @@ import { pageCount } from '../../library-page/libraryRender';
 import { ellipsisLib } from './library-plugin';
 import { curentPageLib } from './library-plugin';
 import { disaibledBtnLib } from './library-plugin';
-import controlColor from '../../common/controlColor';
+import {controlColor} from '../../common/controlColor';
 
 const refs = {
   paginationLib: document.querySelector('#pagination'),

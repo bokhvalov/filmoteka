@@ -7,7 +7,7 @@ import { markupLastPag } from './pagination-markup';
 import { markupStartPag } from './pagination-markup';
 import { markupPag } from './pagination-markup';
 
-import controlColor from '../common/controlColor';
+import {controlColor} from '../common/controlColor';
 
 const div = document.querySelector('#pagination');
 
