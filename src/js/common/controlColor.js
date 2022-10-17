@@ -1,11 +1,11 @@
-export default function controlColor() {
+export function controlColor() {
     const paginColor = document.querySelectorAll('.pagination__page');
     const paginEllips = document.querySelectorAll('.pagination__ellipsis');
     const gallerySubtittle = document.querySelectorAll('.subtitle');
     const modaTvalue = document.querySelectorAll('.modal-table__value');
     const modalTattributes = document.querySelectorAll('.modal-table__attribute');
     // const searchMovies = document.querySelector('.filter');
-    const modalBtn = document.querySelectorAll('.modal-btn');
+    // const modalBtn = document.querySelectorAll('.modal-btn');
     
     try {
         if (localStorage.getItem('section') === 'section-black') {
@@ -64,5 +64,31 @@ export function controlColorFilter() {
         searchMovies.classList.add('black-theme');
     } else {
         searchMovies.classList.remove('black-theme');
+    }
+}
+
+export function controlColorModal() { 
+    
+    if (localStorage.getItem('section') === 'section-black') {
+        document.querySelector('.film-name').style.color = '#ffffff';
+        document.querySelector('.film-about').style.color = '#ffffff';
+        document.querySelector('.film-description').style.color = '#ffffff';
+        document.querySelector('.modal-table__votes').style.background = '#878787';
+        document.querySelector('.modal-table').style.color = '#ffffff';
+    } else {
+        document.querySelector('.film-name').style.color = '#000000';
+        document.querySelector('.film-about').style.color = '#000000';
+        document.querySelector('.film-description').style.color = '#000000';
+        document.querySelector('.modal-table__votes').style.background = '#f7f7f7';
+        document.querySelector('.modal-table').style.color = '#000000';
+    }
+}
+
+export function controlColorLibraryRender() {
+    
+    if (localStorage.getItem('section') === 'section-black') {
+        document.querySelector('.empty_text').style.color = '#ffffff';
+    } else {
+        document.querySelector('.empty_text').style.color = '#000000';
     }
 }
