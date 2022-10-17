@@ -9,6 +9,8 @@ import { markupPagLib } from './library-markup';
 
 import { isNone } from './library-plugin';
 
+import controlColor from '../../common/controlColor';
+
 const divLib = document.querySelector('#pagination');
 
 ////////////////////////////// СЧЕТЧИК ПАГИНАЦИИ ////////////////////////////////////////////////////////////////////////////////////////
@@ -144,11 +146,12 @@ export function startPageLib() {
   //   console.log('до ретурн');
   //   return;
   // }
-  
+
   divLib.innerHTML = '';
 
   divLib.innerHTML = markupStartPagLib();
 
+  controlColor();
   isNone();
 }
 
