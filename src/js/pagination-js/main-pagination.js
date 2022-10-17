@@ -49,7 +49,7 @@ function removeListener(element, tayp, handler) {
 
 // ////////////////////// НАВИГАЦИЯ ПО СЫЛКЕ
 
-function onClickPaginationLink(e) {
+export function onClickPaginationLink(e) {
   e.preventDefault();
   if (e.target.nodeName !== 'A') {
     return;
@@ -81,7 +81,7 @@ function onClickPaginationLink(e) {
 
 // ////////////////////// НАВИГАЦИЯ ПО КНОПКЕ
 
-function onClickButtonPagination(e) {
+export function onClickButtonPagination(e) {
   e.preventDefault();
   if (e.target.nodeName !== 'BUTTON') {
     return;
