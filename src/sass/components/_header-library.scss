@@ -20,21 +20,6 @@
     }
 }
 
-.header-conteiner {
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: 320px;
-
-    @media screen and (min-width: 768px) {
-        max-width: 740px;
-        padding: 0 32px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        max-width: 1240px;
-    }
-}
-
 .header-nav_list {
     display: flex;
     list-style-type: none;
@@ -126,10 +111,11 @@
 }
 
 
-.header-wrap {
+.header-wraper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
     @media screen and (min-width: 768px) {
         justify-content: center;
     }
