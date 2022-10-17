@@ -27,6 +27,12 @@
   cursor: pointer;
 }
 
+.btn:hover,
+.btn:focus {
+  background-color: orangered;
+  color: #f7f7f7;
+}
+
 @media screen and (max-width: 320px) {
   #preLastItem,
   #preLastPag {
@@ -40,14 +46,12 @@
   align-items: center;
   justify-content: center;
 
-  // margin-right: 16px;
-
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
 
-  padding: 3px;
+  padding: 10px 5px;
   color: #000000;
   text-decoration: none;
 }
@@ -59,6 +63,13 @@
   background-color: orangered;
   color: wheat;
 
+  border: none;
+  border-radius: 5px;
+}
+
+.pagination__page:hover,
+.pagination__page:focus {
+  background-color: orangered;
   border: none;
   border-radius: 5px;
 }
@@ -82,7 +93,7 @@
 }
 
 .pagination__item {
-  margin-right: 16px;
+  margin-right: 11px;
 }
 
 .is-none {
