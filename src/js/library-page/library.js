@@ -6,12 +6,11 @@ import { isTouuchDevice } from '../library-page/libraryBackground';
 import Spinner from '../common/spinner';
 import btnWhiteBlack from '../common/btn-white-black';
 import controlColor from '../common/controlColor';
+import '../common/headers-fixed'
+
 import { langCurrent, setLibraryLang } from '../lang/changeLang';
 
-
 const spin = new Spinner();
-
-
 spin.spinOn();
 
 export const refs = {
