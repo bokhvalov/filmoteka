@@ -1,4 +1,4 @@
-import controlColor from "./controlColor";
+import controlColor,{controlColorFilter} from "./controlColor";
 
 export default function btnWhiteBlack() {
   const btnDAndN = document.querySelector('.switch-btn');
@@ -24,7 +24,7 @@ export default function btnWhiteBlack() {
         toggleBlackMode();
         }
         controlColor();
-
+        controlColorFilter();
   });
 }
 
