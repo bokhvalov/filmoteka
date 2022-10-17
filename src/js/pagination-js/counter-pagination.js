@@ -98,6 +98,7 @@ function lastPages(pages) {
   peg2 = pageCount - 5;
 
   div.innerHTML = markupLastPag(peg2, peg3, peg4, peg5, peg6);
+  controlColor();
 }
 
 //////////////////////////////////// УМЕНЬШЕНИЕ СЧЕТЧИКА
@@ -116,6 +117,7 @@ function dicremrnt(pages) {
   peg2 -= 4;
 
   div.innerHTML = pagMarkup(peg2, peg3, peg4, peg5, peg6);
+  controlColor();
 }
 
 ////////////////////////////////// // УВИЛИЧЕНИЕ СЧЕТЧИКА
@@ -135,6 +137,7 @@ function incriment(pages) {
   peg6 += 4;
 
   div.innerHTML = pagMarkup(peg2, peg3, peg4, peg5, peg6);
+  controlColor();
 }
 
 // //////////////////// РАЗМЕТКА ПАГИНАЦИИ ПРИ ПЕРВОМ ЗАПУСКЕ СТРАНИЦЫ (НАЧАЛЬНАЯ СТРАНИЦА)
@@ -180,4 +183,5 @@ export function adaptivPage() {
   }
 
   ul.insertAdjacentHTML('beforeend', li);
+  controlColor();
 }
