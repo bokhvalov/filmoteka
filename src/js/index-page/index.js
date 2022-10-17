@@ -8,10 +8,9 @@ import { controlColor, controlColorFilter } from '../common/controlColor';
 import { filterRenderGenre, filterRenderYear } from './filterRender';
 import { refs } from '../common/varriables';
 import '../common/headers-fixed';
-
 import {langCurrent, setIndexLang} from '../lang/changeLang'
 import { filterRenderGenre, filterRenderYear } from './filterRender';
-
+import * as extendedSearch from "./extendedSearch";
 
 filterRenderGenre();
 filterRenderYear();
