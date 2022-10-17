@@ -3,7 +3,7 @@ import {fetchGenresList} from './themoviedbAPI';
 import { APIKEY } from './index';
 import localStrg from '../localStorage/localStrg';
 
-let currentRenderLang='en';
+let currentRenderLang=langCurrent();
 
 export function filterRenderYear() {
 
