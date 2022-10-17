@@ -26,8 +26,6 @@ const refs = {
   paginationLib: document.querySelector('#pagination'),
 };
 
-// refs.paginationLib.removeEventListener('click', onlibraryLink);
-// refs.paginationLib.removeEventListener('click', onlibraryBtn);
 removeListener(refs.paginationLib, 'click', onlibraryLink);
 removeListener(refs.paginationLib, 'click', onlibraryBtn);
 
@@ -63,8 +61,6 @@ export function onClickPaginationLink(e) {
     spin.spinOn();
     searchMoviesPagination(e);
   }
-
-  console.log('Это меин');
 
   // СЧЕТЧИК ПАГИНАЦИИ
 

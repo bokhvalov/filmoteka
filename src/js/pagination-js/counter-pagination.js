@@ -7,6 +7,8 @@ import { markupLastPag } from './pagination-markup';
 import { markupStartPag } from './pagination-markup';
 import { markupPag } from './pagination-markup';
 
+import controlColor from '../common/controlColor';
+
 const div = document.querySelector('#pagination');
 
 ////////////////////////////// СЧЕТЧИК ПАГИНАЦИИ ////////////////////////////////////////////////////////////////////////////////////////
@@ -148,7 +150,9 @@ export function startPage() {
   const none = document.querySelector('.is-none');
   if (none) {
     none.classList.remove('is-none');
-  } 
+  }
+
+  controlColor();
 }
 
 // ЕСЛИ МАКСИМАЛЬНОЕ КАЛИЧЕСТВО СТРАНИЦ МЕНЬШЕ 8 РАЗМЕТКА ДОЛЖНА БЫТЬ ДИНАМИЧЕСКОЙ
