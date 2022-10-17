@@ -1,5 +1,5 @@
 import { text } from './packageLang';
-import { filterRenderGenre, filterRenderYear } from '../index-page/filterRender';
+
 
 const refs = {
   enLangBTN: document.getElementById('e-lang-en'),
@@ -54,8 +54,6 @@ export function setIndexLang(lang) {
       extSearchBtnRst.innerHTML = 'reset';
     
   }
-  filterRenderGenre();
-  filterRenderYear();
 }
 
 export function setLibraryLang(lang) {

@@ -5,6 +5,7 @@ import goTopBtn from '../common/goTopBtn';
 import { renderPopularMovies } from './renderPopularMovies';
 import btnWhiteBlack from '../common/btn-white-black';
 import { controlColor, controlColorFilter } from '../common/controlColor';
+import { filterRenderGenre, filterRenderYear } from './filterRender';
 
 import '../common/headers-fixed';
 export const APIKEY = '565e4989d784811de7dff7d665000157';
@@ -32,6 +33,8 @@ refs.uaLangBTN.addEventListener('click', ()=>changeLang('ua'));
 
 function changeLang (lang){
   setIndexLang(lang);
+  filterRenderGenre();
+  filterRenderYear();
   renderPopularMovies();
 }
 
